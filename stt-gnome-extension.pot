@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-13 21:06+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/prefs.ts:19 src/prefs.ts:286
+msgid "Reset to default"
+msgstr ""
+
+#: src/prefs.ts:53 src/extension.ts:688 src/extension.ts:697
+msgid "Speech to Text"
+msgstr ""
+
+#: src/prefs.ts:59
+msgid "OpenRouter Provider"
+msgstr ""
+
+#: src/prefs.ts:60
+msgid "API credentials and model settings for transcription via OpenRouter."
+msgstr ""
+
+#: src/prefs.ts:65
+msgid "API Key"
+msgstr ""
+
+#: src/prefs.ts:71
+msgid "Model"
+msgstr ""
+
+#: src/prefs.ts:83
+msgid "Temperature"
+msgstr ""
+
+#: src/prefs.ts:84
+msgid "Sampling temperature (0 = deterministic, 1 = more creative)"
+msgstr ""
+
+#: src/prefs.ts:97
+msgid "Request Timeout"
+msgstr ""
+
+#: src/prefs.ts:98
+msgid "Seconds to wait for transcription"
+msgstr ""
+
+#: src/prefs.ts:110
+msgid "Behavior"
+msgstr ""
+
+#: src/prefs.ts:115
+msgid "Show Icon in Top Bar"
+msgstr ""
+
+#: src/prefs.ts:116
+msgid "When off, the icon appears only while recording or transcribing."
+msgstr ""
+
+#: src/prefs.ts:126
+msgid "Left"
+msgstr ""
+
+#: src/prefs.ts:127
+msgid "Center"
+msgstr ""
+
+#: src/prefs.ts:128
+msgid "Right"
+msgstr ""
+
+#: src/prefs.ts:131
+msgid "Tray Horizontal Alignment"
+msgstr ""
+
+#: src/prefs.ts:132
+msgid ""
+"Place the status icon in the left, center, or right section of the top bar."
+msgstr ""
+
+#: src/prefs.ts:172
+msgid "Top Bar Icon Position"
+msgstr ""
+
+#: src/prefs.ts:173
+msgid ""
+"Order within that section (− / +): higher = closer to the outer edge of the "
+"bar."
+msgstr ""
+
+#: src/prefs.ts:187
+msgid "Paste placeholder text"
+msgstr ""
+
+#: src/prefs.ts:188
+msgid "Do nothing (no clipboard / paste)"
+msgstr ""
+
+#: src/prefs.ts:191
+msgid "When there is no speech"
+msgstr ""
+
+#: src/prefs.ts:192
+msgid "If the model returns no transcribed words"
+msgstr ""
+
+#: src/prefs.ts:222
+msgid "Placeholder text (e.g. …; leave empty to paste nothing)"
+msgstr ""
+
+#: src/prefs.ts:247
+msgid "Play Sound Effects"
+msgstr ""
+
+#: src/prefs.ts:248
+msgid "Play tone when recording starts and stops"
+msgstr ""
+
+#: src/prefs.ts:254
+msgid "Sound Volume"
+msgstr ""
+
+#: src/prefs.ts:255
+msgid "Volume for start/stop effects (0 = mute, 100 = full)"
+msgstr ""
+
+#: src/prefs.ts:267
+msgid "Keyboard Shortcut"
+msgstr ""
+
+#: src/prefs.ts:268
+msgid "Press a key combination anywhere to start or stop recording."
+msgstr ""
+
+#: src/prefs.ts:273
+msgid "Enable Keyboard Shortcuts"
+msgstr ""
+
+#: src/prefs.ts:274
+msgid "When off, the toggle-recording shortcut is inactive."
+msgstr ""
+
+#: src/prefs.ts:280
+msgid "Toggle Recording"
+msgstr ""
+
+#: src/prefs.ts:304 src/prefs.ts:342
+msgid "Disabled"
+msgstr ""
+
+#: src/prefs.ts:362
+msgid "Press shortcut…"
+msgstr ""
+
+#: src/extension.ts:689
+msgid "Please set your OpenRouter API key in extension settings."
+msgstr ""
+
+#: src/extension.ts:698
+msgid "Please set a transcription model in extension settings."
+msgstr ""
+
+#: src/extension.ts:718 src/extension.ts:791
+msgid "Speech to Text — Error"
+msgstr ""
+
+#: src/extension.ts:719
+msgid "Failed to start recording."
+msgstr ""
