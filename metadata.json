@@ -1,6 +1,6 @@
 {
   "name": "Speech to Text",
-  "description": "Record from the microphone, transcribe via OpenRouter, then copy text to the clipboard and paste into the focused app (Shift+Insert; Ctrl+Shift+Insert in terminals).\n\nClipboard: text is written to the clipboard when you stop a recording so it can be pasted. The extension does not read or upload unrelated clipboard contents.\n\nNetwork: stopping a recording sends audio to openrouter.ai over HTTPS using your API key from settings.\n\nKeyboard: global shortcut to toggle recording is on by default (<Super>z); change or disable it in extension preferences. You can still start and stop recording from the panel icon.",
+  "description": "Record from the microphone, transcribe via OpenRouter, then copy text to the clipboard and paste into the focused app (Shift+Insert; Ctrl+Shift+Insert in terminals).\n\nClipboard: text is written to the clipboard when you stop a recording so it can be pasted. The extension does not read or upload unrelated clipboard contents.\n\nNetwork: stopping a recording sends audio to openrouter.ai over HTTPS using your API key from settings.\n\nKeyboard: global shortcut to toggle recording is on by default Super+z; change or disable it in extension preferences. You can still start and stop recording from the panel icon.",
   "uuid": "stt@pvmnsdev.gmail.com",
   "url": "https://github.com/d-kurchenko/gnome-shell-extension-stt",
   "settings-schema": "org.gnome.shell.extensions.stt",
