@@ -16,7 +16,7 @@
 
     <!-- Transcription model -->
     <key name="model" type="s">
-      <default>"google/gemini-2.0-flash-lite-001"</default>
+      <default>"google/gemini-2.5-flash-lite"</default>
       <summary>Transcription model</summary>
       <description>
         The OpenRouter model identifier used for audio transcription.
