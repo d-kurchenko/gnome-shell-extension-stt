@@ -18,23 +18,53 @@ if (tscResult.exitCode !== 0) {
   process.exit(tscResult.exitCode ?? 1);
 }
 
+console.log('Formatting emitted JavaScript with ESLint…');
+const eslintResult = spawnSync(
+  'bun',
+  [
+    'x',
+    'eslint',
+    '--no-config-lookup',
+    '--config',
+    'eslint.config.dist.js',
+    '--fix',
+    EXTENSION_BUNDLE_DIRECTORY,
+  ],
+  {stdio: 'inherit'},
+);
+if (eslintResult.status !== 0) {
+  process.exit(eslintResult.status ?? 1);
+}
+
 // Verify JS output
-const expectedFiles = ['extension.js', 'prefs.js'];
+const expectedFiles = [
+  'extension.js',
+  'prefs.js',
+  'lib/const.js',
+  'lib/gst.js',
+  'lib/recorder.js',
+  'lib/sound.js',
+  'lib/transcribe.js',
+  'lib/indicator.js',
+  'lib/paste.js',
+  'prefs/page.js',
+  'prefs/reset.js',
+  'prefs/shortcut.js',
+];
 for (const expectedJavaScriptFilename of expectedFiles) {
   if (!existsSync(`${EXTENSION_BUNDLE_DIRECTORY}/${expectedJavaScriptFilename}`)) {
     console.error(`ERROR: Expected output file not found: ${expectedJavaScriptFilename}`);
     process.exit(1);
   }
-  console.log(
-    `  ✓ src/${expectedJavaScriptFilename.replace('.js', '.ts')} → dist/stt@pvmnsdev.gmail.com/${expectedJavaScriptFilename}`,
-  );
+  console.log(`  ✓ ${expectedJavaScriptFilename}`);
 }
 
 // Copy static files
 console.log('Copying static files...');
 
-// Metadata
+// Metadata and license
 cpSync('metadata.json', `${EXTENSION_BUNDLE_DIRECTORY}/metadata.json`);
+cpSync('LICENSE', `${EXTENSION_BUNDLE_DIRECTORY}/LICENSE`);
 
 // Stylesheet
 cpSync('stylesheet.css', `${EXTENSION_BUNDLE_DIRECTORY}/stylesheet.css`);
