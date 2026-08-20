@@ -14,6 +14,7 @@ import {KEYS, panelBoxName} from './const.js';
 export class Indicator
 {
     #settings: Gio.Settings | null;
+    #uuid: string;
     #onToggle: () => void;
     #button: PanelMenu.Button | null = null;
     #icon: St.Bin | null = null;
@@ -21,9 +22,10 @@ export class Indicator
     #recording = false;
     #transcribing = false;
 
-    constructor(settings: Gio.Settings, onToggle: () => void)
+    constructor(settings: Gio.Settings, uuid: string, onToggle: () => void)
     {
         this.#settings = settings;
+        this.#uuid = uuid;
         this.#onToggle = onToggle;
     }
 
@@ -32,14 +34,8 @@ export class Indicator
         (this.#settings as any).connectObject(
             `changed::${KEYS.SHOW_ICON}`,
             () => this.#sync(),
-            this
-        );
-        (this.#settings as any).connectObject(
             `changed::${KEYS.PANEL_POSITION}`,
             () => this.#reposition(),
-            this
-        );
-        (this.#settings as any).connectObject(
             `changed::${KEYS.PANEL_BOX}`,
             () => this.#reposition(),
             this
@@ -117,7 +113,7 @@ export class Indicator
 
         const position = this.#settings.get_int(KEYS.PANEL_POSITION);
         const box = panelBoxName(this.#settings.get_string(KEYS.PANEL_BOX));
-        Main.panel.addToStatusArea('speech-to-text-extension', this.#button, position, box);
+        Main.panel.addToStatusArea(this.#uuid, this.#button, position, box);
     }
 
     #removeButton(): void

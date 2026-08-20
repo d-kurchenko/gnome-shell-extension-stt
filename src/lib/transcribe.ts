@@ -19,11 +19,15 @@ export class Transcriber
 {
     #session: Soup.Session;
     #cancellable: Gio.Cancellable;
-    #metadata: {name?: string, url?: string, version?: string | number};
+    #title: string;
+    #referer: string;
+    #version: string;
 
     constructor(metadata: {name?: string, url?: string, version?: string | number})
     {
-        this.#metadata = metadata;
+        this.#title = metadata.name || 'Speech to Text';
+        this.#referer = metadata.url || '';
+        this.#version = metadata.version != null ? String(metadata.version) : '0';
         this.#session = new Soup.Session();
         this.#cancellable = new Gio.Cancellable();
     }
@@ -65,17 +69,10 @@ export class Transcriber
             new GLib.Bytes(new TextEncoder().encode(body))
         );
 
-        const title = (this.#metadata.name && String(this.#metadata.name).trim()) ||
-            'Speech to Text (GNOME Shell extension)';
-        const referer = (this.#metadata.url && String(this.#metadata.url).trim()) ||
-            'https://github.com/d-kurchenko/gnome-shell-extension-stt';
-        const version = this.#metadata.version != null ? String(this.#metadata.version) : '0';
-
         message.request_headers.append('Authorization', `Bearer ${apiKey}`);
-        message.request_headers.append('HTTP-Referer', referer);
-        message.request_headers.append('X-OpenRouter-Title', title);
-        this.#session.user_agent =
-            `${title.replace(/\s+/g, '-')}/${version} (GNOME Shell extension; ${referer})`;
+        message.request_headers.append('HTTP-Referer', this.#referer);
+        message.request_headers.append('X-OpenRouter-Title', this.#title);
+        this.#session.user_agent = `${this.#title.replace(/\s+/g, '-')}/${this.#version}`;
         this.#session.timeout = timeoutSeconds;
 
         const response = await this.#session.send_and_read_async(

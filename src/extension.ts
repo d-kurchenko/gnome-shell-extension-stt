@@ -34,7 +34,7 @@ export default class SpeechToTextExtension extends Extension
         this.#transcriber = new Transcriber(this.metadata);
         this.#sound = new SoundPlayer();
         this.#paster = new Paster();
-        this.#indicator = new Indicator(this.#settings, () => this.#toggle());
+        this.#indicator = new Indicator(this.#settings, this.uuid, () => this.#toggle());
 
         this.#paster.enable();
         this.#indicator.enable();
@@ -43,9 +43,6 @@ export default class SpeechToTextExtension extends Extension
         (this.#settings as any).connectObject(
             `changed::${KEYS.TOGGLE_SHORTCUT}`,
             () => this.#rebindShortcuts(),
-            this
-        );
-        (this.#settings as any).connectObject(
             `changed::${KEYS.ENABLE_SHORTCUTS}`,
             () => this.#rebindShortcuts(),
             this
