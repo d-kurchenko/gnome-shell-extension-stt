@@ -1,0 +1,76 @@
+name: Publish extension
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ego-publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: ${{ !github.event.release.prerelease }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          persist-credentials: false
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.4'
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y gettext libglib2.0-bin zip
+
+      - run: bun install --frozen-lockfile
+      - run: bun run check
+      - run: bun run pack
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-zip
+          path: stt-ego-upload.zip
+          if-no-files-found: error
+
+      - name: Attach ZIP to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$RELEASE_TAG" stt-ego-upload.zip --clobber
+
+  upload:
+    needs: build
+    runs-on: ubuntu-24.04
+    container: fedora:44
+    timeout-minutes: 20
+    steps:
+      - name: Install GNOME extension tools
+        run: dnf install -y --setopt=install_weak_deps=False gnome-shell
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: extension-zip
+
+      - name: Submit to GNOME Extensions review
+        shell: bash
+        env:
+          EGO_USERNAME: ${{ secrets.EGO_USERNAME }}
+          EGO_PASSWORD: ${{ secrets.EGO_PASSWORD }}
+        run: |
+          : "${EGO_USERNAME:?Add the EGO_USERNAME repository secret}"
+          : "${EGO_PASSWORD:?Add the EGO_PASSWORD repository secret}"
+          printf '%s' "$EGO_PASSWORD" | gnome-extensions upload \
+            --user="$EGO_USERNAME" \
+            --password-file=- \
+            --accept-tos \
+            stt-ego-upload.zip

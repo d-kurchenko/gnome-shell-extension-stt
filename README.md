@@ -50,3 +50,27 @@ No separate dictation window. No context switch. Just flow.
 Install from **[extensions.gnome.org](https://extensions.gnome.org/)** when the listing is live, or follow your distro’s usual GNOME extension workflow from this repository’s releases.
 
 *Requires a modern GNOME Shell environment and an OpenRouter account with an API key. Microphone access is used only while you are recording.*
+
+## Releases
+
+Publishing a stable GitHub Release runs `.github/workflows/publish.yml`. It checks
+and builds the tagged commit, attaches `stt-ego-upload.zip` to the release, and
+submits that same ZIP to extensions.gnome.org for review. Drafts and prereleases
+do not submit an extension.
+
+Before the first release, add these repository secrets under **Settings → Secrets
+and variables → Actions**:
+
+- `EGO_USERNAME`: the extensions.gnome.org account that owns the extension.
+- `EGO_PASSWORD`: that account's password.
+
+The upload command uses `--accept-tos` to accept the
+[GNOME Extensions upload terms](https://extensions.gnome.org/upload/).
+Review those terms before enabling uploads with your account credentials.
+
+Commit and push the changes, create a tag for the version you want to ship, then
+publish a GitHub Release for that tag. The workflow must be present in the tagged
+commit. GNOME reviewers still decide when the submitted version is approved.
+If submission fails, fix the cause and rerun only the failed upload job to reuse
+the existing ZIP. Check EGO before retrying an interrupted upload: it may already
+have been received.
