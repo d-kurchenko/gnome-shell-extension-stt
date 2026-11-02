@@ -82,10 +82,8 @@ cpSync(
   `${EXTENSION_BUNDLE_DIRECTORY}/schemas/org.gnome.shell.extensions.stt.gschema.xml`,
 );
 
-// Sounds
-mkdirSync(`${EXTENSION_BUNDLE_DIRECTORY}/resources`, { recursive: true });
-cpSync('resources/start.mp3', `${EXTENSION_BUNDLE_DIRECTORY}/resources/start.mp3`);
-cpSync('resources/stop.mp3', `${EXTENSION_BUNDLE_DIRECTORY}/resources/stop.mp3`);
+// Sounds and icons
+cpSync('resources', `${EXTENSION_BUNDLE_DIRECTORY}/resources`, { recursive: true });
 
 // Locale: compile .po → .mo (must match metadata.json "gettext-domain" + ".mo")
 const gettextDomainMoBasename = 'gnome-shell-extension-stt.mo';

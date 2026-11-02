@@ -18,13 +18,18 @@ import {createShortcutButton} from './shortcut.js';
 export function createPage(
     settings: Gio.Settings,
     metadata: ExtensionMetadata,
-    uuid: string
+    uuid: string,
+    path: string
 ): Adw.PreferencesPage
 {
     const page = new Adw.PreferencesPage({
         title: _('Speech to Text'),
-        icon_name: 'audio-input-microphone-symbolic',
+        icon_name: 'speech-to-text-symbolic',
     });
+    const iconTheme = Gtk.IconTheme.get_for_display(page.get_display());
+    const iconPath = `${path}/resources/icons`;
+    if (!iconTheme.get_search_path().includes(iconPath))
+        iconTheme.add_search_path(iconPath);
     addOpenRouterGroup(page, settings, new ModelPreferences(page, settings, metadata, uuid));
     addBehaviorGroup(page, settings);
     addShortcutGroup(page, settings);

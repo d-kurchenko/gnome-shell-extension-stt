@@ -1,20 +1,16 @@
 .speech-to-text-panel-icon
 {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.75);
     margin: 2px 4px;
 }
 
 .speech-to-text-panel-icon.recording
 {
-    background-color: #ff7700;
+    color: #f4773a;
 }
 
 .speech-to-text-panel-icon.transcribing
 {
-    background-color: #ffaa00;
+    color: #ffbe6f;
     animation: speech-to-text-panel-icon-pulse 1.2s ease-in-out infinite;
 }
 

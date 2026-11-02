@@ -47,7 +47,7 @@ export class Controller
         this.#transcriber = new Transcriber(metadata, uuid);
         this.#sound = new SoundPlayer();
         this.#paster = new Paster();
-        this.#indicator = new Indicator(this.#settings, uuid, () => this.#toggle());
+        this.#indicator = new Indicator(this.#settings, uuid, path, () => this.#toggle());
 
         this.#paster.enable();
         this.#indicator.enable();

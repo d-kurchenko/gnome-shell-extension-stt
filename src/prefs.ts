@@ -12,6 +12,6 @@ export default class SpeechToTextPreferences extends ExtensionPreferences
 {
     getPreferencesWidget(): Adw.PreferencesPage
     {
-        return createPage(this.getSettings(), this.metadata, this.uuid);
+        return createPage(this.getSettings(), this.metadata, this.uuid, this.path);
     }
 }

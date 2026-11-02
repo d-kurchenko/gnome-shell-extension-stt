@@ -17,15 +17,19 @@ export class Indicator
     #uuid: string;
     #onToggle: () => void;
     #button: PanelMenu.Button | null = null;
-    #icon: St.Bin | null = null;
+    #icon: St.Icon | null = null;
+    #iconFile: Gio.FileIcon;
     #pressId = 0;
     #recording = false;
     #transcribing = false;
 
-    constructor(settings: Gio.Settings, uuid: string, onToggle: () => void)
+    constructor(settings: Gio.Settings, uuid: string, path: string, onToggle: () => void)
     {
         this.#settings = settings;
         this.#uuid = uuid;
+        this.#iconFile = new Gio.FileIcon({
+            file: Gio.File.new_for_path(`${path}/resources/icons/speech-to-text-symbolic.svg`),
+        });
         this.#onToggle = onToggle;
     }
 
@@ -98,7 +102,9 @@ export class Indicator
     #createButton(): void
     {
         this.#button = new PanelMenu.Button(0.0, 'Speech to Text', true);
-        this.#icon = new St.Bin({
+        this.#icon = new St.Icon({
+            gicon: this.#iconFile,
+            icon_size: 16,
             style_class: 'speech-to-text-panel-icon',
             x_align: Clutter.ActorAlign.CENTER,
             y_align: Clutter.ActorAlign.CENTER,
