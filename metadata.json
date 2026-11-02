@@ -4,6 +4,6 @@
     "uuid": "stt@pvmnsdev.gmail.com",
     "url": "https://github.com/d-kurchenko/gnome-shell-extension-stt",
     "settings-schema": "org.gnome.shell.extensions.stt",
-    "shell-version": ["47", "48", "49", "50"],
+    "shell-version": ["47", "48", "49", "50", "51"],
     "gettext-domain": "gnome-shell-extension-stt"
 }

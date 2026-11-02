@@ -4,6 +4,7 @@
 
 import Clutter from 'gi://Clutter';
 import GLib from 'gi://GLib';
+import Shell from 'gi://Shell';
 import St from 'gi://St';
 
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
@@ -16,7 +17,11 @@ export class Paster
 
     enable(): void
     {
-        const seat = Clutter.get_default_backend().get_default_seat();
+        const stage = Shell.Global.get().stage;
+        const backend = typeof stage.get_context === 'function'
+            ? stage.get_context().get_backend()
+            : Clutter.get_default_backend();
+        const seat = backend.get_default_seat();
         this.#keyboard = seat.create_virtual_device(Clutter.InputDeviceType.KEYBOARD_DEVICE);
 
         (Main.inputMethod as any).connectObject(
