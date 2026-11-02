@@ -36,5 +36,7 @@ ZIP. The runtime bundle contains the two SVG icons, not the listing artwork.
 
 `badges/` contains the README's install, GNOME compatibility, and license badges.
 They use the same palette as the posters and link to their destinations from the
-README. The supported Shell versions follow `metadata.json`; the license badge
+README. The GNOME badge is generated from `metadata.json` by `bun run build` or
+`bun run badges:update`; edit `shell-version` rather than the SVG. Consecutive
+versions are grouped into ranges, with gaps kept visible. The license badge
 links to `LICENSE`.

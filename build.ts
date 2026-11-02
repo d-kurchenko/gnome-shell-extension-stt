@@ -1,6 +1,9 @@
 #!/usr/bin/env bun
 import { mkdirSync, cpSync, readdirSync, existsSync, rmSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
+import { updateGnomeBadge } from './scripts/update-gnome-badge.ts';
+
+await updateGnomeBadge();
 
 const DISTRIBUTION_OUTPUT_DIRECTORY = 'dist';
 const EXTENSION_BUNDLE_DIRECTORY = `${DISTRIBUTION_OUTPUT_DIRECTORY}/stt@pvmnsdev.gmail.com`;

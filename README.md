@@ -6,7 +6,7 @@ clipboard and pasted into the focused application, replacing selected editable
 text.
 
 [![Install Speech to Text from GNOME Extensions](assets/badges/gnome-extensions.svg)](https://extensions.gnome.org/extension/9978/speech-to-text/)
-[![GNOME Shell 47–51](assets/badges/gnome-shell.svg)](#installation)
+[![Supported GNOME Shell versions](assets/badges/gnome-shell.svg)](#installation)
 [![License: GPL-2.0-or-later](assets/badges/license.svg)](LICENSE)
 
 Requires GStreamer 1.0 with the base/good plugins and an
@@ -108,6 +108,10 @@ bun run pack
 `bun run pack` produces `stt-ego-upload.zip` and verifies its contents against the
 build. CI runs the same checks. Use `bun run i18n:refresh` after changing
 translatable strings.
+
+Builds also regenerate the GNOME compatibility badge from `metadata.json`.
+Use `bun run badges:update` to update it separately. Include the generated SVG
+when committing changes to `shell-version`; CI checks that it stays in sync.
 
 ### Debugging
 

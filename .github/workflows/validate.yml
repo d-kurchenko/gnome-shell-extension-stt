@@ -34,6 +34,9 @@ jobs:
       - name: Build and check release ZIP
         run: bun run pack
 
+      - name: Check generated GNOME badge
+        run: git diff --exit-code -- assets/badges/gnome-shell.svg
+
       - uses: actions/upload-artifact@v4
         with:
           name: extension-zip

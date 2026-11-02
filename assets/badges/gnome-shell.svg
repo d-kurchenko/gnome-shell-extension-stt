@@ -1,3 +1,4 @@
+<!-- Generated from metadata.json by scripts/update-gnome-badge.ts. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="44" viewBox="0 0 180 44" role="img" aria-labelledby="title">
   <title id="title">GNOME Shell 47–51</title>
   <rect x=".5" y=".5" width="179" height="43" rx="10" fill="#f1f4f6" stroke="#cbd5dc"/>

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "bun run build.ts",
+    "badges:update": "bun run scripts/update-gnome-badge.ts",
     "install:extension": "./install.sh",
     "clean": "rm -rf dist/",
     "check": "bun x tsc --noEmit --project tsconfig.json",
