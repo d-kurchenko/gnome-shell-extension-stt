@@ -12,34 +12,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  validate:
     if: ${{ !github.event.release.prerelease }}
+    uses: ./.github/workflows/validate.yml
+    permissions:
+      contents: read
+
+  release:
+    needs: validate
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 5
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name }}
-          persist-credentials: false
-
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: '1.4.4'
-
-      - name: Install build tools
-        run: sudo apt-get update && sudo apt-get install -y gettext libglib2.0-bin zip
-
-      - run: bun install --frozen-lockfile
-      - run: bun run check
-      - run: bun run pack
-
-      - uses: actions/upload-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: extension-zip
-          path: stt-ego-upload.zip
-          if-no-files-found: error
 
       - name: Attach ZIP to release
         env:
@@ -49,7 +37,7 @@ jobs:
         run: gh release upload "$RELEASE_TAG" stt-ego-upload.zip --clobber
 
   upload:
-    needs: build
+    needs: release
     runs-on: ubuntu-24.04
     container: fedora:44
     timeout-minutes: 20

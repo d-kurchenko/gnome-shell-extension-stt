@@ -1,0 +1,41 @@
+name: Validate extension
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.4'
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y gettext libglib2.0-bin python3 zip
+
+      - run: bun install --frozen-lockfile
+      - run: bun run check
+
+      - name: Validate settings schema
+        run: glib-compile-schemas --strict --dry-run schemas
+
+      - name: Build and check release ZIP
+        run: bun run pack
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-zip
+          path: stt-ego-upload.zip
+          if-no-files-found: error

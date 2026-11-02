@@ -51,12 +51,25 @@ Install from **[extensions.gnome.org](https://extensions.gnome.org/)** when the 
 
 *Requires a modern GNOME Shell environment and an OpenRouter account with an API key. Microphone access is used only while you are recording.*
 
+## Checks
+
+Pull requests and pushes to `main` run `.github/workflows/validate.yml`: type
+checking, strict schema validation, and a full release build. The build formats
+JavaScript with ESLint and rejects multiple statements on one line. The package
+check verifies that the ZIP contains every compiled module and matches the build
+output byte for byte, with metadata and files at the ZIP root.
+
+Run the same checks locally with `bun run check`,
+`glib-compile-schemas --strict --dry-run schemas`, and `bun run pack`.
+Packaging requires Bun, Python 3, gettext, GLib tools, and zip.
+
 ## Releases
 
-Publishing a stable GitHub Release runs `.github/workflows/publish.yml`. It checks
-and builds the tagged commit, attaches `stt-ego-upload.zip` to the release, and
-submits that same ZIP to extensions.gnome.org for review. Drafts and prereleases
-do not submit an extension.
+Publishing a stable GitHub Release runs `.github/workflows/publish.yml`. It calls
+the same validation workflow on the release tag, attaches the validated
+`stt-ego-upload.zip` to the release, and submits that ZIP to extensions.gnome.org
+for review without rebuilding it. Drafts and prereleases do not submit an
+extension.
 
 Before the first release, add these repository secrets under **Settings → Secrets
 and variables → Actions**:

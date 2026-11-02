@@ -16,6 +16,7 @@ export default [
             '@stylistic/semi': ['error', 'always'],
             '@stylistic/object-curly-spacing': ['error', 'never'],
             '@stylistic/comma-dangle': ['error', 'never'],
+            '@stylistic/max-statements-per-line': ['error', {max: 1}],
             '@stylistic/eol-last': ['error', 'always'],
             '@stylistic/lines-between-class-members': ['error', {
                 enforce: [
