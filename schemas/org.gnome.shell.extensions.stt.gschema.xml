@@ -16,10 +16,32 @@
 
     <!-- Transcription model -->
     <key name="model" type="s">
-      <default>"google/gemini-2.5-flash-lite"</default>
+      <default>"microsoft/mai-transcribe-2"</default>
       <summary>Transcription model</summary>
       <description>
         The OpenRouter model identifier used for audio transcription.
+      </description>
+    </key>
+
+    <key name="model-api" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="chat"/>
+        <choice value="transcription"/>
+      </choices>
+      <default>"auto"</default>
+      <summary>Model API</summary>
+      <description>
+        Automatically select the API from model capabilities, or override it for a manually entered model.
+      </description>
+    </key>
+
+    <key name="speech-language" type="s">
+      <default>""</default>
+      <summary>Speech language</summary>
+      <description>
+        ISO-639-1 code of the spoken language, such as ru, uk, or en.
+        Leave empty to let the model detect the language automatically.
       </description>
     </key>
 

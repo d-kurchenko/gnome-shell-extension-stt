@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-stt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 20:00+0300\n"
+"POT-Creation-Date: 2026-11-02 14:40+0200\n"
 "PO-Revision-Date: 2026-05-13 15:19+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,161 +16,324 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/extension.ts:145 src/extension.ts:154 src/prefs/page.ts:18
+#: src/lib/controller.ts:164 src/lib/controller.ts:173 src/prefs/page.ts:25
 msgid "Speech to Text"
 msgstr "音声テキスト変換"
 
-#: src/extension.ts:146
+#: src/lib/controller.ts:165
 msgid "Please set your OpenRouter API key in extension settings."
 msgstr "拡張機能の設定でOpenRouter APIキーを設定してください。"
 
-#: src/extension.ts:155
+#: src/lib/controller.ts:174
 msgid "Please set a transcription model in extension settings."
 msgstr "拡張機能の設定で文字起こしモデルを設定してください。"
 
-#: src/extension.ts:168 src/extension.ts:213
+#: src/lib/controller.ts:205 src/lib/controller.ts:255
 msgid "Speech to Text — Error"
 msgstr "音声テキスト変換 — エラー"
 
-#: src/extension.ts:168
+#: src/lib/controller.ts:205
 msgid "Failed to start recording."
 msgstr "録音の開始に失敗しました。"
 
-#: src/prefs/page.ts:31
-msgid "OpenRouter Provider"
-msgstr "OpenRouter プロバイダー"
+#: src/openrouter/protocol.ts:39
+msgid "OpenRouter returned an invalid response."
+msgstr ""
 
-#: src/prefs/page.ts:32
-msgid "API credentials and model settings for transcription via OpenRouter."
-msgstr "OpenRouter経由の文字起こしのためのAPI認証情報とモデル設定。"
+#: src/openrouter/protocol.ts:40
+msgid "Could not connect to OpenRouter. Check your connection."
+msgstr ""
 
-#: src/prefs/page.ts:36
-msgid "API Key"
-msgstr "APIキー"
+#: src/openrouter/protocol.ts:41
+msgid ""
+"OpenRouter timed out. Try a shorter recording or increase the request "
+"timeout."
+msgstr ""
 
-#: src/prefs/page.ts:41
+#: src/openrouter/protocol.ts:42
+msgid "Check your OpenRouter API key."
+msgstr ""
+
+#: src/openrouter/protocol.ts:43
+msgid "Your OpenRouter balance is insufficient."
+msgstr ""
+
+#: src/openrouter/protocol.ts:44
+msgid "The selected model is unavailable or does not support this request."
+msgstr ""
+
+#: src/openrouter/protocol.ts:45
+msgid "The recording is too large for this model. Try a shorter recording."
+msgstr ""
+
+#: src/openrouter/protocol.ts:46
+msgid "OpenRouter is receiving too many requests. Try again later."
+msgstr ""
+
+#: src/openrouter/protocol.ts:47
+msgid "OpenRouter could not complete the request."
+msgstr ""
+
+#: src/openrouter/protocol.ts:48
+msgid ""
+"Could not determine the model type. Set it when entering the model ID "
+"manually."
+msgstr ""
+
+#: src/openrouter/protocol.ts:49
+msgid "This model does not support audio transcription. Choose another model."
+msgstr ""
+
+#: src/openrouter/protocol.ts:50
+#, fuzzy
+msgid "Failed to read the audio recording."
+msgstr "録音の開始に失敗しました。"
+
+#: src/openrouter/protocol.ts:51
+msgid ""
+"Enter a two-letter speech language code in settings, or leave it empty for "
+"automatic detection."
+msgstr ""
+
+#: src/prefs/language.ts:15
+msgid "Speech language"
+msgstr ""
+
+#: src/prefs/language.ts:16
+msgid "Choose the spoken language if automatic detection is inaccurate."
+msgstr ""
+
+#: src/prefs/language.ts:18 src/prefs/models.ts:24 src/prefs/models.ts:116
+msgid "Automatic"
+msgstr ""
+
+#: src/prefs/language.ts:18
+msgid "Russian"
+msgstr ""
+
+#: src/prefs/language.ts:18
+msgid "Ukrainian"
+msgstr ""
+
+#: src/prefs/language.ts:18
+msgid "English"
+msgstr ""
+
+#: src/prefs/language.ts:18
+msgid "Other language"
+msgstr ""
+
+#: src/prefs/language.ts:24
+msgid "Language code (for example, de or fr)"
+msgstr ""
+
+#: src/prefs/language.ts:25
+msgid "Apply"
+msgstr ""
+
+#: src/prefs/models.ts:24 src/prefs/models.ts:115 src/prefs/models.ts:165
+msgid "Speech recognition"
+msgstr ""
+
+#: src/prefs/models.ts:24 src/prefs/models.ts:116 src/prefs/models.ts:166
+msgid "LLM with audio"
+msgstr ""
+
+#: src/prefs/models.ts:53
 msgid "Model"
 msgstr "モデル"
 
-#: src/prefs/page.ts:49
+#: src/prefs/models.ts:60
+msgid "View model on OpenRouter"
+msgstr ""
+
+#: src/prefs/models.ts:68 src/prefs/reset.ts:29
+msgid "Reset to default"
+msgstr "デフォルトに戻す"
+
+#: src/prefs/models.ts:80 src/prefs/models.ts:131
+msgid "Choose model"
+msgstr ""
+
+#: src/prefs/models.ts:138
+msgid "Refresh models"
+msgstr ""
+
+#: src/prefs/models.ts:149
+msgid "Search by name or model ID"
+msgstr ""
+
+#: src/prefs/models.ts:164
+msgid "Recommended"
+msgstr ""
+
+#: src/prefs/models.ts:183
+msgid ""
+"Speech recognition models return their own formatting. LLMs use the "
+"transcription instructions."
+msgstr ""
+
+#: src/prefs/models.ts:206
+msgid "Enter a model ID manually"
+msgstr ""
+
+#: src/prefs/models.ts:207
+#, fuzzy
+msgid "Model ID"
+msgstr "モデル"
+
+#: src/prefs/models.ts:209
+#, fuzzy
+msgid "Model type"
+msgstr "モデル"
+
+#: src/prefs/models.ts:212
+msgid "Use model"
+msgstr ""
+
+#: src/prefs/models.ts:224
+msgid "Use the OpenRouter ID, for example provider/model."
+msgstr ""
+
+#: src/prefs/models.ts:266
+msgid "No matching models."
+msgstr ""
+
+#: src/prefs/models.ts:266
+msgid "No models loaded. Refresh the list or enter a model ID manually."
+msgstr ""
+
+#: src/prefs/models.ts:281
+msgid "Loading models…"
+msgstr ""
+
+#: src/prefs/page.ts:38
+msgid "OpenRouter Provider"
+msgstr "OpenRouter プロバイダー"
+
+#: src/prefs/page.ts:39
+msgid "API credentials and model settings for transcription via OpenRouter."
+msgstr "OpenRouter経由の文字起こしのためのAPI認証情報とモデル設定。"
+
+#: src/prefs/page.ts:43
+msgid "API Key"
+msgstr "APIキー"
+
+#: src/prefs/page.ts:51
 msgid "Temperature"
 msgstr "温度"
 
-#: src/prefs/page.ts:50
+#: src/prefs/page.ts:52
 msgid "Sampling temperature (0 = deterministic, 1 = more creative)"
 msgstr "サンプリング温度（0 = 決定的、1 = より創造的）"
 
-#: src/prefs/page.ts:59
+#: src/prefs/page.ts:61
 msgid "Request Timeout"
 msgstr "リクエストタイムアウト"
 
-#: src/prefs/page.ts:60
+#: src/prefs/page.ts:62
 msgid "Seconds to wait for transcription"
 msgstr "文字起こしの待機秒数"
 
-#: src/prefs/page.ts:70
+#: src/prefs/page.ts:72
 msgid "Behavior"
 msgstr "動作"
 
-#: src/prefs/page.ts:74
+#: src/prefs/page.ts:76
 msgid "Show Icon in Top Bar"
 msgstr "トップバーにアイコンを表示"
 
-#: src/prefs/page.ts:75
+#: src/prefs/page.ts:77
 msgid "When off, the icon appears only while recording or transcribing."
 msgstr "オフのときは、録音または文字起こし中にのみアイコンが表示されます。"
 
-#: src/prefs/page.ts:81
+#: src/prefs/page.ts:83
 msgid "Tray Horizontal Alignment"
 msgstr "トレイの水平方向の配置"
 
-#: src/prefs/page.ts:82
+#: src/prefs/page.ts:84
 msgid ""
 "Place the status icon in the left, center, or right section of the top bar."
 msgstr ""
 "ステータスアイコンをトップバーの左・中央・右のいずれかの領域に置きます。"
 
-#: src/prefs/page.ts:83
+#: src/prefs/page.ts:85
 msgid "Left"
 msgstr "左"
 
-#: src/prefs/page.ts:83
+#: src/prefs/page.ts:85
 msgid "Center"
 msgstr "中央"
 
-#: src/prefs/page.ts:83
+#: src/prefs/page.ts:85
 msgid "Right"
 msgstr "右"
 
-#: src/prefs/page.ts:94
+#: src/prefs/page.ts:96
 msgid "Top Bar Icon Position"
 msgstr "トップバー内のアイコン位置"
 
-#: src/prefs/page.ts:95
+#: src/prefs/page.ts:97
 msgid ""
 "Order within that section (− / +): higher = closer to the outer edge of the "
 "bar."
 msgstr "その領域内の順序（− / +）: 値が大きいほどバーの外側の端に近づきます。"
 
-#: src/prefs/page.ts:103
+#: src/prefs/page.ts:105
 msgid "When there is no speech"
 msgstr "発話がない場合"
 
-#: src/prefs/page.ts:104
+#: src/prefs/page.ts:106
 msgid "If the model returns no transcribed words"
 msgstr "モデルが書き起こされた語を返さない場合"
 
-#: src/prefs/page.ts:106
+#: src/prefs/page.ts:108
 msgid "Paste placeholder text"
 msgstr "プレースホルダーテキストを貼り付け"
 
-#: src/prefs/page.ts:107
+#: src/prefs/page.ts:109
 msgid "Do nothing (no clipboard / paste)"
 msgstr "何もしない（クリップボード／貼り付けなし）"
 
-#: src/prefs/page.ts:117
+#: src/prefs/page.ts:119
 msgid "Placeholder text (e.g. …; leave empty to paste nothing)"
 msgstr "プレースホルダーテキスト（例：…；空のままにすると貼り付けません）"
 
-#: src/prefs/page.ts:132
+#: src/prefs/page.ts:134
 msgid "Play Sound Effects"
 msgstr "効果音を再生"
 
-#: src/prefs/page.ts:133
+#: src/prefs/page.ts:135
 msgid "Play tone when recording starts and stops"
 msgstr "録音の開始時と停止時に音を鳴らす"
 
-#: src/prefs/page.ts:139
+#: src/prefs/page.ts:141
 msgid "Sound Volume"
 msgstr "音量"
 
-#: src/prefs/page.ts:140
+#: src/prefs/page.ts:142
 msgid "Volume for start/stop effects (0 = mute, 100 = full)"
 msgstr "開始/停止効果の音量（0 = ミュート、100 = 最大）"
 
-#: src/prefs/page.ts:151
+#: src/prefs/page.ts:153
 msgid "Keyboard Shortcut"
 msgstr "キーボードショートカット"
 
-#: src/prefs/page.ts:152
+#: src/prefs/page.ts:154
 msgid "Press a key combination anywhere to start or stop recording."
 msgstr "任意の場所でキーの組み合わせを押して、録音を開始または停止します。"
 
-#: src/prefs/page.ts:157
+#: src/prefs/page.ts:159
 msgid "Enable Keyboard Shortcuts"
 msgstr "キーボードショートカットを有効化"
 
-#: src/prefs/page.ts:158
+#: src/prefs/page.ts:160
 msgid "When off, the toggle-recording shortcut is inactive."
 msgstr "オフの場合、録音切替ホットキーは無効です"
 
-#: src/prefs/page.ts:163
+#: src/prefs/page.ts:165
 msgid "Toggle Recording"
 msgstr "録音の切り替え"
-
-#: src/prefs/reset.ts:29
-msgid "Reset to default"
-msgstr "デフォルトに戻す"
 
 #: src/prefs/shortcut.ts:43
 msgid "Disabled"

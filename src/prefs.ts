@@ -1,17 +1,17 @@
 /**
- * Preferences window entry point.
+ * Preferences entry point.
  */
 
 import Adw from 'gi://Adw';
 
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
-import {fillPage} from './prefs/page.js';
+import {createPage} from './prefs/page.js';
 
 export default class SpeechToTextPreferences extends ExtensionPreferences
 {
-    async fillPreferencesWindow(window: Adw.PreferencesWindow)
+    getPreferencesWidget(): Adw.PreferencesPage
     {
-        fillPage(window, this.getSettings());
+        return createPage(this.getSettings(), this.metadata, this.uuid);
     }
 }

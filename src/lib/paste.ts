@@ -23,6 +23,7 @@ export class Paster
             : Clutter.get_default_backend();
         const seat = backend.get_default_seat();
         this.#keyboard = seat.create_virtual_device(Clutter.InputDeviceType.KEYBOARD_DEVICE);
+        this.#contentPurpose = Main.inputMethod.content_purpose;
 
         (Main.inputMethod as any).connectObject(
             'notify::content-purpose',
@@ -37,7 +38,6 @@ export class Paster
     {
         const clipboard = St.Clipboard.get_default();
         clipboard.set_text(St.ClipboardType.CLIPBOARD, text);
-        clipboard.set_text(St.ClipboardType.PRIMARY, text);
 
         if (this.#timeoutId) {
             GLib.source_remove(this.#timeoutId);
@@ -66,26 +66,24 @@ export class Paster
         if (!this.#keyboard)
             return;
 
-        if (this.#contentPurpose === Clutter.InputContentPurpose.TERMINAL) {
-            this.#key(Clutter.KEY_Control_L, Clutter.KeyState.PRESSED);
+        const terminal = this.#contentPurpose === Clutter.InputContentPurpose.TERMINAL;
+        this.#key(Clutter.KEY_Control_L, Clutter.KeyState.PRESSED);
+        if (terminal)
             this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.PRESSED);
-            this.#key(Clutter.KEY_Insert, Clutter.KeyState.PRESSED);
-            this.#key(Clutter.KEY_Insert, Clutter.KeyState.RELEASED);
-            this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.RELEASED);
-            this.#key(Clutter.KEY_Control_L, Clutter.KeyState.RELEASED);
-            return;
-        }
 
-        this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.PRESSED);
-        this.#key(Clutter.KEY_Insert, Clutter.KeyState.PRESSED);
-        this.#key(Clutter.KEY_Insert, Clutter.KeyState.RELEASED);
-        this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.RELEASED);
+        this.#key(Clutter.KEY_v, Clutter.KeyState.PRESSED);
+        this.#key(Clutter.KEY_v, Clutter.KeyState.RELEASED);
+
+        if (terminal)
+            this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.RELEASED);
+
+        this.#key(Clutter.KEY_Control_L, Clutter.KeyState.RELEASED);
     }
 
     #key(keyval: number, state: Clutter.KeyState): void
     {
         this.#keyboard.notify_keyval(
-            Clutter.get_current_event_time() * 1000,
+            GLib.get_monotonic_time(),
             keyval,
             state
         );

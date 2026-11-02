@@ -14,7 +14,7 @@
     "settings": "dconf dump /org/gnome/shell/extensions/stt/",
     "prefs": "gnome-extensions prefs stt@pvmnsdev.gmail.com",
     "errors": "gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Extensions.GetExtensionErrors 'stt@pvmnsdev.gmail.com'",
-    "i18n:refresh": "xgettext --from-code=UTF-8 --keyword=_ --keyword=N_ -o stt-gnome-extension.pot src/extension.ts src/prefs.ts src/prefs/page.ts src/prefs/reset.ts src/prefs/shortcut.ts && for po in locale/*/LC_MESSAGES/stt-gnome-extension.po; do msgmerge --update --backup=none \"$po\" stt-gnome-extension.pot; done",
+    "i18n:refresh": "xgettext --from-code=UTF-8 --keyword=_ --keyword=N_ -o stt-gnome-extension.pot src/*.ts src/lib/*.ts src/openrouter/*.ts src/prefs/*.ts && for po in locale/*/LC_MESSAGES/stt-gnome-extension.po; do msgmerge --update --backup=none \"$po\" stt-gnome-extension.pot; done",
     "dev": "bun run build.ts && ./install.sh && dbus-run-session gnome-shell --devkit --wayland"
   },
   "devDependencies": {

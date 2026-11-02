@@ -41,6 +41,7 @@ const expectedFiles = [
   'extension.js',
   'prefs.js',
   'lib/const.js',
+  'lib/controller.js',
   'lib/gst.js',
   'lib/recorder.js',
   'lib/sound.js',
@@ -48,8 +49,13 @@ const expectedFiles = [
   'lib/indicator.js',
   'lib/paste.js',
   'prefs/page.js',
+  'prefs/models.js',
+  'prefs/language.js',
   'prefs/reset.js',
   'prefs/shortcut.js',
+  'openrouter/catalog.js',
+  'openrouter/client.js',
+  'openrouter/protocol.js',
 ];
 for (const expectedJavaScriptFilename of expectedFiles) {
   if (!existsSync(`${EXTENSION_BUNDLE_DIRECTORY}/${expectedJavaScriptFilename}`)) {

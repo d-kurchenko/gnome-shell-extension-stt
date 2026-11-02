@@ -46,9 +46,8 @@ export class Indicator
     setRecording(recording: boolean): void
     {
         this.#recording = recording;
+        this.#sync();
         this.#updateStyle();
-        if (!recording)
-            this.#sync();
     }
 
     setTranscribing(transcribing: boolean): void

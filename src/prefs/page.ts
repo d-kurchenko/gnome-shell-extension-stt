@@ -9,23 +9,30 @@ import Gtk from 'gi://Gtk';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 import {EMPTY_SPEECH, KEYS, PANEL_BOX} from '../lib/const.js';
+import {ExtensionMetadata} from '../openrouter/client.js';
+import {ModelPreferences} from './models.js';
+import {addLanguageRow} from './language.js';
 import {addResetButton, watchSetting} from './reset.js';
 import {createShortcutButton} from './shortcut.js';
 
-export function fillPage(window: Adw.PreferencesWindow, settings: Gio.Settings): void
+export function createPage(
+    settings: Gio.Settings,
+    metadata: ExtensionMetadata,
+    uuid: string
+): Adw.PreferencesPage
 {
     const page = new Adw.PreferencesPage({
         title: _('Speech to Text'),
         icon_name: 'audio-input-microphone-symbolic',
     });
-    window.add(page);
-
-    addOpenRouterGroup(page, settings);
+    addOpenRouterGroup(page, settings, new ModelPreferences(page, settings, metadata, uuid));
     addBehaviorGroup(page, settings);
     addShortcutGroup(page, settings);
+
+    return page;
 }
 
-function addOpenRouterGroup(page: Adw.PreferencesPage, settings: Gio.Settings): void
+function addOpenRouterGroup(page: Adw.PreferencesPage, settings: Gio.Settings, models: ModelPreferences): void
 {
     const group = new Adw.PreferencesGroup({
         title: _('OpenRouter Provider'),
@@ -37,13 +44,8 @@ function addOpenRouterGroup(page: Adw.PreferencesPage, settings: Gio.Settings): 
     group.add(apiKey);
     settings.bind(KEYS.API_KEY, apiKey, 'text', Gio.SettingsBindFlags.DEFAULT);
 
-    const model = new Adw.EntryRow({
-        title: _('Model'),
-        show_apply_button: false,
-    });
-    group.add(model);
-    settings.bind(KEYS.MODEL, model, 'text', Gio.SettingsBindFlags.DEFAULT);
-    addResetButton(settings, KEYS.MODEL, model);
+    models.addTo(group);
+    addLanguageRow(group, settings);
 
     const temperature = new Adw.SpinRow({
         title: _('Temperature'),

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-stt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 20:00+0300\n"
+"POT-Creation-Date: 2026-11-02 14:40+0200\n"
 "PO-Revision-Date: 2026-05-13 15:19+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,101 +17,273 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/extension.ts:145 src/extension.ts:154 src/prefs/page.ts:18
+#: src/lib/controller.ts:164 src/lib/controller.ts:173 src/prefs/page.ts:25
 msgid "Speech to Text"
 msgstr "Голос у текст"
 
-#: src/extension.ts:146
+#: src/lib/controller.ts:165
 msgid "Please set your OpenRouter API key in extension settings."
 msgstr ""
 "Будь ласка, вкажіть свій ключ OpenRouter API у налаштуваннях розширення."
 
-#: src/extension.ts:155
+#: src/lib/controller.ts:174
 msgid "Please set a transcription model in extension settings."
 msgstr "Будь ласка, вкажіть модель транскрипції у налаштуваннях розширення."
 
-#: src/extension.ts:168 src/extension.ts:213
+#: src/lib/controller.ts:205 src/lib/controller.ts:255
 msgid "Speech to Text — Error"
 msgstr "Голос у текст — Помилка"
 
-#: src/extension.ts:168
+#: src/lib/controller.ts:205
 msgid "Failed to start recording."
 msgstr "Не вдалося розпочати запис."
 
-#: src/prefs/page.ts:31
+#: src/openrouter/protocol.ts:39
+msgid "OpenRouter returned an invalid response."
+msgstr "OpenRouter повернув некоректну відповідь."
+
+#: src/openrouter/protocol.ts:40
+msgid "Could not connect to OpenRouter. Check your connection."
+msgstr "Не вдалося підключитися до OpenRouter. Перевірте з’єднання."
+
+#: src/openrouter/protocol.ts:41
+msgid ""
+"OpenRouter timed out. Try a shorter recording or increase the request "
+"timeout."
+msgstr ""
+"OpenRouter не відповів вчасно. Скоротіть запис або збільште час очікування "
+"запиту."
+
+#: src/openrouter/protocol.ts:42
+msgid "Check your OpenRouter API key."
+msgstr "Перевірте API-ключ OpenRouter."
+
+#: src/openrouter/protocol.ts:43
+msgid "Your OpenRouter balance is insufficient."
+msgstr "На балансі OpenRouter недостатньо коштів."
+
+#: src/openrouter/protocol.ts:44
+msgid "The selected model is unavailable or does not support this request."
+msgstr "Вибрана модель недоступна або не підтримує цей запит."
+
+#: src/openrouter/protocol.ts:45
+msgid "The recording is too large for this model. Try a shorter recording."
+msgstr "Запис завеликий для цієї моделі. Спробуйте коротший запис."
+
+#: src/openrouter/protocol.ts:46
+msgid "OpenRouter is receiving too many requests. Try again later."
+msgstr "Перевищено ліміт запитів OpenRouter. Повторіть пізніше."
+
+#: src/openrouter/protocol.ts:47
+msgid "OpenRouter could not complete the request."
+msgstr "OpenRouter не вдалося виконати запит."
+
+#: src/openrouter/protocol.ts:48
+msgid ""
+"Could not determine the model type. Set it when entering the model ID "
+"manually."
+msgstr ""
+"Не вдалося визначити тип моделі. Укажіть його під час ручного введення ID "
+"моделі."
+
+#: src/openrouter/protocol.ts:49
+msgid "This model does not support audio transcription. Choose another model."
+msgstr "Ця модель не підтримує розпізнавання мовлення. Виберіть іншу модель."
+
+#: src/openrouter/protocol.ts:50
+msgid "Failed to read the audio recording."
+msgstr "Не вдалося прочитати аудіозапис."
+
+#: src/openrouter/protocol.ts:51
+msgid ""
+"Enter a two-letter speech language code in settings, or leave it empty for "
+"automatic detection."
+msgstr ""
+"Укажіть у налаштуваннях дволітерний код мови мовлення або залиште його "
+"порожнім для автовизначення."
+
+#: src/prefs/language.ts:15
+msgid "Speech language"
+msgstr "Мова мовлення"
+
+#: src/prefs/language.ts:16
+msgid "Choose the spoken language if automatic detection is inaccurate."
+msgstr "Укажіть мову мовлення, якщо автовизначення помиляється."
+
+#: src/prefs/language.ts:18 src/prefs/models.ts:24 src/prefs/models.ts:116
+msgid "Automatic"
+msgstr "Автоматично"
+
+#: src/prefs/language.ts:18
+msgid "Russian"
+msgstr "Російська"
+
+#: src/prefs/language.ts:18
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: src/prefs/language.ts:18
+msgid "English"
+msgstr "Англійська"
+
+#: src/prefs/language.ts:18
+msgid "Other language"
+msgstr "Інша мова"
+
+#: src/prefs/language.ts:24
+msgid "Language code (for example, de or fr)"
+msgstr "Код мови (наприклад, de або fr)"
+
+#: src/prefs/language.ts:25
+msgid "Apply"
+msgstr "Застосувати"
+
+#: src/prefs/models.ts:24 src/prefs/models.ts:115 src/prefs/models.ts:165
+msgid "Speech recognition"
+msgstr "Розпізнавання мовлення"
+
+#: src/prefs/models.ts:24 src/prefs/models.ts:116 src/prefs/models.ts:166
+msgid "LLM with audio"
+msgstr "LLM з підтримкою аудіо"
+
+#: src/prefs/models.ts:53
+msgid "Model"
+msgstr "Модель"
+
+#: src/prefs/models.ts:60
+msgid "View model on OpenRouter"
+msgstr "Відкрити модель в OpenRouter"
+
+#: src/prefs/models.ts:68 src/prefs/reset.ts:29
+msgid "Reset to default"
+msgstr "Скинути до стандартного"
+
+#: src/prefs/models.ts:80 src/prefs/models.ts:131
+msgid "Choose model"
+msgstr "Вибрати модель"
+
+#: src/prefs/models.ts:138
+msgid "Refresh models"
+msgstr "Оновити моделі"
+
+#: src/prefs/models.ts:149
+msgid "Search by name or model ID"
+msgstr "Пошук за назвою або ID моделі"
+
+#: src/prefs/models.ts:164
+msgid "Recommended"
+msgstr "Рекомендовані"
+
+#: src/prefs/models.ts:183
+msgid ""
+"Speech recognition models return their own formatting. LLMs use the "
+"transcription instructions."
+msgstr ""
+"Моделі розпізнавання мовлення самі оформлюють текст. LLM використовують "
+"інструкції для розшифрування."
+
+#: src/prefs/models.ts:206
+msgid "Enter a model ID manually"
+msgstr "Ввести ID моделі вручну"
+
+#: src/prefs/models.ts:207
+msgid "Model ID"
+msgstr "ID моделі"
+
+#: src/prefs/models.ts:209
+msgid "Model type"
+msgstr "Тип моделі"
+
+#: src/prefs/models.ts:212
+msgid "Use model"
+msgstr "Вибрати модель"
+
+#: src/prefs/models.ts:224
+msgid "Use the OpenRouter ID, for example provider/model."
+msgstr "Вкажіть ID з OpenRouter, наприклад provider/model."
+
+#: src/prefs/models.ts:266
+msgid "No matching models."
+msgstr "Відповідних моделей немає."
+
+#: src/prefs/models.ts:266
+msgid "No models loaded. Refresh the list or enter a model ID manually."
+msgstr "Моделі не завантажено. Оновіть список або введіть ID моделі вручну."
+
+#: src/prefs/models.ts:281
+msgid "Loading models…"
+msgstr "Завантаження моделей…"
+
+#: src/prefs/page.ts:38
 msgid "OpenRouter Provider"
 msgstr "Провайдер OpenRouter"
 
-#: src/prefs/page.ts:32
+#: src/prefs/page.ts:39
 msgid "API credentials and model settings for transcription via OpenRouter."
 msgstr ""
 "Облікові дані API та налаштування моделі для транскрипції через OpenRouter."
 
-#: src/prefs/page.ts:36
+#: src/prefs/page.ts:43
 msgid "API Key"
 msgstr "Ключ API"
 
-#: src/prefs/page.ts:41
-msgid "Model"
-msgstr "Модель"
-
-#: src/prefs/page.ts:49
+#: src/prefs/page.ts:51
 msgid "Temperature"
 msgstr "Температура"
 
-#: src/prefs/page.ts:50
+#: src/prefs/page.ts:52
 msgid "Sampling temperature (0 = deterministic, 1 = more creative)"
 msgstr "Температура семплювання (0 = детерміновано, 1 = більш креативно)"
 
-#: src/prefs/page.ts:59
+#: src/prefs/page.ts:61
 msgid "Request Timeout"
 msgstr "Таймаут запиту"
 
-#: src/prefs/page.ts:60
+#: src/prefs/page.ts:62
 msgid "Seconds to wait for transcription"
 msgstr "Секунд очікування транскрипції"
 
-#: src/prefs/page.ts:70
+#: src/prefs/page.ts:72
 msgid "Behavior"
 msgstr "Поведінка"
 
-#: src/prefs/page.ts:74
+#: src/prefs/page.ts:76
 msgid "Show Icon in Top Bar"
 msgstr "Показувати іконку у верхній панелі"
 
-#: src/prefs/page.ts:75
+#: src/prefs/page.ts:77
 msgid "When off, the icon appears only while recording or transcribing."
 msgstr ""
 "Коли вимкнено, іконка показується лише під час запису або транскрипції."
 
-#: src/prefs/page.ts:81
+#: src/prefs/page.ts:83
 msgid "Tray Horizontal Alignment"
 msgstr "Горизонтальне вирівнювання в треї"
 
-#: src/prefs/page.ts:82
+#: src/prefs/page.ts:84
 msgid ""
 "Place the status icon in the left, center, or right section of the top bar."
 msgstr ""
 "Розмістити значок стану в лівій, центральній або правій частині верхньої "
 "панелі."
 
-#: src/prefs/page.ts:83
+#: src/prefs/page.ts:85
 msgid "Left"
 msgstr "Ліворуч"
 
-#: src/prefs/page.ts:83
+#: src/prefs/page.ts:85
 msgid "Center"
 msgstr "По центру"
 
-#: src/prefs/page.ts:83
+#: src/prefs/page.ts:85
 msgid "Right"
 msgstr "Праворуч"
 
-#: src/prefs/page.ts:94
+#: src/prefs/page.ts:96
 msgid "Top Bar Icon Position"
 msgstr "Позиція значка на панелі"
 
-#: src/prefs/page.ts:95
+#: src/prefs/page.ts:97
 msgid ""
 "Order within that section (− / +): higher = closer to the outer edge of the "
 "bar."
@@ -119,65 +291,61 @@ msgstr ""
 "Порядок у цій області (− / +): більше значення — ближче до зовнішнього краю "
 "панелі."
 
-#: src/prefs/page.ts:103
+#: src/prefs/page.ts:105
 msgid "When there is no speech"
 msgstr "Коли мовлення немає"
 
-#: src/prefs/page.ts:104
+#: src/prefs/page.ts:106
 msgid "If the model returns no transcribed words"
 msgstr "Якщо модель не повернула жодного слова транскрипції"
 
-#: src/prefs/page.ts:106
+#: src/prefs/page.ts:108
 msgid "Paste placeholder text"
 msgstr "Вставити текст-заповнювач"
 
-#: src/prefs/page.ts:107
+#: src/prefs/page.ts:109
 msgid "Do nothing (no clipboard / paste)"
 msgstr "Нічого не робити (без буфера обміну / вставки)"
 
-#: src/prefs/page.ts:117
+#: src/prefs/page.ts:119
 msgid "Placeholder text (e.g. …; leave empty to paste nothing)"
 msgstr "Текст-заповнювач (напр. …; залиште порожнім, щоб нічого не вставляти)"
 
-#: src/prefs/page.ts:132
+#: src/prefs/page.ts:134
 msgid "Play Sound Effects"
 msgstr "Відтворювати звукові ефекти"
 
-#: src/prefs/page.ts:133
+#: src/prefs/page.ts:135
 msgid "Play tone when recording starts and stops"
 msgstr "Відтворювати звук при старті та зупинці запису"
 
-#: src/prefs/page.ts:139
+#: src/prefs/page.ts:141
 msgid "Sound Volume"
 msgstr "Гучність звуку"
 
-#: src/prefs/page.ts:140
+#: src/prefs/page.ts:142
 msgid "Volume for start/stop effects (0 = mute, 100 = full)"
 msgstr "Гучність ефектів старту/зупинки (0 = без звуку, 100 = максимум)"
 
-#: src/prefs/page.ts:151
+#: src/prefs/page.ts:153
 msgid "Keyboard Shortcut"
 msgstr "Комбінація клавіш"
 
-#: src/prefs/page.ts:152
+#: src/prefs/page.ts:154
 msgid "Press a key combination anywhere to start or stop recording."
 msgstr "Натисніть комбінацію клавіш будь-де, щоб почати або зупинити запис."
 
-#: src/prefs/page.ts:157
+#: src/prefs/page.ts:159
 msgid "Enable Keyboard Shortcuts"
 msgstr "Увімкнути комбінації клавіш"
 
-#: src/prefs/page.ts:158
+#: src/prefs/page.ts:160
 msgid "When off, the toggle-recording shortcut is inactive."
 msgstr "Коли вимкнено, гаряча клавіша перемикання запису неактивна"
 
-#: src/prefs/page.ts:163
+#: src/prefs/page.ts:165
 msgid "Toggle Recording"
 msgstr "Перемкнути запис"
-
-#: src/prefs/reset.ts:29
-msgid "Reset to default"
-msgstr "Скинути до стандартного"
 
 #: src/prefs/shortcut.ts:43
 msgid "Disabled"
@@ -186,6 +354,16 @@ msgstr "Вимкнено"
 #: src/prefs/shortcut.ts:60
 msgid "Press shortcut…"
 msgstr "Натисніть комбінацію…"
+
+#~ msgid "Advanced"
+#~ msgstr "Додатково"
+
+#~ msgid ""
+#~ "Automatic uses the model capabilities. Override only for a manually "
+#~ "entered model."
+#~ msgstr ""
+#~ "Тип визначається за можливостями моделі. Змінюйте його лише для ID, "
+#~ "введеного вручну."
 
 #~ msgid "Please set a system prompt in extension settings."
 #~ msgstr "Будь ласка, вкажіть системний промпт у налаштуваннях розширення."

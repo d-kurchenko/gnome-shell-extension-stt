@@ -13,20 +13,21 @@ const PLAYBIN_AUDIO_ONLY = 1 << 1;
 type Playback = {
     element: Gst.Element;
     watchId: number;
+    resolve: () => void;
 };
 
 export class SoundPlayer
 {
-    #playbacks: Playback[] = [];
+    #playback: Playback | null = null;
 
-    play(path: string, volumePercent: number): void
+    async play(path: string, volumePercent: number): Promise<void>
     {
+        this.stop();
         const file = Gio.File.new_for_path(path);
         if (!file.query_exists(null))
             return;
 
         initGst();
-
         const playbin = Gst.ElementFactory.make('playbin', null);
         if (!playbin)
             return;
@@ -41,51 +42,48 @@ export class SoundPlayer
             return;
         }
 
-        const playback: Playback = {element: playbin, watchId: 0};
-        playback.watchId = bus.add_watch(GLib.PRIORITY_DEFAULT, (_bus, message) => {
-            if (message.type === Gst.MessageType.EOS ||
-                message.type === Gst.MessageType.ERROR) {
+        await new Promise<void>(resolve => {
+            const playback: Playback = {element: playbin, watchId: 0, resolve};
+            this.#playback = playback;
+            playback.watchId = bus.add_watch(GLib.PRIORITY_DEFAULT, (_bus, message) => {
                 if (message.type === Gst.MessageType.ERROR) {
                     const [error] = message.parse_error();
                     console.error(`[Speech to Text] Sound: ${error.message}`);
                 }
-                this.#drop(playback, false);
-                return GLib.SOURCE_REMOVE;
-            }
-            return GLib.SOURCE_CONTINUE;
+                if (message.type === Gst.MessageType.EOS || message.type === Gst.MessageType.ERROR) {
+                    this.#finish(false);
+                    return GLib.SOURCE_REMOVE;
+                }
+                return GLib.SOURCE_CONTINUE;
+            });
+
+            if (playbin.set_state(Gst.State.PLAYING) === Gst.StateChangeReturn.FAILURE)
+                this.#finish(true);
         });
+    }
 
-        if (playbin.set_state(Gst.State.PLAYING) === Gst.StateChangeReturn.FAILURE) {
-            this.#drop(playback, true);
-            return;
-        }
-
-        this.#playbacks.push(playback);
+    stop(): void
+    {
+        this.#finish(true);
     }
 
     destroy(): void
     {
-        const playbacks = this.#playbacks;
-        this.#playbacks = [];
-        for (const playback of playbacks)
-            this.#stop(playback, true);
+        this.stop();
     }
 
-    #drop(playback: Playback, removeSource: boolean): void
+    #finish(removeSource: boolean): void
     {
-        const index = this.#playbacks.indexOf(playback);
-        if (index !== -1)
-            this.#playbacks.splice(index, 1);
+        const playback = this.#playback;
+        if (!playback)
+            return;
 
-        this.#stop(playback, removeSource);
-    }
-
-    #stop(playback: Playback, removeSource: boolean): void
-    {
+        this.#playback = null;
         if (removeSource && playback.watchId)
             GLib.source_remove(playback.watchId);
 
         playback.watchId = 0;
         playback.element.set_state(Gst.State.NULL);
+        playback.resolve();
     }
 }

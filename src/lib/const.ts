@@ -5,6 +5,8 @@
 export const KEYS = {
     API_KEY: 'openrouter-api-key',
     MODEL: 'model',
+    MODEL_API: 'model-api',
+    LANGUAGE: 'speech-language',
     TEMPERATURE: 'temperature',
     EMPTY_SPEECH_ACTION: 'empty-speech-action',
     EMPTY_SPEECH_PLACEHOLDER: 'empty-speech-placeholder',
