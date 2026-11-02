@@ -1,0 +1,32 @@
+---
+import Brand from '../shared/ui/Brand.astro';
+import Icon from '../shared/ui/Icon.astro';
+import Action from '../shared/ui/Action.astro';
+import LanguageSwitcher from '../features/language-switcher/LanguageSwitcher.astro';
+import { site } from '../shared/config/site';
+import type { Locale, Messages } from '../i18n';
+
+interface Props {
+    locale: Locale;
+    messages: Messages['nav'];
+}
+const { locale, messages: t } = Astro.props;
+---
+
+<header class="site-header wrap">
+    <Brand locale={locale} />
+    <nav aria-label={t.main}>
+        <a href="#how-it-works">{t.workflow}</a>
+        <a href="#questions">{t.questions}</a>
+        <a class="source-link" href={site.repository}>
+            <Icon name="github" size={18} />
+            <span>GitHub</span>
+        </a>
+    </nav>
+    <div class="header-actions">
+        <LanguageSwitcher locale={locale} label={t.language} />
+        <div class="header-install">
+            <Action href="#install" label={t.install} variant="dark" icon="download" small />
+        </div>
+    </div>
+</header>

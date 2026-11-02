@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import models from '../../../assets/screenshots/models.png';
+import Action from '../shared/ui/Action.astro';
+import Heading from '../shared/ui/Heading.astro';
+import { site } from '../shared/config/site';
+import type { Messages } from '../i18n';
+
+interface Props {
+    messages: Messages['models'];
+}
+const { messages: t } = Astro.props;
+---
+
+<section class="model-section" aria-labelledby="model-title">
+    <div class="model-layout wrap">
+        <figure class="model-art">
+            <div class="screenshot-frame">
+                <Image
+                    src={models}
+                    width={900}
+                    widths={[450, 900]}
+                    sizes="(max-width: 800px) 90vw, 45vw"
+                    format="webp"
+                    quality={85}
+                    alt={t.alt}
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+            <figcaption>{t.caption}</figcaption>
+        </figure>
+        <div class="model-copy">
+            <Heading id="model-title" text={t.title} />
+            <p class="section-description">{t.body}</p>
+            {t.features.map((feature) => (
+                <div class="model-feature">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.body}</p>
+                </div>
+            ))}
+            <Action href={`${site.repository}#configuration`} label={t.settings} />
+        </div>
+    </div>
+</section>

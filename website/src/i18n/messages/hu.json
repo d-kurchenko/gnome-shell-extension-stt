@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text GNOME-hoz — Hangalapú gépelés Linuxon",
+        "description": "Hangalapú gépelés a GNOME Shellhez Linuxon. Diktálás Super+Z-vel, átírás az OpenRouterrel, beillesztés Wayland és X11 alatt. Ingyenes, nyílt forrású bővítmény."
+    },
+    "nav": {
+        "skip": "Ugrás a tartalomhoz",
+        "main": "Fő navigáció",
+        "workflow": "Így működik",
+        "questions": "Kérdések",
+        "install": "Telepítés",
+        "language": "Nyelv",
+        "source": "Forráskód",
+        "issues": "Hiba jelentése",
+        "license": "Licenc"
+    },
+    "hero": {
+        "context": "Hangalapú gépelés GNOME-hoz Linuxon",
+        "title": "A te hangod.\nA te ritmusod.",
+        "body": "Mondd ki a gondolataidat, és illeszd őket az éppen használt alkalmazásba. Egy gyorsbillentyűvel diktálhatsz a GNOME asztalon.",
+        "install": "Telepítés GNOME-hoz",
+        "free": "Ingyenes és nyílt forrású.",
+        "key": "Saját OpenRouter API-kulcs szükséges."
+    },
+    "compatibility": {
+        "label": "Kompatibilitás és követelmények",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Átírás ezzel:"
+    },
+    "workflow": {
+        "title": "Ne veszítsd el\na gondolatmenetet.",
+        "body": "Diktálj jegyzeteket, üzeneteket vagy terminálparancsokat külön diktálóalkalmazás nélkül.",
+        "steps": [
+            {
+                "title": "Nyomd meg. Beszélj.",
+                "body": "Nyomd meg a Super+Z-t, vagy kattints a panelikonra. Narancssárga jelzés mutatja a felvételt."
+            },
+            {
+                "title": "Nyomd meg újra. Átírás.",
+                "body": "Állítsd le a felvételt, hogy a hang az OpenRouterhez és a választott modellhez kerüljön."
+            },
+            {
+                "title": "Folytasd.",
+                "body": "Az átirat lecseréli a vágólap tartalmát, és az aktív alkalmazásba kerül. Kézzel is beillesztheted."
+            }
+        ],
+        "note": "A Super+Z módosítható vagy kikapcsolható a beállításokban. Az automatikus beillesztés az alkalmazástól és a kiosztástól függ."
+    },
+    "models": {
+        "title": "A te hangod.\nA te modelled.",
+        "body": "Válassz modellt és beszélt nyelvet a GNOME natív beállításaiban.",
+        "features": [
+            {
+                "title": "Kereshető modellkatalógus",
+                "body": "Beszédfelismerő modellek vagy hangbemenetes LLM-ek az OpenRouteren keresztül. Az alapértelmezett a MAI-Transcribe 2."
+            },
+            {
+                "title": "Beszélj a saját nyelveden",
+                "body": "Használj automatikus nyelvfelismerést, vagy válassz nyelvet. A felismerés a modelltől függ."
+            },
+            {
+                "title": "A te asztalod, a te beállításaid",
+                "body": "Módosítsd a gyorsbillentyűt, mozgasd vagy rejtsd el az ikont, és kapcsold be vagy ki a felvételi hangokat."
+            }
+        ],
+        "settings": "Beállítások megismerése",
+        "caption": "Valódi beállítások, angol nyelven. Az elérhető modellek változhatnak.",
+        "alt": "Natív GNOME-modellválasztó MAI-Transcribe 2 és más hangmodellekkel"
+    },
+    "setup": {
+        "title": "Pihentesd\na billentyűzetet.",
+        "body": "GNOME Shell, mikrofon, internet és saját OpenRouter API-kulcs szükséges.",
+        "steps": [
+            {
+                "title": "Telepítsd a bővítményt",
+                "body": "Töltsd le a Speech to Text bővítményt a GNOME Extensions oldalról. Támogatott Shell-verziók: {versions}."
+            },
+            {
+                "title": "Add meg az API-kulcsot",
+                "body": "Nyisd meg a beállításokat, add meg az OpenRouter-kulcsot és válassz modellt. Az API használata szolgáltatótól függően pénzbe kerülhet."
+            },
+            {
+                "title": "Válassz szövegmezőt. Beszélj.",
+                "body": "Super+Z az indításhoz, majd újra a leállításhoz. Az átirat az éppen használt alkalmazásba kerül."
+            }
+        ],
+        "open": "GNOME Extensions megnyitása",
+        "key": "OpenRouter-kulcs beszerzése",
+        "before": "Mielőtt elkezded",
+        "requirements": "GStreamer 1.0 szükséges base és good bővítményekkel. Wayland alatt telepítés vagy frissítés után jelentkezz ki, majd vissza.",
+        "manual": "Kézi telepítés és hibaelhárítás"
+    },
+    "faq": {
+        "title": "Jó\ntudni.",
+        "ask": "Kérdezz a GitHubon",
+        "items": [
+            {
+                "title": "Ingyenes?",
+                "body": "A bővítmény ingyenes GPL-2.0-or-later licenccel. Saját OpenRouter-fiókodat használja; az árak és a modellek a szolgáltatótól függenek."
+            },
+            {
+                "title": "Hová kerül a hangom?",
+                "body": "A felvétel helyben készül, majd leállításkor HTTPS-en az OpenRouterhez kerül. Feldolgozása és megőrzése az OpenRoutertől és a szolgáltatótól függ. A kulcs a GSettingsben van. Nincs telemetria."
+            },
+            {
+                "title": "Mi történik a vágólappal?",
+                "body": "Az átirat lecseréli a vágólap tartalmát a beillesztéshez. A bővítmény más tartalmat és a vágólapelőzményeket nem olvassa vagy tölti fel."
+            },
+            {
+                "title": "Működik Wayland alatt és terminálban?",
+                "body": "A beillesztés Ctrl+V, terminálban Ctrl+Shift+V. Az alkalmazásnak ezt támogatnia kell. Wayland alatt a nem latin kiosztások akadályozhatják az automatikus beillesztést; a szöveg a vágólapon marad kézi beillesztéshez."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Egy jó ötlet\negy szóval kezdődik.",
+        "install": "Kezdd a Speech to Texttel",
+        "body": "Független, nyílt forrású GNOME Shell-bővítmény."
+    },
+    "demo": {
+        "play": "Demó indítása",
+        "again": "Újra",
+        "recording": "Felvétel…",
+        "transcribing": "Átírás…",
+        "ready": "Indításra kész",
+        "done": "Beillesztve a vágólapról",
+        "caption": "Csak szemléltetés. A mikrofon kikapcsolva marad.",
+        "heading": "Engedd szabadon az ötleteket.",
+        "sample": "Holnap töltsünk kevesebb időt gépeléssel és többet alkotással.",
+        "pause": "Demó szüneteltetése",
+        "resume": "Demó folytatása"
+    }
+}

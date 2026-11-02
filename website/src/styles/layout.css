@@ -1,0 +1,166 @@
+@layer layout {
+    .wrap {
+        width: min(1280px, calc(100% - 112px));
+        margin-inline: auto;
+    }
+
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-block: 28px;
+    }
+
+    .site-header > nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 13px;
+        font-weight: 650;
+    }
+
+    .site-header > nav a {
+        text-decoration: none;
+    }
+
+    .site-header > nav a:hover,
+    .site-footer a:hover {
+        color: var(--orange-deep);
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        align-items: center;
+        column-gap: 30px;
+        padding-top: 75px;
+        padding-bottom: 49px;
+    }
+
+    .hero-copy {
+        padding-bottom: 48px;
+    }
+
+    .compatibility {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-block: 1px solid var(--line);
+        padding-block: 25px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .compatibility > span {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        flex-wrap: wrap;
+    }
+
+    .compatibility a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .compat-icon {
+        font-size: 21px;
+        line-height: 1;
+    }
+
+    .section-space {
+        padding-block: 104px;
+    }
+
+    .section-intro {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 48px;
+        margin-bottom: 58px;
+    }
+
+    .section-intro > p {
+        max-width: 330px;
+        color: var(--muted);
+        font-size: 16px;
+    }
+
+    .workflow-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .model-section {
+        background: #e6ebef;
+        padding-block: 84px;
+        overflow: hidden;
+    }
+
+    .model-layout {
+        display: grid;
+        grid-template-columns: 1fr 0.83fr;
+        gap: 100px;
+        align-items: center;
+    }
+
+    .model-copy {
+        padding-block: 20px;
+    }
+
+    .setup-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 42px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .faq-section {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 80px;
+        padding-block: 25px 80px;
+    }
+
+    .closing {
+        padding-block: 80px 100px;
+        text-align: center;
+        border-top: 1px solid var(--line);
+    }
+
+    .site-footer {
+        border-top: 1px solid var(--line);
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 28px;
+        font-size: 11px;
+    }
+
+    .hero > astro-island {
+        display: block;
+        min-width: 0;
+    }
+
+    .hero-copy,
+    .section-intro > *,
+    .model-copy,
+    .setup-steps li > div,
+    .faq-list {
+        min-width: 0;
+    }
+
+    .compatibility > span:first-child {
+        max-width: 300px;
+    }
+}

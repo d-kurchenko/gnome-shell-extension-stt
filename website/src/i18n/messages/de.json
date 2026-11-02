@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text für GNOME — Spracheingabe unter Linux",
+        "description": "Spracheingabe für GNOME Shell unter Linux. Mit Super+Z diktieren, über OpenRouter transkribieren und in Apps unter Wayland oder X11 einfügen. Kostenlos und quelloffen."
+    },
+    "nav": {
+        "skip": "Zum Inhalt",
+        "main": "Hauptnavigation",
+        "workflow": "So funktioniert’s",
+        "questions": "Fragen",
+        "install": "Installieren",
+        "language": "Sprache",
+        "source": "Quellcode",
+        "issues": "Fehler melden",
+        "license": "Lizenz"
+    },
+    "hero": {
+        "context": "Spracheingabe für GNOME unter Linux",
+        "title": "Deine Stimme.\nDein Arbeitsfluss.",
+        "body": "Sprich deine Gedanken aus und füge sie in deine aktuelle App ein. Ein Tastenkürzel bringt die Diktierfunktion auf deinen GNOME-Desktop.",
+        "install": "Für GNOME installieren",
+        "free": "Kostenlos und quelloffen.",
+        "key": "Dein OpenRouter-API-Schlüssel wird benötigt."
+    },
+    "compatibility": {
+        "label": "Kompatibilität und Voraussetzungen",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transkription über"
+    },
+    "workflow": {
+        "title": "Verliere nicht\nden Faden.",
+        "body": "Diktiere Notizen, Nachrichten oder Terminaleingaben, ohne eine separate Diktier-App zu öffnen.",
+        "steps": [
+            {
+                "title": "Drücken. Sprechen.",
+                "body": "Drücke Super+Z oder klicke auf das Panelsymbol. Eine orange Anzeige signalisiert die Aufnahme."
+            },
+            {
+                "title": "Erneut drücken. Transkribieren.",
+                "body": "Beende die Aufnahme, um das Audio an OpenRouter und dein gewähltes Modell zu senden."
+            },
+            {
+                "title": "Weiterarbeiten.",
+                "body": "Das Transkript ersetzt den Inhalt der Zwischenablage und wird in die aktive App eingefügt. Manuelles Einfügen ist ebenfalls möglich."
+            }
+        ],
+        "note": "Ändere oder deaktiviere Super+Z in den Einstellungen. Automatisches Einfügen hängt von App und Tastaturbelegung ab."
+    },
+    "models": {
+        "title": "Deine Stimme.\nDein Modell.",
+        "body": "Wähle Modell und gesprochene Sprache in den nativen GNOME-Einstellungen.",
+        "features": [
+            {
+                "title": "Durchsuchbarer Modellkatalog",
+                "body": "Nutze Spracherkennungsmodelle oder LLMs mit Audioeingabe über OpenRouter. Standard ist MAI-Transcribe 2."
+            },
+            {
+                "title": "Sprich deine Sprache",
+                "body": "Lass die Sprache automatisch erkennen oder lege sie fest. Die Erkennung hängt vom Modell ab."
+            },
+            {
+                "title": "Dein Desktop, deine Einstellungen",
+                "body": "Ändere das Tastenkürzel, verschiebe oder verstecke das Panelsymbol und schalte Aufnahmetöne ein oder aus."
+            }
+        ],
+        "settings": "Einstellungen entdecken",
+        "caption": "Echte Einstellungen, hier auf Englisch. Verfügbare Modelle können sich ändern.",
+        "alt": "Native GNOME-Modellauswahl mit MAI-Transcribe 2 und weiteren Audiomodellen"
+    },
+    "setup": {
+        "title": "Gönn deiner Tastatur\neine kleine Pause.",
+        "body": "Du brauchst GNOME Shell, ein Mikrofon, Internet und deinen OpenRouter-API-Schlüssel.",
+        "steps": [
+            {
+                "title": "Erweiterung installieren",
+                "body": "Hole Speech to Text von GNOME Extensions. Unterstützte Shell-Versionen: {versions}."
+            },
+            {
+                "title": "API-Schlüssel hinzufügen",
+                "body": "Öffne die Einstellungen, gib deinen OpenRouter-Schlüssel ein und wähle ein Modell. Je nach Anbieter können API-Kosten anfallen."
+            },
+            {
+                "title": "Textfeld auswählen. Sprechen.",
+                "body": "Drücke Super+Z zum Starten und erneut zum Beenden. Das Transkript wird in die aktive App eingefügt."
+            }
+        ],
+        "open": "GNOME Extensions öffnen",
+        "key": "OpenRouter-Schlüssel erstellen",
+        "before": "Vor dem Start",
+        "requirements": "GStreamer 1.0 mit base- und good-Plugins ist erforderlich. Nach Installation oder Update unter Wayland ab- und wieder anmelden.",
+        "manual": "Manuelle Installation und Fehlerbehebung"
+    },
+    "faq": {
+        "title": "Gut\nzu wissen.",
+        "ask": "Auf GitHub fragen",
+        "items": [
+            {
+                "title": "Ist es kostenlos?",
+                "body": "Die Erweiterung ist unter GPL-2.0-or-later kostenlos. Du nutzt dein eigenes OpenRouter-Konto; Kosten und Modellverfügbarkeit hängen vom Anbieter ab."
+            },
+            {
+                "title": "Wohin geht mein Audio?",
+                "body": "Audio wird lokal aufgenommen und beim Beenden über HTTPS an OpenRouter gesendet. Verarbeitung und Aufbewahrung hängen von OpenRouter und dem Anbieter ab. Der Schlüssel liegt in GSettings. Keine Telemetrie."
+            },
+            {
+                "title": "Was passiert mit meiner Zwischenablage?",
+                "body": "Das fertige Transkript ersetzt den Inhalt zum Einfügen. Andere Inhalte und der Verlauf der Zwischenablage werden weder gelesen noch hochgeladen."
+            },
+            {
+                "title": "Funktioniert es unter Wayland und im Terminal?",
+                "body": "Einfügen nutzt Ctrl+V, im Terminal Ctrl+Shift+V. Die App muss das unterstützen. Unter Wayland können nichtlateinische Belegungen automatisches Einfügen verhindern; der Text bleibt zum manuellen Einfügen in der Zwischenablage."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Gute Ideen beginnen\nmit einem Wort.",
+        "install": "Mit Speech to Text starten",
+        "body": "Eine unabhängige, quelloffene GNOME-Shell-Erweiterung."
+    },
+    "demo": {
+        "play": "Demo abspielen",
+        "again": "Erneut abspielen",
+        "recording": "Aufnahme…",
+        "transcribing": "Transkription…",
+        "ready": "Bereit zum Start",
+        "done": "Aus der Zwischenablage eingefügt",
+        "caption": "Nur eine Illustration. Dein Mikrofon bleibt aus.",
+        "heading": "Lass die Ideen fließen.",
+        "sample": "Morgen wollen wir weniger Zeit mit Tippen und mehr mit dem Erschaffen neuer Dinge verbringen.",
+        "pause": "Demo pausieren",
+        "resume": "Demo fortsetzen"
+    }
+}

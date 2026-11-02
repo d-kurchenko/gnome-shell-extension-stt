@@ -78,6 +78,9 @@ clipboard history or collect telemetry.
 
 ## Development
 
+The promotional website lives in [`website/`](website/README.md). It uses Astro,
+Vue, and VueUse and has a separate GitHub Pages workflow and dependency lockfile.
+
 The extension is written in TypeScript and runs in GJS. Building requires Bun,
 GLib tools, gettext, Python 3, and zip.
 

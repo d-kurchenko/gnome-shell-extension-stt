@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import Seo from '../shared/ui/Seo.astro';
+import Header from './SiteHeader.astro';
+import Footer from './SiteFooter.astro';
+import { getMessages, locales, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+const { locale } = Astro.props;
+const info = locales.find((item) => item.code === locale)!;
+const messages = getMessages(locale);
+---
+
+<!doctype html>
+<html lang={locale} dir={info.direction}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Seo locale={info} messages={messages} />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">
+            {messages.nav.skip}
+        </a>
+        <Header locale={locale} messages={messages.nav} />
+        <main id="main">
+            <slot />
+        </main>
+        <Footer locale={locale} messages={messages} />
+    </body>
+</html>

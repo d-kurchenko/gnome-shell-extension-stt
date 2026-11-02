@@ -1,0 +1,31 @@
+export const locales = [
+    { code: 'en', source: null, name: 'English', og: 'en_US', direction: 'ltr' },
+    { code: 'ar', source: 'ar', name: 'العربية', og: 'ar_AR', direction: 'rtl' },
+    { code: 'bg', source: 'bg', name: 'Български', og: 'bg_BG', direction: 'ltr' },
+    { code: 'ca', source: 'ca', name: 'Català', og: 'ca_ES', direction: 'ltr' },
+    { code: 'cs', source: 'cs', name: 'Čeština', og: 'cs_CZ', direction: 'ltr' },
+    { code: 'de', source: 'de', name: 'Deutsch', og: 'de_DE', direction: 'ltr' },
+    { code: 'el', source: 'el', name: 'Ελληνικά', og: 'el_GR', direction: 'ltr' },
+    { code: 'es', source: 'es', name: 'Español', og: 'es_ES', direction: 'ltr' },
+    { code: 'eu', source: 'eu', name: 'Euskara', og: 'eu_ES', direction: 'ltr' },
+    { code: 'fa', source: 'fa', name: 'فارسی', og: 'fa_IR', direction: 'rtl' },
+    { code: 'fi', source: 'fi', name: 'Suomi', og: 'fi_FI', direction: 'ltr' },
+    { code: 'fr', source: 'fr_FR', name: 'Français', og: 'fr_FR', direction: 'ltr' },
+    { code: 'hu', source: 'hu', name: 'Magyar', og: 'hu_HU', direction: 'ltr' },
+    { code: 'it', source: 'it', name: 'Italiano', og: 'it_IT', direction: 'ltr' },
+    { code: 'ja', source: 'ja', name: '日本語', og: 'ja_JP', direction: 'ltr' },
+    { code: 'kn', source: 'kn', name: 'ಕನ್ನಡ', og: 'kn_IN', direction: 'ltr' },
+    { code: 'ko', source: 'ko', name: '한국어', og: 'ko_KR', direction: 'ltr' },
+    { code: 'nl', source: 'nl', name: 'Nederlands', og: 'nl_NL', direction: 'ltr' },
+    { code: 'oc', source: 'oc', name: 'Occitan', og: 'oc_FR', direction: 'ltr' },
+    { code: 'pl', source: 'pl', name: 'Polski', og: 'pl_PL', direction: 'ltr' },
+    { code: 'pt-BR', source: 'pt_BR', name: 'Português do Brasil', og: 'pt_BR', direction: 'ltr' },
+    { code: 'ru', source: 'ru', name: 'Русский', og: 'ru_RU', direction: 'ltr' },
+    { code: 'sk', source: 'sk', name: 'Slovenčina', og: 'sk_SK', direction: 'ltr' },
+    { code: 'tr', source: 'tr', name: 'Türkçe', og: 'tr_TR', direction: 'ltr' },
+    { code: 'uk', source: 'uk', name: 'Українська', og: 'uk_UA', direction: 'ltr' },
+    { code: 'zh-CN', source: 'zh_CN', name: '简体中文', og: 'zh_CN', direction: 'ltr' },
+] as const;
+
+export type Locale = (typeof locales)[number]['code'];
+export type LocaleInfo = (typeof locales)[number];

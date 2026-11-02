@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text pre GNOME — Hlasové zadávanie v Linuxe",
+        "description": "Hlasové zadávanie pre GNOME Shell v Linuxe. Diktujte cez Super+Z, prepisujte cez OpenRouter a vkladajte do aplikácií na Waylande aj X11. Zadarmo a s otvoreným kódom."
+    },
+    "nav": {
+        "skip": "Prejsť na obsah",
+        "main": "Hlavná navigácia",
+        "workflow": "Ako to funguje",
+        "questions": "Otázky",
+        "install": "Nainštalovať",
+        "language": "Jazyk",
+        "source": "Zdrojový kód",
+        "issues": "Nahlásiť problém",
+        "license": "Licencia"
+    },
+    "hero": {
+        "context": "Hlasové zadávanie pre GNOME v Linuxe",
+        "title": "Váš hlas.\nVaše tempo.",
+        "body": "Vyslovte myšlienky a vložte ich do aplikácie, ktorú používate. Klávesová skratka prináša diktovanie na plochu GNOME.",
+        "install": "Nainštalovať pre GNOME",
+        "free": "Zadarmo a s otvoreným kódom.",
+        "key": "Potrebujete vlastný API kľúč OpenRouter."
+    },
+    "compatibility": {
+        "label": "Kompatibilita a požiadavky",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Prepis cez"
+    },
+    "workflow": {
+        "title": "Nestraťte\nniť myšlienok.",
+        "body": "Diktujte poznámky, správy či príkazy bez otvárania samostatnej aplikácie.",
+        "steps": [
+            {
+                "title": "Stlačte. Hovorte.",
+                "body": "Stlačte Super+Z alebo ikonu na paneli. Oranžový indikátor označuje nahrávanie."
+            },
+            {
+                "title": "Stlačte znova. Prepíšte.",
+                "body": "Zastavte nahrávanie a odošlite zvuk do OpenRouteru vybranému modelu."
+            },
+            {
+                "title": "Pokračujte.",
+                "body": "Prepis nahradí obsah schránky a vloží sa do aktívnej aplikácie. Možné je aj ručné vloženie."
+            }
+        ],
+        "note": "Zmeňte alebo vypnite Super+Z v nastaveniach. Automatické vloženie závisí od aplikácie a klávesnice."
+    },
+    "models": {
+        "title": "Váš hlas.\nVáš model.",
+        "body": "Vyberte model a jazyk reči v natívnych nastaveniach GNOME.",
+        "features": [
+            {
+                "title": "Katalóg modelov s vyhľadávaním",
+                "body": "Používajte modely rozpoznávania reči alebo LLM so zvukovým vstupom cez OpenRouter. Predvolený je MAI-Transcribe 2."
+            },
+            {
+                "title": "Hovorte svojím jazykom",
+                "body": "Použite automatické rozpoznanie alebo vyberte jazyk. Rozpoznávanie závisí od modelu."
+            },
+            {
+                "title": "Vaša plocha, vaše nastavenia",
+                "body": "Zmeňte skratku, premiestnite či skryte ikonu a zapnite alebo vypnite zvuky nahrávania."
+            }
+        ],
+        "settings": "Preskúmať nastavenia",
+        "caption": "Skutočné nastavenia v angličtine. Dostupnosť modelov sa môže meniť.",
+        "alt": "Natívny výber modelu GNOME s MAI-Transcribe 2 a ďalšími zvukovými modelmi"
+    },
+    "setup": {
+        "title": "Doprajte klávesnici\nchvíľu oddychu.",
+        "body": "Potrebujete GNOME Shell, mikrofón, internet a vlastný API kľúč OpenRouter.",
+        "steps": [
+            {
+                "title": "Nainštalujte rozšírenie",
+                "body": "Získajte Speech to Text z GNOME Extensions. Podporované verzie Shellu: {versions}."
+            },
+            {
+                "title": "Pridajte API kľúč",
+                "body": "Otvorte nastavenia, zadajte kľúč OpenRouter a vyberte model. Poskytovateľ môže účtovať používanie API."
+            },
+            {
+                "title": "Vyberte textové pole. Hovorte.",
+                "body": "Stlačte Super+Z na začatie a znova na zastavenie. Text sa vloží do aplikácie, kde píšete."
+            }
+        ],
+        "open": "Otvoriť GNOME Extensions",
+        "key": "Získať kľúč OpenRouter",
+        "before": "Skôr než začnete",
+        "requirements": "Vyžaduje GStreamer 1.0 s pluginmi base a good. Po inštalácii či aktualizácii na Waylande sa odhláste a znova prihláste.",
+        "manual": "Ručná inštalácia a riešenie problémov"
+    },
+    "faq": {
+        "title": "Čo sa oplatí\nvedieť.",
+        "ask": "Opýtať sa na GitHube",
+        "items": [
+            {
+                "title": "Je to zadarmo?",
+                "body": "Rozšírenie je zadarmo pod GPL-2.0-or-later. Používa váš účet OpenRouter; ceny a modely závisia od poskytovateľa."
+            },
+            {
+                "title": "Kam sa odosiela zvuk?",
+                "body": "Zvuk sa nahráva lokálne a po zastavení sa odošle do OpenRouteru cez HTTPS. Spracovanie a uchovanie závisia od OpenRouteru a poskytovateľa. Kľúč je v GSettings. Bez telemetrie."
+            },
+            {
+                "title": "Čo sa stane so schránkou?",
+                "body": "Prepis nahradí obsah schránky na vloženie. Rozšírenie nečíta ani neodosiela iný obsah alebo históriu schránky."
+            },
+            {
+                "title": "Funguje na Waylande a v termináloch?",
+                "body": "Vkladá cez Ctrl+V, v termináloch Ctrl+Shift+V. Aplikácia musí skratku podporovať. Na Waylande môžu nelatinské rozloženia blokovať automatické vloženie; text zostáva v schránke na ručné vloženie."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Dobrý nápad začína\nslovom.",
+        "install": "Začať so Speech to Text",
+        "body": "Nezávislé rozšírenie GNOME Shell s otvoreným kódom."
+    },
+    "demo": {
+        "play": "Prehrať ukážku",
+        "again": "Prehrať znova",
+        "recording": "Nahrávanie…",
+        "transcribing": "Prepisovanie…",
+        "ready": "Pripravené",
+        "done": "Vložené zo schránky",
+        "caption": "Len ilustrácia. Mikrofón zostáva vypnutý.",
+        "heading": "Nechajte nápady plynúť.",
+        "sample": "Zajtra venujme menej času písaniu a viac tvoreniu.",
+        "pause": "Pozastaviť ukážku",
+        "resume": "Pokračovať v ukážke"
+    }
+}

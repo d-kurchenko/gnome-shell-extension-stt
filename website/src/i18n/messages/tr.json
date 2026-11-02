@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "GNOME için Speech to Text — Linux’ta sesle yazma",
+        "description": "Linux’ta GNOME Shell için sesle yazma. Super+Z ile dikte edin, OpenRouter ile metne çevirin ve Wayland veya X11’de uygulamalara yapıştırın. Ücretsiz ve açık kaynak."
+    },
+    "nav": {
+        "skip": "İçeriğe geç",
+        "main": "Ana gezinme",
+        "workflow": "Nasıl çalışır",
+        "questions": "Sorular",
+        "install": "Yükle",
+        "language": "Dil",
+        "source": "Kaynak kodu",
+        "issues": "Sorun bildir",
+        "license": "Lisans"
+    },
+    "hero": {
+        "context": "Linux’ta GNOME için sesle yazma",
+        "title": "Sizin sesiniz.\nSizin akışınız.",
+        "body": "Düşüncelerinizi söyleyin ve kullandığınız uygulamaya aktarın. Bir klavye kısayolu GNOME masaüstünüze dikte getirir.",
+        "install": "GNOME için yükle",
+        "free": "Ücretsiz ve açık kaynak.",
+        "key": "Kendi OpenRouter API anahtarınız gerekir."
+    },
+    "compatibility": {
+        "label": "Uyumluluk ve gereksinimler",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Metne çevirme:"
+    },
+    "workflow": {
+        "title": "Düşünce akışınızı\nkaybetmeyin.",
+        "body": "Ayrı bir dikte uygulaması açmadan not, mesaj veya terminal girdisi yazdırın.",
+        "steps": [
+            {
+                "title": "Basın. Konuşun.",
+                "body": "Super+Z’ye basın veya panel simgesine tıklayın. Turuncu gösterge kaydın başladığını belirtir."
+            },
+            {
+                "title": "Tekrar basın. Metne çevirin.",
+                "body": "Sesi OpenRouter’a ve seçtiğiniz modele göndermek için kaydı durdurun."
+            },
+            {
+                "title": "Devam edin.",
+                "body": "Metin, pano içeriğinin yerini alır ve etkin uygulamaya yapıştırılır. Elle de yapıştırabilirsiniz."
+            }
+        ],
+        "note": "Super+Z’yi tercihlerden değiştirin veya kapatın. Otomatik yapıştırma uygulamaya ve klavye düzenine bağlıdır."
+    },
+    "models": {
+        "title": "Sizin sesiniz.\nSizin modeliniz.",
+        "body": "Modelinizi ve konuşma dilini GNOME’un yerel tercihlerinden seçin.",
+        "features": [
+            {
+                "title": "Aranabilir model kataloğu",
+                "body": "OpenRouter üzerinden konuşma tanıma modelleri veya ses girişli LLM’ler kullanın. Varsayılan MAI-Transcribe 2’dir."
+            },
+            {
+                "title": "Kendi dilinizde konuşun",
+                "body": "Otomatik dil algılamayı kullanın veya dil seçin. Tanıma modele bağlıdır."
+            },
+            {
+                "title": "Sizin masaüstünüz, sizin tercihleriniz",
+                "body": "Kısayolu değiştirin, simgeyi taşıyın veya gizleyin ve kayıt seslerini açın ya da kapatın."
+            }
+        ],
+        "settings": "Ayarları inceleyin",
+        "caption": "İngilizce gösterilen gerçek tercihler. Kullanılabilir modeller değişebilir.",
+        "alt": "MAI-Transcribe 2 ve diğer ses modelleriyle GNOME model seçicisi"
+    },
+    "setup": {
+        "title": "Klavyenize\nbiraz mola verin.",
+        "body": "GNOME Shell, mikrofon, internet ve kendi OpenRouter API anahtarınız gerekir.",
+        "steps": [
+            {
+                "title": "Uzantıyı yükleyin",
+                "body": "Speech to Text’i GNOME Extensions’tan edinin. Desteklenen Shell sürümleri: {versions}."
+            },
+            {
+                "title": "API anahtarınızı ekleyin",
+                "body": "Tercihleri açın, OpenRouter anahtarınızı girin ve model seçin. Sağlayıcıya göre API kullanımı ücretli olabilir."
+            },
+            {
+                "title": "Metin alanını seçin. Konuşun.",
+                "body": "Başlamak için Super+Z’ye, durdurmak için tekrar basın. Metin, yazdığınız uygulamaya yapıştırılır."
+            }
+        ],
+        "open": "GNOME Extensions’ı aç",
+        "key": "OpenRouter anahtarı al",
+        "before": "Başlamadan önce",
+        "requirements": "Base ve good eklentileriyle GStreamer 1.0 gerekir. Wayland’da kurulum veya güncelleme sonrası oturumu kapatıp tekrar açın.",
+        "manual": "Elle kurulum ve sorun giderme"
+    },
+    "faq": {
+        "title": "Bilmeniz\ngerekenler.",
+        "ask": "GitHub’da sorun",
+        "items": [
+            {
+                "title": "Ücretsiz mi?",
+                "body": "Uzantı GPL-2.0-or-later altında ücretsizdir. Kendi OpenRouter hesabınızı kullanır; maliyetler ve model erişimi sağlayıcıya bağlıdır."
+            },
+            {
+                "title": "Sesim nereye gider?",
+                "body": "Ses yerel olarak kaydedilir ve durdurunca HTTPS ile OpenRouter’a gönderilir. İşleme ve saklama OpenRouter’a ve sağlayıcıya bağlıdır. Anahtar GSettings’te saklanır. Telemetri toplanmaz."
+            },
+            {
+                "title": "Panoma ne olur?",
+                "body": "Metin, yapıştırma için pano içeriğinin yerini alır. Uzantı diğer pano içeriklerini veya geçmişini okumaz ya da yüklemez."
+            },
+            {
+                "title": "Wayland’da ve terminallerde çalışır mı?",
+                "body": "Yapıştırma Ctrl+V, terminallerde Ctrl+Shift+V kullanır. Uygulama bunu desteklemelidir. Wayland’da Latin dışı düzenler otomatik yapıştırmayı engelleyebilir; metin elle yapıştırmak için panoda kalır."
+            }
+        ]
+    },
+    "closing": {
+        "title": "İyi fikirler\nbir sözcükle başlar.",
+        "install": "Speech to Text ile başlayın",
+        "body": "Bağımsız, açık kaynaklı bir GNOME Shell uzantısı."
+    },
+    "demo": {
+        "play": "Demoyu oynat",
+        "again": "Tekrar oynat",
+        "recording": "Kaydediliyor…",
+        "transcribing": "Metne çevriliyor…",
+        "ready": "Hazır",
+        "done": "Panodan yapıştırıldı",
+        "caption": "Yalnızca gösterim. Mikrofonunuz kapalı kalır.",
+        "heading": "Fikirler aksın.",
+        "sample": "Yarın yazmaya daha az, üretmeye daha çok zaman ayıralım.",
+        "pause": "Demoyu duraklat",
+        "resume": "Demoya devam et"
+    }
+}

@@ -1,0 +1,32 @@
+---
+import Heading from '../shared/ui/Heading.astro';
+import { site } from '../shared/config/site';
+import type { Messages } from '../i18n';
+
+interface Props {
+    messages: Messages['faq'];
+}
+const { messages: t } = Astro.props;
+---
+
+<section id="questions" class="faq-section wrap" aria-labelledby="faq-title">
+    <div class="faq-heading">
+        <Heading id="faq-title" text={t.title} />
+        <p>
+            <a href={`${site.repository}/issues`}>{t.ask}</a>
+        </p>
+    </div>
+    <div class="faq-list">
+        {t.items.map((item) => (
+            <details>
+                <summary>
+                    {item.title}
+                    <span aria-hidden="true">+</span>
+                </summary>
+                <div>
+                    <p>{item.body}</p>
+                </div>
+            </details>
+        ))}
+    </div>
+</section>

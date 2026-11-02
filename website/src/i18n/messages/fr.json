@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text pour GNOME — Dictée vocale sous Linux",
+        "description": "Dictée vocale pour GNOME Shell sous Linux. Dictez avec Super+Z, transcrivez via OpenRouter et collez dans vos applications sous Wayland ou X11. Extension libre et gratuite."
+    },
+    "nav": {
+        "skip": "Aller au contenu",
+        "main": "Navigation principale",
+        "workflow": "Fonctionnement",
+        "questions": "Questions",
+        "install": "Installer",
+        "language": "Langue",
+        "source": "Code source",
+        "issues": "Signaler un problème",
+        "license": "Licence"
+    },
+    "hero": {
+        "context": "Dictée vocale pour GNOME sous Linux",
+        "title": "Votre voix.\nVotre rythme.",
+        "body": "Exprimez vos idées et retrouvez-les dans l’application que vous utilisez. Un raccourci apporte la dictée à votre bureau GNOME.",
+        "install": "Installer pour GNOME",
+        "free": "Gratuit et libre.",
+        "key": "Votre clé API OpenRouter est nécessaire."
+    },
+    "compatibility": {
+        "label": "Compatibilité et prérequis",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transcription via"
+    },
+    "workflow": {
+        "title": "Gardez le fil\nde vos idées.",
+        "body": "Dictez notes, messages ou commandes sans ouvrir une application de dictée séparée.",
+        "steps": [
+            {
+                "title": "Appuyez. Parlez.",
+                "body": "Appuyez sur Super+Z ou sur l’icône du panneau. Un indicateur orange signale l’enregistrement."
+            },
+            {
+                "title": "Appuyez encore. Transcrivez.",
+                "body": "Arrêtez l’enregistrement pour envoyer l’audio à OpenRouter et au modèle choisi."
+            },
+            {
+                "title": "Continuez.",
+                "body": "Le texte remplace le contenu du presse-papiers et se colle dans l’application active. Vous pouvez aussi le coller manuellement."
+            }
+        ],
+        "note": "Modifiez ou désactivez Super+Z dans les préférences. Le collage automatique dépend de l’application et du clavier."
+    },
+    "models": {
+        "title": "Votre voix.\nVotre modèle.",
+        "body": "Choisissez le modèle et la langue parlée dans les préférences natives de GNOME.",
+        "features": [
+            {
+                "title": "Un catalogue avec recherche",
+                "body": "Utilisez des modèles de reconnaissance vocale ou des LLM acceptant l’audio via OpenRouter. MAI-Transcribe 2 est le modèle par défaut."
+            },
+            {
+                "title": "Parlez votre langue",
+                "body": "Activez la détection automatique ou choisissez une langue. La reconnaissance dépend du modèle."
+            },
+            {
+                "title": "Votre bureau, vos préférences",
+                "body": "Modifiez le raccourci, déplacez ou masquez l’icône et activez ou désactivez les sons d’enregistrement."
+            }
+        ],
+        "settings": "Découvrir les réglages",
+        "caption": "Préférences réelles, présentées en anglais. Les modèles disponibles peuvent changer.",
+        "alt": "Sélecteur de modèles natif GNOME avec MAI-Transcribe 2 et d’autres modèles audio"
+    },
+    "setup": {
+        "title": "Laissez votre clavier\nsouffler un peu.",
+        "body": "Il vous faut GNOME Shell, un microphone, Internet et votre clé API OpenRouter.",
+        "steps": [
+            {
+                "title": "Installez l’extension",
+                "body": "Téléchargez Speech to Text sur GNOME Extensions. Versions de Shell prises en charge : {versions}."
+            },
+            {
+                "title": "Ajoutez votre clé API",
+                "body": "Ouvrez les préférences, saisissez votre clé OpenRouter et choisissez un modèle. L’API peut être payante selon le fournisseur."
+            },
+            {
+                "title": "Sélectionnez un champ. Parlez.",
+                "body": "Appuyez sur Super+Z pour démarrer, puis à nouveau pour arrêter. Le texte est collé dans l’application active."
+            }
+        ],
+        "open": "Ouvrir GNOME Extensions",
+        "key": "Obtenir une clé OpenRouter",
+        "before": "Avant de commencer",
+        "requirements": "GStreamer 1.0 avec les greffons base et good est requis. Après installation ou mise à jour sous Wayland, déconnectez-vous puis reconnectez-vous.",
+        "manual": "Installation manuelle et dépannage"
+    },
+    "faq": {
+        "title": "Quelques points\nà connaître.",
+        "ask": "Demander sur GitHub",
+        "items": [
+            {
+                "title": "Est-ce gratuit ?",
+                "body": "L’extension est gratuite sous GPL-2.0-or-later. Vous utilisez votre compte OpenRouter ; les coûts et les modèles disponibles dépendent du fournisseur."
+            },
+            {
+                "title": "Où va mon audio ?",
+                "body": "L’audio est enregistré localement puis envoyé à OpenRouter en HTTPS à l’arrêt. Le traitement et la conservation dépendent d’OpenRouter et du fournisseur. La clé est stockée dans GSettings. Aucune télémétrie."
+            },
+            {
+                "title": "Que devient mon presse-papiers ?",
+                "body": "La transcription remplace son contenu pour le collage. L’extension ne lit ni n’envoie les autres contenus ou l’historique du presse-papiers."
+            },
+            {
+                "title": "Cela fonctionne sous Wayland et dans les terminaux ?",
+                "body": "Le collage utilise Ctrl+V, ou Ctrl+Shift+V dans les terminaux. L’application doit le prendre en charge. Sous Wayland, un clavier non latin peut empêcher le collage automatique ; le texte reste disponible pour un collage manuel."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Une bonne idée commence\npar un mot.",
+        "install": "Commencer avec Speech to Text",
+        "body": "Une extension GNOME Shell indépendante et libre."
+    },
+    "demo": {
+        "play": "Voir la démo",
+        "again": "Revoir",
+        "recording": "Enregistrement…",
+        "transcribing": "Transcription…",
+        "ready": "Prêt à démarrer",
+        "done": "Collé depuis le presse-papiers",
+        "caption": "Illustration uniquement. Le microphone reste éteint.",
+        "heading": "Laissez venir les idées.",
+        "sample": "Demain, passons moins de temps à taper et plus de temps à créer.",
+        "pause": "Mettre en pause",
+        "resume": "Reprendre la démo"
+    }
+}

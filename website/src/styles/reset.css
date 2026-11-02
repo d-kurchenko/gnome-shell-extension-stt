@@ -1,0 +1,36 @@
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    body,
+    h1,
+    h2,
+    h3,
+    p {
+        margin: 0;
+    }
+    button,
+    input {
+        font: inherit;
+    }
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+    img,
+    svg {
+        display: block;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    button {
+        color: inherit;
+    }
+    [hidden] {
+        display: none !important;
+    }
+}

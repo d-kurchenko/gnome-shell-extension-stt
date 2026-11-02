@@ -1,0 +1,19 @@
+---
+import logo from '../../../../resources/icons/speech-to-text.svg?url';
+import { site } from '../config/site';
+import { localePath } from '../../i18n/routing';
+import type { Locale } from '../../i18n';
+
+interface Props {
+    locale: Locale;
+    small?: boolean;
+}
+const { locale, small = false } = Astro.props;
+---
+
+<a class="brand" href={localePath(locale)}>
+    <img src={logo} width={small ? 30 : 42} height={small ? 30 : 42} alt="" />
+    <span lang="en" dir="ltr">
+        {site.name}
+    </span>
+</a>

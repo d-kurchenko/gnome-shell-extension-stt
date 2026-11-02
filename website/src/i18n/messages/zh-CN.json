@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "GNOME Speech to Text — Linux 语音输入",
+        "description": "适用于 Linux GNOME Shell 的语音输入。按 Super+Z 听写，通过 OpenRouter 转写，在 Wayland 或 X11 应用中粘贴。免费开源扩展。"
+    },
+    "nav": {
+        "skip": "跳到正文",
+        "main": "主导航",
+        "workflow": "使用方法",
+        "questions": "常见问题",
+        "install": "安装扩展",
+        "language": "语言",
+        "source": "源代码",
+        "issues": "报告问题",
+        "license": "许可证"
+    },
+    "hero": {
+        "context": "Linux GNOME 语音输入",
+        "title": "用你的声音。\n按你的节奏。",
+        "body": "说出想法，直接输入到正在使用的应用。一个快捷键，让 GNOME 桌面支持听写。",
+        "install": "为 GNOME 安装",
+        "free": "免费且开源。",
+        "key": "需要你自己的 OpenRouter API 密钥。"
+    },
+    "compatibility": {
+        "label": "兼容性与要求",
+        "gnome": "GNOME Shell {versions}",
+        "via": "转写服务"
+    },
+    "workflow": {
+        "title": "保持\n思路连贯。",
+        "body": "无需切换到单独的听写应用，即可口述笔记、消息或终端输入。",
+        "steps": [
+            {
+                "title": "按下，说话。",
+                "body": "按 Super+Z 或点击面板图标。橙色指示表示正在录音。"
+            },
+            {
+                "title": "再按一次，转成文字。",
+                "body": "停止录音，将音频发送到 OpenRouter 和所选模型。"
+            },
+            {
+                "title": "继续工作。",
+                "body": "转写结果会替换剪贴板内容并粘贴到当前应用，也可以手动粘贴。"
+            }
+        ],
+        "note": "在首选项中更改或禁用 Super+Z。自动粘贴取决于应用和键盘布局。"
+    },
+    "models": {
+        "title": "你的声音。\n你的模型。",
+        "body": "在 GNOME 原生首选项中选择模型和口语语言。",
+        "features": [
+            {
+                "title": "可搜索的模型目录",
+                "body": "通过 OpenRouter 使用语音识别模型或支持音频输入的大语言模型。默认使用 MAI-Transcribe 2。"
+            },
+            {
+                "title": "说你的语言",
+                "body": "使用自动语言检测或指定语言。识别效果取决于模型。"
+            },
+            {
+                "title": "你的桌面，你的偏好",
+                "body": "更改快捷键，移动或隐藏图标，开启或关闭录音提示音。"
+            }
+        ],
+        "settings": "了解设置",
+        "caption": "实际首选项界面，以英语显示。可用模型可能变化。",
+        "alt": "显示 MAI-Transcribe 2 和其他音频模型的 GNOME 原生选择器"
+    },
+    "setup": {
+        "title": "让键盘\n休息一下。",
+        "body": "需要 GNOME Shell、麦克风、互联网和你自己的 OpenRouter API 密钥。",
+        "steps": [
+            {
+                "title": "安装扩展",
+                "body": "从 GNOME Extensions 获取 Speech to Text。支持的 Shell 版本：{versions}。"
+            },
+            {
+                "title": "添加 API 密钥",
+                "body": "打开首选项，输入 OpenRouter 密钥并选择模型。API 使用可能产生费用，具体取决于提供商。"
+            },
+            {
+                "title": "选中文本框，说话。",
+                "body": "按 Super+Z 开始，再按一次停止。文本会粘贴到你正在输入的应用。"
+            }
+        ],
+        "open": "打开 GNOME Extensions",
+        "key": "获取 OpenRouter 密钥",
+        "before": "开始之前",
+        "requirements": "需要 GStreamer 1.0 及 base、good 插件。在 Wayland 下安装或更新后，请注销并重新登录。",
+        "manual": "手动安装与故障排除"
+    },
+    "faq": {
+        "title": "你可能\n想了解。",
+        "ask": "在 GitHub 提问",
+        "items": [
+            {
+                "title": "免费吗？",
+                "body": "扩展按 GPL-2.0-or-later 免费提供。使用你自己的 OpenRouter 账户；费用和模型可用性取决于提供商。"
+            },
+            {
+                "title": "音频会发送到哪里？",
+                "body": "音频在本地录制，停止时通过 HTTPS 发送到 OpenRouter。处理与保留取决于 OpenRouter 和提供商。密钥保存在 GSettings 中。扩展不收集遥测数据。"
+            },
+            {
+                "title": "剪贴板会怎样？",
+                "body": "转写结果会替换剪贴板内容以便粘贴。扩展不会读取或上传其他剪贴板内容或历史记录。"
+            },
+            {
+                "title": "支持 Wayland 和终端吗？",
+                "body": "粘贴使用 Ctrl+V，终端中使用 Ctrl+Shift+V，应用需要支持相应快捷键。在 Wayland 下，非拉丁键盘布局可能导致自动粘贴失败；文本仍保留在剪贴板，可手动粘贴。"
+            }
+        ]
+    },
+    "closing": {
+        "title": "好想法\n从一句话开始。",
+        "install": "开始使用 Speech to Text",
+        "body": "独立开发的开源 GNOME Shell 扩展。"
+    },
+    "demo": {
+        "play": "播放演示",
+        "again": "再次播放",
+        "recording": "录音中…",
+        "transcribing": "转写中…",
+        "ready": "准备就绪",
+        "done": "已从剪贴板粘贴",
+        "caption": "仅为示意，麦克风保持关闭。",
+        "heading": "让想法自由流动。",
+        "sample": "明天，让我们少花时间打字，多花时间创造。",
+        "pause": "暂停演示",
+        "resume": "继续演示"
+    }
+}

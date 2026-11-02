@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text voor GNOME — Spraakgestuurd typen op Linux",
+        "description": "Spraakgestuurd typen voor GNOME Shell op Linux. Dicteer met Super+Z, transcribeer via OpenRouter en plak in apps op Wayland of X11. Gratis en opensource."
+    },
+    "nav": {
+        "skip": "Naar de inhoud",
+        "main": "Hoofdnavigatie",
+        "workflow": "Zo werkt het",
+        "questions": "Vragen",
+        "install": "Installeren",
+        "language": "Taal",
+        "source": "Broncode",
+        "issues": "Probleem melden",
+        "license": "Licentie"
+    },
+    "hero": {
+        "context": "Spraakgestuurd typen voor GNOME op Linux",
+        "title": "Jouw stem.\nJouw ritme.",
+        "body": "Spreek je gedachten uit en zet ze in de app die je al gebruikt. Eén sneltoets brengt dicteren naar je GNOME-bureaublad.",
+        "install": "Installeren voor GNOME",
+        "free": "Gratis en opensource.",
+        "key": "Je eigen OpenRouter-API-sleutel is nodig."
+    },
+    "compatibility": {
+        "label": "Compatibiliteit en vereisten",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transcriptie via"
+    },
+    "workflow": {
+        "title": "Houd je\ngedachten vast.",
+        "body": "Dicteer notities, berichten of terminalinvoer zonder een aparte dicteerapp te openen.",
+        "steps": [
+            {
+                "title": "Druk. Spreek.",
+                "body": "Druk op Super+Z of klik op het paneelpictogram. Een oranje indicator toont dat de opname loopt."
+            },
+            {
+                "title": "Druk opnieuw. Transcribeer.",
+                "body": "Stop de opname om audio naar OpenRouter en je gekozen model te sturen."
+            },
+            {
+                "title": "Ga verder.",
+                "body": "Het transcript vervangt je klembordinhoud en wordt in de actieve app geplakt. Handmatig plakken kan ook."
+            }
+        ],
+        "note": "Wijzig of schakel Super+Z uit in de voorkeuren. Automatisch plakken hangt af van de app en toetsenbordindeling."
+    },
+    "models": {
+        "title": "Jouw stem.\nJouw model.",
+        "body": "Kies je model en gesproken taal in de ingebouwde GNOME-voorkeuren.",
+        "features": [
+            {
+                "title": "Doorzoekbare modelcatalogus",
+                "body": "Gebruik spraakherkenningsmodellen of LLM’s met audio-invoer via OpenRouter. MAI-Transcribe 2 is standaard."
+            },
+            {
+                "title": "Spreek je eigen taal",
+                "body": "Laat de taal automatisch herkennen of selecteer er een. Herkenning hangt af van je model."
+            },
+            {
+                "title": "Jouw bureaublad, jouw voorkeuren",
+                "body": "Wijzig de sneltoets, verplaats of verberg het pictogram en zet opnamegeluiden aan of uit."
+            }
+        ],
+        "settings": "Instellingen bekijken",
+        "caption": "Echte voorkeuren, hier in het Engels. Beschikbare modellen kunnen veranderen.",
+        "alt": "GNOME-modelkiezer met MAI-Transcribe 2 en andere audiomodellen"
+    },
+    "setup": {
+        "title": "Geef je toetsenbord\neven rust.",
+        "body": "Je hebt GNOME Shell, een microfoon, internet en je eigen OpenRouter-API-sleutel nodig.",
+        "steps": [
+            {
+                "title": "Installeer de extensie",
+                "body": "Download Speech to Text via GNOME Extensions. Ondersteunde Shell-versies: {versions}."
+            },
+            {
+                "title": "Voeg je API-sleutel toe",
+                "body": "Open de voorkeuren, voer je OpenRouter-sleutel in en kies een model. API-gebruik kan geld kosten, afhankelijk van de aanbieder."
+            },
+            {
+                "title": "Selecteer een tekstveld. Spreek.",
+                "body": "Druk op Super+Z om te starten en opnieuw om te stoppen. De tekst wordt geplakt in de app waarin je typte."
+            }
+        ],
+        "open": "GNOME Extensions openen",
+        "key": "OpenRouter-sleutel aanmaken",
+        "before": "Voordat je begint",
+        "requirements": "Vereist GStreamer 1.0 met base- en good-plug-ins. Meld je na installatie of bijwerken op Wayland af en weer aan.",
+        "manual": "Handmatige installatie en probleemoplossing"
+    },
+    "faq": {
+        "title": "Goed\nom te weten.",
+        "ask": "Vragen op GitHub",
+        "items": [
+            {
+                "title": "Is het gratis?",
+                "body": "De extensie is gratis onder GPL-2.0-or-later. Je gebruikt je eigen OpenRouter-account; kosten en modellen hangen af van de aanbieder."
+            },
+            {
+                "title": "Waar gaat mijn audio heen?",
+                "body": "Audio wordt lokaal opgenomen en bij stoppen via HTTPS naar OpenRouter gestuurd. Verwerking en bewaring hangen af van OpenRouter en de aanbieder. Je sleutel staat in GSettings. Geen telemetrie."
+            },
+            {
+                "title": "Wat gebeurt er met mijn klembord?",
+                "body": "Het transcript vervangt de inhoud om te kunnen plakken. Andere klembordinhoud en geschiedenis worden niet gelezen of geüpload."
+            },
+            {
+                "title": "Werkt het op Wayland en in terminals?",
+                "body": "Plakken gebruikt Ctrl+V, of Ctrl+Shift+V in terminals. De app moet dit ondersteunen. Op Wayland kunnen niet-Latijnse indelingen automatisch plakken verhinderen; de tekst blijft op het klembord voor handmatig plakken."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Een goed idee begint\nmet een woord.",
+        "install": "Begin met Speech to Text",
+        "body": "Een onafhankelijke opensource-extensie voor GNOME Shell."
+    },
+    "demo": {
+        "play": "Demo afspelen",
+        "again": "Opnieuw afspelen",
+        "recording": "Opnemen…",
+        "transcribing": "Transcriberen…",
+        "ready": "Klaar voor de start",
+        "done": "Geplakt vanaf het klembord",
+        "caption": "Alleen een illustratie. Je microfoon blijft uit.",
+        "heading": "Laat de ideeën stromen.",
+        "sample": "Laten we morgen minder tijd besteden aan typen en meer aan het maken van dingen.",
+        "pause": "Demo pauzeren",
+        "resume": "Demo hervatten"
+    }
+}

@@ -1,0 +1,34 @@
+---
+import Icon from '../shared/ui/Icon.astro';
+import { site } from '../shared/config/site';
+import { formatVersions, type Messages } from '../i18n';
+
+interface Props {
+    messages: Messages['compatibility'];
+}
+const { messages: t } = Astro.props;
+---
+
+<div class="compatibility wrap" aria-label={t.label}>
+    <span>
+        <span class="compat-icon" aria-hidden="true">
+            ◉
+        </span>
+        {formatVersions(t.gnome, site.versions)}
+    </span>
+    <span>
+        <Icon name="check" size={18} />
+        <bdi>Wayland & X11</bdi>
+    </span>
+    <span>
+        <Icon name="github" size={18} />
+        <bdi>GPL-2.0-or-later</bdi>
+    </span>
+    <span>
+        {t.via}{' '}
+        <a href={site.openRouter}>
+            <bdi>OpenRouter</bdi>
+            <Icon name="arrow" size={14} />
+        </a>
+    </span>
+</div>

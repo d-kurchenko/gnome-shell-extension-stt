@@ -1,0 +1,446 @@
+@layer components {
+    .brand {
+        display: inline-flex;
+        gap: 11px;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        text-decoration: none;
+        flex-shrink: 0;
+        max-width: 100%;
+    }
+
+    .source-link {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        min-height: 52px;
+        padding: 13px 22px;
+        border: 0;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 750;
+        transition:
+            background 0.18s,
+            transform 0.18s;
+        text-align: center;
+    }
+
+    .button:hover {
+        transform: translateY(-2px);
+    }
+
+    .button-orange {
+        background: var(--orange);
+        color: #252d32;
+        box-shadow: 0 3px 0 #ca5724;
+    }
+
+    .button-orange:hover {
+        background: #ff8c54;
+    }
+
+    .button-dark {
+        background: var(--ink);
+        color: white;
+    }
+
+    .button-dark:hover {
+        background: #3d5261;
+    }
+
+    .button-small {
+        min-height: 42px;
+        padding: 9px 15px;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+
+    .product-context {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 24px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .context-dot {
+        display: inline-block;
+        flex-shrink: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--orange-deep);
+    }
+
+    .hero-description {
+        max-width: 385px;
+        margin-top: 28px;
+        font-size: 17px;
+        line-height: 1.8;
+        color: var(--muted);
+    }
+
+    .hero-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 23px;
+        margin-top: 31px;
+    }
+
+    .text-link {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 750;
+        text-decoration: none;
+    }
+
+    .text-link:hover {
+        text-decoration: underline;
+    }
+
+    .hero-requirements {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 11px;
+    }
+
+    .hero-requirements a {
+        text-decoration-color: #8a98a2;
+    }
+
+    .step-visual {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        height: 78px;
+        margin-bottom: 22px;
+    }
+
+    .shortcut-visual kbd,
+    .setup-shortcut kbd {
+        display: inline-grid;
+        place-items: center;
+        background: white;
+        box-shadow: 0 3px 0 #d4dce1;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        height: 46px;
+        min-width: 46px;
+        padding-inline: 15px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .shortcut-visual > span {
+        color: #7b8790;
+        padding-inline: 4px;
+    }
+
+    .wave-visual {
+        gap: 6px;
+    }
+
+    .wave-visual i {
+        width: 7px;
+        background: var(--orange);
+        border-radius: 7px;
+    }
+
+    .pasted-visual {
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 550;
+    }
+
+    .pasted-visual svg {
+        color: var(--orange-deep);
+    }
+
+    .pasted-visual i {
+        height: 22px;
+        width: 2px;
+        background: var(--orange);
+    }
+
+    .workflow-steps p {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 14px;
+        max-width: 290px;
+        line-height: 1.9;
+    }
+
+    .workflow-footnote {
+        margin-top: 40px;
+        font-size: 12px;
+        color: var(--muted);
+    }
+
+    .model-art {
+        min-width: 0;
+        background: var(--lavender);
+        border-radius: 22px;
+        padding: 25px 30px 0;
+        overflow: hidden;
+        margin: 0;
+        padding-block-start: 25px;
+    }
+
+    .screenshot-frame {
+        overflow: hidden;
+        height: 400px;
+        border-radius: 13px 13px 0 0;
+        box-shadow: 0 12px 25px #39364b35;
+    }
+
+    .screenshot-frame img {
+        width: 100%;
+    }
+
+    .section-description {
+        margin-top: 24px;
+        font-size: 16px;
+        color: var(--muted);
+        line-height: 1.8;
+    }
+
+    .model-feature {
+        margin-top: 27px;
+    }
+
+    .model-feature h3 {
+        font-size: 15px;
+    }
+
+    .model-feature p {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.9;
+    }
+
+    .model-copy > .text-link {
+        margin-top: 28px;
+    }
+
+    .setup-steps li {
+        display: flex;
+        align-items: start;
+        gap: 16px;
+    }
+
+    .step-number {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 29px;
+        height: 29px;
+        border: 1px solid #c7d2da;
+        border-radius: 50%;
+        font-size: 12px;
+    }
+
+    .setup-steps h3 {
+        font-size: 17px;
+        margin-top: 3px;
+    }
+
+    .setup-steps p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-block: 14px 22px;
+        line-height: 1.9;
+    }
+
+    .setup-steps .button {
+        min-height: 43px;
+        font-size: 10px;
+        padding: 10px 14px;
+        gap: 8px;
+    }
+
+    .setup-steps .text-link {
+        font-size: 11px;
+    }
+
+    .setup-shortcut {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .setup-shortcut kbd {
+        font-size: 10px;
+        height: 29px;
+        min-width: 29px;
+        border-radius: 6px;
+        padding-inline: 9px;
+    }
+
+    .install-notes {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 55px;
+        padding: 24px 28px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        font-size: 12px;
+        color: var(--muted);
+    }
+
+    .install-notes p {
+        max-width: 620px;
+    }
+
+    .install-notes strong {
+        display: block;
+        color: var(--ink);
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .install-notes a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        font-weight: 700;
+        color: var(--ink);
+    }
+
+    .faq-heading > p {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 26px;
+    }
+
+    .faq-heading a {
+        color: var(--ink);
+        font-weight: 700;
+    }
+
+    .faq-list {
+        border-top: 1px solid var(--line);
+    }
+
+    details {
+        border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding-block: 23px;
+        list-style: none;
+        font-size: 14px;
+        font-weight: 650;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary > span {
+        font-size: 23px;
+        font-weight: 400;
+        line-height: 1;
+        transition: transform 0.2s;
+    }
+
+    details[open] summary > span {
+        transform: rotate(45deg);
+    }
+
+    details > div {
+        padding-bottom: 24px;
+        padding-right: 30px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+        padding-inline: 0 30px;
+    }
+
+    details p + p {
+        margin-top: 12px;
+    }
+
+    .closing > img {
+        margin-inline: auto;
+        margin-bottom: 25px;
+    }
+
+    .closing h2 {
+        font-size: clamp(40px, 5vw, 65px);
+    }
+
+    .closing .button {
+        margin-top: 30px;
+    }
+
+    .closing > p {
+        color: var(--muted);
+        font-size: 10px;
+        margin-top: 20px;
+    }
+
+    .site-footer .brand {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .site-footer p {
+        color: var(--muted);
+        font-size: 10px;
+    }
+
+    .site-footer nav {
+        display: flex;
+        gap: 22px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
+    .site-footer nav a {
+        text-decoration: none;
+    }
+
+    @keyframes waveform {
+        from {
+            transform: scaleY(0.4);
+        }
+        to {
+            transform: scaleY(1);
+        }
+    }
+
+    .shortcut {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .model-art figcaption {
+        position: relative;
+        padding-block: 13px;
+        font-size: 11px;
+        color: #515465;
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text pro GNOME — Hlasové zadávání v Linuxu",
+        "description": "Hlasové zadávání pro GNOME Shell v Linuxu. Diktujte pomocí Super+Z, přepisujte přes OpenRouter a vkládejte do aplikací na Waylandu i X11. Zdarma a s otevřeným kódem."
+    },
+    "nav": {
+        "skip": "Přejít na obsah",
+        "main": "Hlavní navigace",
+        "workflow": "Jak to funguje",
+        "questions": "Otázky",
+        "install": "Nainstalovat",
+        "language": "Jazyk",
+        "source": "Zdrojový kód",
+        "issues": "Nahlásit problém",
+        "license": "Licence"
+    },
+    "hero": {
+        "context": "Hlasové zadávání pro GNOME v Linuxu",
+        "title": "Váš hlas.\nVaše tempo.",
+        "body": "Vyslovte myšlenku a vložte ji do aplikace, kterou právě používáte. Klávesová zkratka přináší diktování na plochu GNOME.",
+        "install": "Nainstalovat pro GNOME",
+        "free": "Zdarma a s otevřeným kódem.",
+        "key": "Potřebujete vlastní API klíč OpenRouter."
+    },
+    "compatibility": {
+        "label": "Kompatibilita a požadavky",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Přepis přes"
+    },
+    "workflow": {
+        "title": "Neztrácejte\nnit myšlenek.",
+        "body": "Diktujte poznámky, zprávy či příkazy bez přepínání do samostatné aplikace.",
+        "steps": [
+            {
+                "title": "Stiskněte. Mluvte.",
+                "body": "Stiskněte Super+Z nebo ikonu na panelu. Oranžový indikátor značí probíhající nahrávání."
+            },
+            {
+                "title": "Stiskněte znovu. Přepište.",
+                "body": "Zastavením odešlete zvuk do OpenRouteru a vybranému modelu."
+            },
+            {
+                "title": "Pokračujte.",
+                "body": "Přepis nahradí obsah schránky a vloží se do aktivní aplikace. Vložit jej můžete i ručně."
+            }
+        ],
+        "note": "Změňte nebo vypněte Super+Z v předvolbách. Automatické vložení závisí na aplikaci a rozložení klávesnice."
+    },
+    "models": {
+        "title": "Váš hlas.\nVáš model.",
+        "body": "Vyberte model a jazyk řeči v nativních předvolbách GNOME.",
+        "features": [
+            {
+                "title": "Prohledávatelný katalog modelů",
+                "body": "Používejte modely rozpoznávání řeči nebo LLM se zvukovým vstupem přes OpenRouter. Výchozí je MAI-Transcribe 2."
+            },
+            {
+                "title": "Mluvte svým jazykem",
+                "body": "Použijte automatické rozpoznání nebo vyberte jazyk. Rozpoznávání závisí na modelu."
+            },
+            {
+                "title": "Vaše plocha, vaše předvolby",
+                "body": "Změňte zkratku, přesuňte či skryjte ikonu a zapněte nebo vypněte zvuky nahrávání."
+            }
+        ],
+        "settings": "Prozkoumat nastavení",
+        "caption": "Skutečné předvolby v angličtině. Nabídka modelů se může měnit.",
+        "alt": "Nativní výběr modelu GNOME s MAI-Transcribe 2 a dalšími zvukovými modely"
+    },
+    "setup": {
+        "title": "Dopřejte klávesnici\nchvíli oddechu.",
+        "body": "Potřebujete GNOME Shell, mikrofon, internet a vlastní API klíč OpenRouter.",
+        "steps": [
+            {
+                "title": "Nainstalujte rozšíření",
+                "body": "Stáhněte Speech to Text z GNOME Extensions. Podporované verze Shellu: {versions}."
+            },
+            {
+                "title": "Přidejte API klíč",
+                "body": "Otevřete předvolby, zadejte klíč OpenRouter a vyberte model. Použití API může být dle poskytovatele placené."
+            },
+            {
+                "title": "Vyberte textové pole. Mluvte.",
+                "body": "Stiskněte Super+Z pro spuštění a znovu pro zastavení. Text se vloží do aplikace, ve které píšete."
+            }
+        ],
+        "open": "Otevřít GNOME Extensions",
+        "key": "Získat klíč OpenRouter",
+        "before": "Než začnete",
+        "requirements": "Vyžaduje GStreamer 1.0 s pluginy base a good. Po instalaci či aktualizaci na Waylandu se odhlaste a znovu přihlaste.",
+        "manual": "Ruční instalace a řešení potíží"
+    },
+    "faq": {
+        "title": "Co je dobré\nvědět.",
+        "ask": "Zeptat se na GitHubu",
+        "items": [
+            {
+                "title": "Je to zdarma?",
+                "body": "Rozšíření je zdarma pod GPL-2.0-or-later. Používá váš účet OpenRouter; náklady a dostupnost modelů závisejí na poskytovateli."
+            },
+            {
+                "title": "Kam jde můj zvuk?",
+                "body": "Zvuk se nahrává lokálně a po zastavení odesílá do OpenRouteru přes HTTPS. Zpracování a uchování závisí na OpenRouteru a poskytovateli. Klíč je v GSettings. Bez telemetrie."
+            },
+            {
+                "title": "Co se stane se schránkou?",
+                "body": "Přepis nahradí obsah schránky pro vložení. Rozšíření nečte ani neodesílá jiný obsah nebo historii schránky."
+            },
+            {
+                "title": "Funguje na Waylandu a v terminálech?",
+                "body": "Vložení používá Ctrl+V, v terminálech Ctrl+Shift+V. Aplikace musí zkratku podporovat. Na Waylandu mohou nelatinská rozložení bránit automatickému vložení; text zůstává ve schránce pro ruční vložení."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Dobrý nápad začíná\nslovem.",
+        "install": "Začít se Speech to Text",
+        "body": "Nezávislé rozšíření GNOME Shell s otevřeným kódem."
+    },
+    "demo": {
+        "play": "Přehrát ukázku",
+        "again": "Přehrát znovu",
+        "recording": "Nahrávání…",
+        "transcribing": "Přepisování…",
+        "ready": "Připraveno",
+        "done": "Vloženo ze schránky",
+        "caption": "Pouze ilustrace. Mikrofon zůstává vypnutý.",
+        "heading": "Nechte nápady plynout.",
+        "sample": "Zítra věnujme méně času psaní a více tvoření.",
+        "pause": "Pozastavit ukázku",
+        "resume": "Pokračovat v ukázce"
+    }
+}

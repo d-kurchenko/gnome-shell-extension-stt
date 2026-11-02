@@ -1,0 +1,47 @@
+---
+import Heading from '../shared/ui/Heading.astro';
+import Icon from '../shared/ui/Icon.astro';
+import Shortcut from '../shared/ui/Shortcut.astro';
+import type { Messages } from '../i18n';
+
+interface Props {
+    messages: Messages['workflow'];
+}
+const { messages: t } = Astro.props;
+---
+
+<section id="how-it-works" class="workflow wrap section-space" aria-labelledby="workflow-title">
+    <div class="section-intro">
+        <Heading id="workflow-title" text={t.title} />
+        <p>{t.body}</p>
+    </div>
+    <ol class="workflow-steps">
+        {t.steps.map((step, index) => (
+            <li>
+                <div
+                    class:list={[
+                        'step-visual',
+                        ['shortcut-visual', 'wave-visual', 'pasted-visual'][index],
+                    ]}
+                    aria-hidden="true"
+                >
+                    {index === 0 && <Shortcut />}
+                    {index === 1 &&
+                        [14, 30, 44, 23, 52, 35, 18, 42, 26, 14].map((height) => (
+                            <i style={`height:${height}px`}></i>
+                        ))}
+                    {index === 2 && (
+                        <>
+                            <Icon name="check" size={24} />
+                            <span>{step.title}</span>
+                            <i></i>
+                        </>
+                    )}
+                </div>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+            </li>
+        ))}
+    </ol>
+    <p class="workflow-footnote">{t.note}</p>
+</section>

@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text GNOMElle — Puhekirjoitus Linuxissa",
+        "description": "Puhekirjoitus GNOME Shellille Linuxissa. Sanele Super+Z:lla, litteroi OpenRouterilla ja liitä sovelluksiin Waylandissa tai X11:ssä. Maksuton ja avoin laajennus."
+    },
+    "nav": {
+        "skip": "Siirry sisältöön",
+        "main": "Päänavigointi",
+        "workflow": "Näin se toimii",
+        "questions": "Kysymyksiä",
+        "install": "Asenna",
+        "language": "Kieli",
+        "source": "Lähdekoodi",
+        "issues": "Ilmoita ongelmasta",
+        "license": "Lisenssi"
+    },
+    "hero": {
+        "context": "Puhekirjoitus GNOMElle Linuxissa",
+        "title": "Sinun äänesi.\nSinun rytmisi.",
+        "body": "Sano ajatuksesi ja siirrä ne käyttämääsi sovellukseen. Pikanäppäin tuo sanelun GNOME-työpöydällesi.",
+        "install": "Asenna GNOMElle",
+        "free": "Maksuton ja avoin lähdekoodi.",
+        "key": "Tarvitset oman OpenRouter-API-avaimen."
+    },
+    "compatibility": {
+        "label": "Yhteensopivuus ja vaatimukset",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Litterointi palvelulla"
+    },
+    "workflow": {
+        "title": "Säilytä\najatuksenkulku.",
+        "body": "Sanele muistiinpanoja, viestejä tai päätteen syötteitä avaamatta erillistä sanelusovellusta.",
+        "steps": [
+            {
+                "title": "Paina. Puhu.",
+                "body": "Paina Super+Z tai napsauta paneelin kuvaketta. Oranssi ilmaisin kertoo tallennuksesta."
+            },
+            {
+                "title": "Paina uudelleen. Litteroi.",
+                "body": "Lopeta tallennus lähettääksesi äänen OpenRouteriin valitsemallesi mallille."
+            },
+            {
+                "title": "Jatka.",
+                "body": "Teksti korvaa leikepöydän sisällön ja liitetään aktiiviseen sovellukseen. Voit liittää myös käsin."
+            }
+        ],
+        "note": "Vaihda tai poista Super+Z käytöstä asetuksissa. Automaattinen liittäminen riippuu sovelluksesta ja näppäinasettelusta."
+    },
+    "models": {
+        "title": "Sinun äänesi.\nSinun mallisi.",
+        "body": "Valitse malli ja puhekieli GNOMEn omissa asetuksissa.",
+        "features": [
+            {
+                "title": "Haettava malliluettelo",
+                "body": "Käytä puheentunnistusmalleja tai ääntä tukevia kielimalleja OpenRouterin kautta. Oletus on MAI-Transcribe 2."
+            },
+            {
+                "title": "Puhu omaa kieltäsi",
+                "body": "Käytä automaattista kielentunnistusta tai valitse kieli. Tunnistus riippuu mallista."
+            },
+            {
+                "title": "Sinun työpöytäsi ja asetuksesi",
+                "body": "Vaihda pikanäppäin, siirrä tai piilota kuvake ja ota tallennusäänet käyttöön tai pois."
+            }
+        ],
+        "settings": "Tutustu asetuksiin",
+        "caption": "Todelliset asetukset englanniksi. Mallien saatavuus voi muuttua.",
+        "alt": "GNOMEn mallivalitsin, jossa MAI-Transcribe 2 ja muita äänimalleja"
+    },
+    "setup": {
+        "title": "Anna näppäimistölle\nhetki lepoa.",
+        "body": "Tarvitset GNOME Shellin, mikrofonin, internetin ja oman OpenRouter-API-avaimen.",
+        "steps": [
+            {
+                "title": "Asenna laajennus",
+                "body": "Hanki Speech to Text GNOME Extensionsista. Tuetut Shell-versiot: {versions}."
+            },
+            {
+                "title": "Lisää API-avain",
+                "body": "Avaa asetukset, syötä OpenRouter-avain ja valitse malli. API-käyttö voi maksaa palveluntarjoajasta riippuen."
+            },
+            {
+                "title": "Valitse tekstikenttä. Puhu.",
+                "body": "Aloita painamalla Super+Z ja lopeta painamalla uudelleen. Teksti liitetään käyttämääsi sovellukseen."
+            }
+        ],
+        "open": "Avaa GNOME Extensions",
+        "key": "Hanki OpenRouter-avain",
+        "before": "Ennen aloittamista",
+        "requirements": "Vaatii GStreamer 1.0:n sekä base- ja good-liitännäiset. Kirjaudu Waylandissa asennuksen tai päivityksen jälkeen ulos ja takaisin sisään.",
+        "manual": "Asennus käsin ja vianmääritys"
+    },
+    "faq": {
+        "title": "Hyvä\ntietää.",
+        "ask": "Kysy GitHubissa",
+        "items": [
+            {
+                "title": "Onko se maksuton?",
+                "body": "Laajennus on maksuton GPL-2.0-or-later-lisenssillä. Se käyttää omaa OpenRouter-tiliäsi; hinnat ja mallit riippuvat palveluntarjoajasta."
+            },
+            {
+                "title": "Minne ääneni menee?",
+                "body": "Ääni tallennetaan paikallisesti ja lähetetään lopetettaessa OpenRouteriin HTTPS:llä. Käsittely ja säilytys riippuvat OpenRouterista ja palveluntarjoajasta. Avain on GSettingsissä. Ei telemetriaa."
+            },
+            {
+                "title": "Mitä leikepöydälleni tapahtuu?",
+                "body": "Litterointi korvaa leikepöydän sisällön liittämistä varten. Laajennus ei lue tai lähetä muuta sisältöä tai leikepöydän historiaa."
+            },
+            {
+                "title": "Toimiiko se Waylandissa ja päätteissä?",
+                "body": "Liittäminen käyttää Ctrl+V:tä, päätteissä Ctrl+Shift+V:tä. Sovelluksen on tuettava sitä. Waylandissa ei-latinalaiset asettelut voivat estää automaattisen liittämisen; teksti jää leikepöydälle käsin liitettäväksi."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Hyvä idea alkaa\nsanasta.",
+        "install": "Aloita Speech to Textillä",
+        "body": "Riippumaton, avoimen lähdekoodin GNOME Shell -laajennus."
+    },
+    "demo": {
+        "play": "Toista demo",
+        "again": "Toista uudelleen",
+        "recording": "Tallennetaan…",
+        "transcribing": "Litteroidaan…",
+        "ready": "Valmiina",
+        "done": "Liitetty leikepöydältä",
+        "caption": "Vain havainnollistus. Mikrofonisi pysyy pois päältä.",
+        "heading": "Anna ideoiden virrata.",
+        "sample": "Käytetään huomenna vähemmän aikaa kirjoittamiseen ja enemmän luomiseen.",
+        "pause": "Keskeytä demo",
+        "resume": "Jatka demoa"
+    }
+}

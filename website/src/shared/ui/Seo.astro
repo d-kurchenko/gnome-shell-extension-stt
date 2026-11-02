@@ -1,0 +1,77 @@
+---
+import { getImage } from 'astro:assets';
+import listing from '../../../../assets/branding/listing.png';
+import logo from '../../../../resources/icons/speech-to-text.svg?url';
+import latinFont from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
+import cyrillicFont from '@fontsource-variable/manrope/files/manrope-cyrillic-wght-normal.woff2?url';
+import greekFont from '@fontsource-variable/manrope/files/manrope-greek-wght-normal.woff2?url';
+import { site } from '../config/site';
+import { locales, type LocaleInfo } from '../../i18n/locales';
+import { localeUrl } from '../../i18n/routing';
+import type { Messages } from '../../i18n';
+
+interface Props {
+    locale: LocaleInfo;
+    messages: Messages;
+}
+const { locale, messages: t } = Astro.props;
+const canonical = localeUrl(locale.code);
+const social = await getImage({ src: listing, width: 1200, format: 'png' });
+const socialUrl = new URL(social.src, site.origin).href;
+const systemFont = ['ar', 'fa', 'kn', 'ja', 'ko', 'zh-CN'].includes(locale.code);
+const font = ['ru', 'uk', 'bg'].includes(locale.code)
+    ? cyrillicFont
+    : locale.code === 'el'
+      ? greekFont
+      : latinFont;
+const software = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    '@id': `${canonical}#software`,
+    name: site.name,
+    description: t.seo.description,
+    operatingSystem: 'Linux',
+    softwareRequirements: `GNOME Shell ${site.versions.join(', ')}, GStreamer 1.0, Internet, OpenRouter API key`,
+    applicationCategory: 'UtilitiesApplication',
+    inLanguage: locale.code,
+    url: canonical,
+    image: socialUrl,
+    downloadUrl: site.install,
+    license: site.license,
+    isAccessibleForFree: true,
+};
+---
+
+<title>{t.seo.title}</title>
+<meta name="description" content={t.seo.description} />
+<meta name="theme-color" content="#f1f4f6" />
+<link rel="canonical" href={canonical} />
+{locales.map((item) => (
+    <link rel="alternate" hreflang={item.code} href={localeUrl(item.code)} />
+))}
+<link rel="alternate" hreflang="x-default" href={localeUrl('en')} />
+<link rel="icon" type="image/svg+xml" href={logo} />
+{!systemFont && (
+    <link rel="preload" href={font} as="font" type="font/woff2" crossorigin="anonymous" />
+)}
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={locale.og} />
+{locales
+    .filter((item) => item.code !== locale.code)
+    .map((item) => (
+        <meta property="og:locale:alternate" content={item.og} />
+    ))}
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={t.seo.title} />
+<meta property="og:description" content={t.seo.description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={socialUrl} />
+<meta property="og:image:width" content={social.attributes.width} />
+<meta property="og:image:height" content={social.attributes.height} />
+<meta property="og:image:alt" content={t.hero.context} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={t.seo.title} />
+<meta name="twitter:description" content={t.seo.description} />
+<meta name="twitter:image" content={socialUrl} />
+<meta name="twitter:image:alt" content={t.hero.context} />
+<script type="application/ld+json" set:html={JSON.stringify(software).replaceAll('<', '\\u003c')} />

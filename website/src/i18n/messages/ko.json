@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "GNOME용 Speech to Text — Linux 음성 입력",
+        "description": "Linux GNOME Shell용 음성 입력. Super+Z로 녹음하고 OpenRouter로 변환해 Wayland와 X11 앱에 붙여넣으세요. 무료 오픈 소스 확장 기능입니다."
+    },
+    "nav": {
+        "skip": "본문으로 이동",
+        "main": "주 탐색",
+        "workflow": "사용 방법",
+        "questions": "자주 묻는 질문",
+        "install": "설치",
+        "language": "언어",
+        "source": "소스 코드",
+        "issues": "문제 보고",
+        "license": "라이선스"
+    },
+    "hero": {
+        "context": "Linux GNOME을 위한 음성 입력",
+        "title": "당신의 목소리.\n당신의 흐름.",
+        "body": "생각을 말하고 사용 중인 앱에 바로 입력하세요. 단축키 하나로 GNOME 데스크톱에 받아쓰기를 더합니다.",
+        "install": "GNOME에 설치",
+        "free": "무료 오픈 소스.",
+        "key": "본인의 OpenRouter API 키가 필요합니다."
+    },
+    "compatibility": {
+        "label": "호환성 및 요구 사항",
+        "gnome": "GNOME Shell {versions}",
+        "via": "음성 변환 서비스"
+    },
+    "workflow": {
+        "title": "생각의 흐름을\n이어가세요.",
+        "body": "별도 받아쓰기 앱으로 전환하지 않고 메모, 메시지, 터미널 입력을 받아쓰세요.",
+        "steps": [
+            {
+                "title": "누르고 말하세요.",
+                "body": "Super+Z를 누르거나 패널 아이콘을 클릭하세요. 주황색 표시가 녹음 중임을 알려줍니다."
+            },
+            {
+                "title": "다시 눌러 변환하세요.",
+                "body": "녹음을 멈추면 오디오가 OpenRouter와 선택한 모델로 전송됩니다."
+            },
+            {
+                "title": "계속 작업하세요.",
+                "body": "변환된 텍스트가 클립보드 내용을 대체하고 활성 앱에 붙여넣어집니다. 직접 붙여넣을 수도 있습니다."
+            }
+        ],
+        "note": "설정에서 Super+Z를 변경하거나 끌 수 있습니다. 자동 붙여넣기는 앱과 키보드 배열에 따라 달라집니다."
+    },
+    "models": {
+        "title": "당신의 목소리.\n당신의 모델.",
+        "body": "GNOME 기본 설정 화면에서 모델과 말할 언어를 선택하세요.",
+        "features": [
+            {
+                "title": "검색 가능한 모델 목록",
+                "body": "OpenRouter의 음성 인식 모델이나 오디오 입력 지원 LLM을 사용하세요. 기본 모델은 MAI-Transcribe 2입니다."
+            },
+            {
+                "title": "나의 언어로 말하기",
+                "body": "자동 언어 감지를 사용하거나 언어를 지정하세요. 인식은 모델에 따라 달라집니다."
+            },
+            {
+                "title": "내 데스크톱, 내 설정",
+                "body": "단축키를 바꾸고 아이콘을 이동하거나 숨기고 녹음 소리를 켜거나 끄세요."
+            }
+        ],
+        "settings": "설정 살펴보기",
+        "caption": "실제 설정 화면의 영어 표시입니다. 사용 가능한 모델은 바뀔 수 있습니다.",
+        "alt": "MAI-Transcribe 2와 다른 오디오 모델을 보여주는 GNOME 모델 선택기"
+    },
+    "setup": {
+        "title": "키보드에\n잠깐의 휴식을.",
+        "body": "GNOME Shell, 마이크, 인터넷과 본인의 OpenRouter API 키가 필요합니다.",
+        "steps": [
+            {
+                "title": "확장 기능 설치",
+                "body": "GNOME Extensions에서 Speech to Text를 받으세요. 지원 Shell 버전: {versions}."
+            },
+            {
+                "title": "API 키 추가",
+                "body": "설정에서 OpenRouter 키를 입력하고 모델을 고르세요. 제공업체에 따라 API 사용료가 부과될 수 있습니다."
+            },
+            {
+                "title": "텍스트 입력란을 선택하고 말하기",
+                "body": "Super+Z로 시작하고 다시 눌러 멈추세요. 입력하던 앱에 텍스트가 붙여넣어집니다."
+            }
+        ],
+        "open": "GNOME Extensions 열기",
+        "key": "OpenRouter 키 받기",
+        "before": "시작하기 전에",
+        "requirements": "GStreamer 1.0과 base 및 good 플러그인이 필요합니다. Wayland에서 설치하거나 업데이트한 뒤에는 로그아웃 후 다시 로그인하세요.",
+        "manual": "수동 설치 및 문제 해결"
+    },
+    "faq": {
+        "title": "알아두면\n좋은 것들.",
+        "ask": "GitHub에 질문하기",
+        "items": [
+            {
+                "title": "무료인가요?",
+                "body": "확장 기능은 GPL-2.0-or-later로 무료입니다. 본인의 OpenRouter 계정을 사용하며 요금과 모델 제공 여부는 제공업체에 따라 다릅니다."
+            },
+            {
+                "title": "오디오는 어디로 가나요?",
+                "body": "로컬에서 녹음하고 멈출 때 HTTPS로 OpenRouter에 전송합니다. 처리 및 보관은 OpenRouter와 제공업체에 따라 다릅니다. 키는 GSettings에 저장됩니다. 확장 기능은 원격 측정 데이터를 수집하지 않습니다."
+            },
+            {
+                "title": "클립보드는 어떻게 되나요?",
+                "body": "붙여넣기를 위해 변환 결과가 클립보드 내용을 대체합니다. 다른 클립보드 내용이나 기록은 읽거나 업로드하지 않습니다."
+            },
+            {
+                "title": "Wayland와 터미널에서도 되나요?",
+                "body": "Ctrl+V, 터미널에서는 Ctrl+Shift+V를 사용하며 앱이 이를 지원해야 합니다. Wayland에서 비라틴 배열은 자동 붙여넣기를 막을 수 있습니다. 텍스트는 클립보드에 남아 직접 붙여넣을 수 있습니다."
+            }
+        ]
+    },
+    "closing": {
+        "title": "좋은 아이디어는\n한마디에서 시작됩니다.",
+        "install": "Speech to Text 시작하기",
+        "body": "독립적인 오픈 소스 GNOME Shell 확장 기능."
+    },
+    "demo": {
+        "play": "데모 재생",
+        "again": "다시 재생",
+        "recording": "녹음 중…",
+        "transcribing": "변환 중…",
+        "ready": "준비 완료",
+        "done": "클립보드에서 붙여넣음",
+        "caption": "동작 예시입니다. 마이크는 꺼져 있습니다.",
+        "heading": "아이디어를 자유롭게.",
+        "sample": "내일은 타이핑을 줄이고 무언가를 만드는 데 더 많은 시간을 써 봐요.",
+        "pause": "데모 일시 정지",
+        "resume": "데모 계속"
+    }
+}

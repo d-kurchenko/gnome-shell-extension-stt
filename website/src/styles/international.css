@@ -1,0 +1,52 @@
+@layer international {
+    :lang(ar),
+    :lang(fa),
+    :lang(kn),
+    :lang(ja),
+    :lang(ko),
+    :lang(zh-CN) {
+        font-family: system-ui, sans-serif;
+        letter-spacing: normal;
+    }
+
+    :lang(ar) h1,
+    :lang(fa) h1,
+    :lang(kn) h1,
+    :lang(ar) h2,
+    :lang(fa) h2,
+    :lang(kn) h2 {
+        line-height: 1.45;
+        letter-spacing: normal;
+    }
+
+    html:not([lang='en']) h1 {
+        font-size: clamp(44px, 5.2vw, 74px);
+        letter-spacing: -0.045em;
+    }
+
+    html[dir='rtl'] h1,
+    html[dir='rtl'] h2,
+    html[lang='kn'] h1,
+    html[lang='kn'] h2 {
+        letter-spacing: normal;
+    }
+
+    [dir='rtl'] .recording-pill {
+        right: auto;
+        left: 4%;
+    }
+
+    [dir='rtl'] .step-visual {
+        transform-origin: right center;
+    }
+
+    [dir='rtl'] .text-link svg {
+        transform: scaleX(-1);
+    }
+
+    @media (max-width: 600px) {
+        html:not([lang='en']) h1 {
+            font-size: clamp(40px, 10vw, 62px);
+        }
+    }
+}

@@ -1,0 +1,725 @@
+@layer responsive {
+    @media (min-width: 1500px) {
+        .hero {
+            column-gap: 65px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .wrap {
+            width: calc(100% - 64px);
+        }
+
+        .site-header > nav {
+            gap: 20px;
+        }
+
+        .hero {
+            column-gap: 25px;
+            padding-top: 55px;
+        }
+
+        h1 {
+            font-size: 72px;
+        }
+
+        .hero-description {
+            font-size: 15px;
+        }
+
+        .hero-actions {
+            gap: 20px;
+        }
+
+        .hero-actions .button {
+            font-size: 12px;
+            padding-inline: 16px;
+        }
+
+        .hero-actions .text-link {
+            font-size: 11px;
+        }
+
+        .note-body {
+            padding: 18px;
+            height: 180px;
+        }
+
+        .note-heading {
+            font-size: 20px;
+        }
+
+        .transcript {
+            font-size: 11px;
+        }
+
+        .demo-caption {
+            max-width: 130px;
+            text-align: right;
+            font-size: 8px;
+        }
+
+        .voice-caption {
+            gap: 10px;
+            font-size: 8px;
+        }
+
+        .voice-wave {
+            gap: 2px;
+        }
+
+        .workflow-steps {
+            gap: 35px;
+        }
+
+        .model-layout {
+            gap: 55px;
+            grid-template-columns: 1fr 0.9fr;
+        }
+
+        .screenshot-frame {
+            height: 360px;
+        }
+
+        .model-art {
+            padding-inline: 20px;
+        }
+
+        .setup-steps {
+            gap: 28px;
+        }
+
+        .setup-steps li {
+            gap: 12px;
+        }
+
+        .install-notes {
+            gap: 25px;
+        }
+
+        .install-notes a {
+            flex-shrink: 1;
+        }
+
+        .faq-section {
+            gap: 40px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .site-header {
+            padding-block: 22px;
+            flex-wrap: wrap;
+        }
+
+        .site-header > nav > a:not(.source-link) {
+            display: none;
+        }
+
+        .site-header {
+            gap: 15px;
+        }
+
+        .hero {
+            grid-template-columns: 1fr;
+            padding-top: 42px;
+            row-gap: 10px;
+        }
+
+        .hero-copy {
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: clamp(64px, 12vw, 92px);
+        }
+
+        .hero-description {
+            max-width: 440px;
+            font-size: 16px;
+        }
+
+        .hero-actions .button {
+            font-size: 13px;
+            padding-inline: 22px;
+        }
+
+        .hero-actions .text-link {
+            font-size: 12px;
+        }
+
+        .hero-requirements {
+            font-size: 11px;
+        }
+
+        .demo {
+            width: min(100%, 580px);
+            justify-self: center;
+        }
+
+        .desktop {
+            aspect-ratio: 1.35;
+        }
+
+        .note-body {
+            padding: 20px 26px;
+            height: 195px;
+        }
+
+        .note-heading {
+            font-size: 25px;
+        }
+
+        .note-intro,
+        .transcript {
+            font-size: 13px;
+        }
+
+        .note-window {
+            top: 19%;
+        }
+
+        .note-status {
+            font-size: 8px;
+        }
+
+        .demo-caption {
+            max-width: none;
+            font-size: 10px;
+        }
+
+        .demo-play {
+            font-size: 12px;
+        }
+
+        .voice-caption {
+            font-size: 11px;
+            margin-top: 18px;
+        }
+
+        .voice-wave {
+            gap: 3px;
+        }
+
+        .compatibility {
+            justify-content: start;
+            gap: 16px 32px;
+        }
+
+        .compatibility > span {
+            width: calc(50% - 16px);
+        }
+
+        .section-space {
+            padding-block: 75px;
+        }
+
+        .section-intro {
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .section-intro > p {
+            max-width: 250px;
+            font-size: 13px;
+        }
+
+        .workflow-steps {
+            gap: 28px;
+        }
+
+        .workflow-steps h3 {
+            font-size: 16px;
+        }
+
+        .workflow-steps p {
+            font-size: 12px;
+        }
+
+        .step-visual {
+            transform: scale(0.85);
+            transform-origin: left center;
+        }
+
+        .pasted-visual {
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .model-layout {
+            gap: 45px;
+            grid-template-columns: 1fr;
+        }
+
+        .model-art {
+            max-width: 500px;
+            margin-inline: auto;
+            width: 100%;
+            grid-row: 2;
+        }
+
+        .model-copy {
+            max-width: 500px;
+        }
+
+        .model-feature p {
+            font-size: 14px;
+        }
+
+        .model-feature h3 {
+            font-size: 17px;
+        }
+
+        .setup-steps {
+            grid-template-columns: 1fr;
+            gap: 33px;
+        }
+
+        .setup-steps li {
+            gap: 20px;
+        }
+
+        .setup-steps p {
+            max-width: 500px;
+            font-size: 14px;
+            margin-block: 10px 17px;
+        }
+
+        .setup-steps .button {
+            font-size: 12px;
+        }
+
+        .setup-steps h3 {
+            font-size: 20px;
+        }
+
+        .install-notes {
+            align-items: start;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 12px;
+        }
+
+        .install-notes strong {
+            font-size: 13px;
+        }
+
+        .faq-section {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .faq-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .faq-heading p {
+            margin-top: 0;
+        }
+
+        details > div {
+            font-size: 14px;
+        }
+
+        .closing {
+            padding-block: 60px 75px;
+        }
+
+        .site-footer {
+            flex-wrap: wrap;
+        }
+
+        .site-footer p {
+            order: 3;
+            width: 100%;
+        }
+
+        .site-header > nav {
+            display: none;
+        }
+
+        .header-actions {
+            margin-inline-start: auto;
+        }
+
+        .hero > astro-island {
+            width: 100%;
+        }
+
+        .hero .demo {
+            margin-inline: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .wrap {
+            width: calc(100% - 40px);
+        }
+
+        .brand {
+            font-size: 14px;
+            gap: 8px;
+        }
+
+        .brand > img {
+            width: 34px;
+        }
+
+        .header-install {
+            font-size: 10px;
+            padding-inline: 11px;
+            gap: 7px;
+        }
+
+        .header-install svg {
+            width: 13px;
+        }
+
+        .site-header > nav {
+            display: none;
+        }
+
+        .hero {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: clamp(53px, 14vw, 67px);
+        }
+
+        .product-context {
+            font-size: 11px;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            font-size: 15px;
+            margin-top: 24px;
+        }
+
+        .hero-actions {
+            gap: 21px;
+            margin-top: 24px;
+        }
+
+        .hero-actions .button {
+            font-size: 12px;
+            padding-inline: 17px;
+        }
+
+        .hero-actions .text-link {
+            font-size: 10px;
+            gap: 6px;
+        }
+
+        .hero-requirements {
+            font-size: 11px;
+        }
+
+        .desktop {
+            aspect-ratio: 1.08;
+            border-width: 4px;
+        }
+
+        .shell-bar {
+            font-size: 8px;
+        }
+
+        .note-window {
+            top: 19%;
+            width: 86%;
+            left: 7%;
+        }
+
+        .window-title {
+            padding: 9px 12px;
+            font-size: 9px;
+        }
+
+        .note-body {
+            padding: 15px 18px;
+            height: clamp(120px, 42vw, 165px);
+        }
+
+        .note-heading {
+            font-size: 18px;
+        }
+
+        .transcript {
+            font-size: 11px;
+        }
+
+        .note-status {
+            font-size: 6px;
+            padding: 5px 9px;
+            min-height: 24px;
+        }
+
+        .shortcut-hint {
+            bottom: 4%;
+            right: 6%;
+        }
+
+        .shortcut-hint kbd {
+            min-width: 28px;
+            height: 29px;
+            font-size: 9px;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        .recording-pill {
+            top: 13%;
+            padding: 7px 11px;
+            font-size: 9px;
+        }
+
+        .demo-controls {
+            margin-top: 12px;
+        }
+
+        .demo-caption {
+            font-size: 8px;
+            max-width: 150px;
+        }
+
+        .demo-play {
+            font-size: 10px;
+        }
+
+        .voice-caption {
+            font-size: 9px;
+        }
+
+        .voice-wave {
+            gap: 2px;
+        }
+
+        .voice-wave i {
+            width: 2px;
+        }
+
+        .compatibility {
+            font-size: 10px;
+            gap: 14px 14px;
+            padding-block: 20px;
+        }
+
+        .compatibility > span {
+            width: calc(50% - 7px);
+            gap: 7px;
+        }
+
+        .compatibility svg {
+            width: 15px;
+        }
+
+        .section-space {
+            padding-block: 58px;
+        }
+
+        .section-intro {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .section-intro > p {
+            max-width: 100%;
+            font-size: 14px;
+            margin-top: 22px;
+        }
+
+        .workflow-steps {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .workflow-steps li {
+            display: grid;
+            grid-template-columns: 115px 1fr;
+            column-gap: 18px;
+            align-items: start;
+        }
+
+        .step-visual {
+            grid-column: 1;
+            grid-row: span 2;
+            margin: 0;
+            height: 90px;
+            transform: scale(0.75);
+        }
+
+        .workflow-steps h3 {
+            grid-column: 2;
+            font-size: 17px;
+        }
+
+        .workflow-steps p {
+            grid-column: 2;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .pasted-visual {
+            font-size: 11px;
+            flex-wrap: wrap;
+            gap: 5px;
+            align-content: center;
+        }
+
+        .pasted-visual svg {
+            width: 18px;
+        }
+
+        .pasted-visual span {
+            max-width: 95px;
+            white-space: normal;
+        }
+
+        .pasted-visual i {
+            display: none;
+        }
+
+        .workflow-footnote {
+            font-size: 10px;
+            margin-top: 28px;
+        }
+
+        .model-section {
+            padding-block: 55px;
+        }
+
+        .model-layout {
+            gap: 35px;
+        }
+
+        .model-copy {
+            padding: 0;
+        }
+
+        .model-art {
+            padding-inline: 18px;
+        }
+
+        .screenshot-frame {
+            height: 300px;
+        }
+
+        .faq-heading {
+            display: block;
+        }
+
+        .faq-heading p {
+            margin-top: 20px;
+        }
+
+        summary {
+            font-size: 13px;
+            padding-block: 20px;
+        }
+
+        .site-footer {
+            gap: 16px;
+        }
+
+        .site-footer .brand {
+            font-size: 11px;
+        }
+
+        .site-footer nav {
+            gap: 13px;
+            font-size: 9px;
+        }
+
+        .site-footer p {
+            font-size: 9px;
+        }
+
+        .demo-button-label {
+            max-width: 130px;
+        }
+
+        .setup-steps .button {
+            font-size: 12px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :root {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .site-header > nav {
+            gap: 18px;
+        }
+
+        .site-header > nav > a:not(.source-link) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .site-header {
+            gap: 12px;
+        }
+
+        .header-actions {
+            gap: 12px;
+        }
+
+        .header-install {
+            display: none;
+        }
+
+        .site-header .brand {
+            font-size: 13px;
+        }
+
+        .language-switcher > summary > span {
+            max-width: 100px;
+        }
+
+        .demo-play {
+            max-width: 150px;
+        }
+
+        .demo-caption {
+            font-size: 10px;
+        }
+
+        .install-notes a {
+            flex-shrink: 1;
+        }
+
+        .workflow-steps li {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .workflow-steps li > * {
+            grid-column: 1;
+        }
+
+        .workflow-steps li .step-visual {
+            grid-row: auto;
+            height: 64px;
+        }
+
+        .workflow-steps p {
+            max-width: none;
+            font-size: 14px;
+        }
+    }
+}

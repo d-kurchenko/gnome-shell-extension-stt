@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text per GNOME — Dictada vocala jos Linux",
+        "description": "Dictada vocala per GNOME Shell jos Linux. Dictatz amb Super+Z, transcrivètz via OpenRouter e pegatz dins las aplicacions amb Wayland o X11. Extension liura e gratuita."
+    },
+    "nav": {
+        "skip": "Anar al contengut",
+        "main": "Navigacion principala",
+        "workflow": "Cossí fonciona",
+        "questions": "Questions",
+        "install": "Installar",
+        "language": "Lenga",
+        "source": "Còdi font",
+        "issues": "Senhalar un problèma",
+        "license": "Licéncia"
+    },
+    "hero": {
+        "context": "Dictada vocala per GNOME jos Linux",
+        "title": "Vòstra votz.\nVòstre ritme.",
+        "body": "Exprimissètz vòstras idèas e metètz-las dins l’aplicacion qu’utilizatz ja. Un acorchi pòrta la dictada a vòstre burèu GNOME.",
+        "install": "Installar per GNOME",
+        "free": "Gratuit e de còdi dobèrt.",
+        "key": "Cal vòstra clau API OpenRouter."
+    },
+    "compatibility": {
+        "label": "Compatibilitat e prerequesits",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transcripcion via"
+    },
+    "workflow": {
+        "title": "Gardatz lo fil\nde las idèas.",
+        "body": "Dictatz nòtas, messatges o comandas sens dobrir una aplicacion de dictada separada.",
+        "steps": [
+            {
+                "title": "Quichatz. Parlatz.",
+                "body": "Quichatz Super+Z o l’icòna del panèl. Un indicador irange senhala l’enregistrament."
+            },
+            {
+                "title": "Quichatz tornarmai. Transcrivètz.",
+                "body": "Arrestatz l’enregistrament per mandar l’àudio a OpenRouter e al modèl causit."
+            },
+            {
+                "title": "Contunhatz.",
+                "body": "La transcripcion remplaça lo contengut del quichapapièrs e se pega dins l’aplicacion activa. Podètz tanben la pegar manualament."
+            }
+        ],
+        "note": "Cambiatz o desactivatz Super+Z dins las preferéncias. Lo pegatge automatic depend de l’aplicacion e del clavièr."
+    },
+    "models": {
+        "title": "Vòstra votz.\nVòstre modèl.",
+        "body": "Causissètz lo modèl e la lenga parlada dins las preferéncias nativas de GNOME.",
+        "features": [
+            {
+                "title": "Un catalòg de modèls amb recèrca",
+                "body": "Utilizatz de modèls de reconeissença vocala o de LLM amb entrada àudio via OpenRouter. MAI-Transcribe 2 es lo modèl per defaut."
+            },
+            {
+                "title": "Parlatz vòstra lenga",
+                "body": "Utilizatz la deteccion automatica o causissètz una lenga. La reconeissença depend del modèl."
+            },
+            {
+                "title": "Vòstre burèu, vòstras preferéncias",
+                "body": "Cambiatz l’acorchi, desplaçatz o amagatz l’icòna e activatz o desactivatz los sons d’enregistrament."
+            }
+        ],
+        "settings": "Explorar los reglatges",
+        "caption": "Preferéncias vertadièras, mostradas en anglés. Los modèls disponibles pòdon cambiar.",
+        "alt": "Selector natiu GNOME amb MAI-Transcribe 2 e d’autres modèls àudio"
+    },
+    "setup": {
+        "title": "Daissatz vòstre clavièr\nrespirar un pauc.",
+        "body": "Cal GNOME Shell, un microfòn, Internet e vòstra clau API OpenRouter.",
+        "steps": [
+            {
+                "title": "Installatz l’extension",
+                "body": "Obtenètz Speech to Text sus GNOME Extensions. Versions de Shell compatiblas : {versions}."
+            },
+            {
+                "title": "Ajustatz vòstra clau API",
+                "body": "Dobrissètz las preferéncias, picatz la clau OpenRouter e causissètz un modèl. L’API pòt èsser paganta segon lo provesidor."
+            },
+            {
+                "title": "Causissètz un camp. Parlatz.",
+                "body": "Quichatz Super+Z per començar e tornarmai per arrestar. Lo tèxte es pegat dins l’aplicacion ont escriviatz."
+            }
+        ],
+        "open": "Dobrir GNOME Extensions",
+        "key": "Obténer una clau OpenRouter",
+        "before": "Abans de començar",
+        "requirements": "Cal GStreamer 1.0 amb los empeutons base e good. Aprèp installacion o mesa a jorn jos Wayland, desconnectatz-vos puèi reconnectatz-vos.",
+        "manual": "Installacion manuala e resolucion de problèmas"
+    },
+    "faq": {
+        "title": "Qualques punts\na conéisser.",
+        "ask": "Demandar sus GitHub",
+        "items": [
+            {
+                "title": "Es gratuit ?",
+                "body": "L’extension es gratuita jos GPL-2.0-or-later. Utiliza vòstre compte OpenRouter ; los còstes e los modèls dependon del provesidor."
+            },
+            {
+                "title": "Ont va mon àudio ?",
+                "body": "L’àudio es enregistrat localament e mandat a OpenRouter per HTTPS a l’arrèst. Lo tractament e la conservacion dependon d’OpenRouter e del provesidor. La clau es dins GSettings. Pas de telemetria."
+            },
+            {
+                "title": "Qué ven mon quichapapièrs ?",
+                "body": "La transcripcion remplaça son contengut pel pegatge. L’extension legís pas ni manda pas los autres contenguts o l’istoric del quichapapièrs."
+            },
+            {
+                "title": "Fonciona jos Wayland e dins los terminals ?",
+                "body": "Lo pegatge utiliza Ctrl+V, o Ctrl+Shift+V dins los terminals. L’aplicacion deu o acceptar. Jos Wayland, un clavièr non latin pòt empachar lo pegatge automatic ; lo tèxte demòra disponible pel pegatge manual."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Una bona idèa comença\nper un mot.",
+        "install": "Començar amb Speech to Text",
+        "body": "Una extension GNOME Shell independenta e de còdi dobèrt."
+    },
+    "demo": {
+        "play": "Veire la demostracion",
+        "again": "Tornar legir",
+        "recording": "Enregistrament…",
+        "transcribing": "Transcripcion…",
+        "ready": "Prèst per començar",
+        "done": "Pegat del quichapapièrs",
+        "caption": "Illustracion sonque. Lo microfòn demòra atudat.",
+        "heading": "Daissatz venir las idèas.",
+        "sample": "Deman, passam mens de temps a picar e mai de temps a crear.",
+        "pause": "Metre en pausa",
+        "resume": "Reprene la demostracion"
+    }
+}

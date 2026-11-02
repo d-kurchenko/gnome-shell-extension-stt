@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text for GNOME — Voice typing on Linux",
+        "description": "Voice typing for GNOME Shell on Linux. Dictate with Super+Z, transcribe via OpenRouter, and paste into your app on Wayland or X11. Free, open-source extension."
+    },
+    "nav": {
+        "skip": "Skip to content",
+        "main": "Main navigation",
+        "workflow": "How it works",
+        "questions": "Questions",
+        "install": "Get the extension",
+        "language": "Language",
+        "source": "Source code",
+        "issues": "Report an issue",
+        "license": "License"
+    },
+    "hero": {
+        "context": "Voice typing for GNOME on Linux",
+        "title": "Your voice.\nIn your flow.",
+        "body": "Speak your thoughts and put them into the app you’re already using. A keyboard shortcut brings dictation to your GNOME desktop.",
+        "install": "Install for GNOME",
+        "free": "Free & open source.",
+        "key": "Bring your OpenRouter API key."
+    },
+    "compatibility": {
+        "label": "Compatibility and requirements",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transcription via"
+    },
+    "workflow": {
+        "title": "Keep your train\nof thought.",
+        "body": "Dictate notes, messages, or terminal input without switching to a separate dictation app.",
+        "steps": [
+            {
+                "title": "Press. Speak.",
+                "body": "Press Super+Z or click the panel icon. An orange indicator shows that recording has started."
+            },
+            {
+                "title": "Press again. Transcribe.",
+                "body": "Stop recording to send the audio to OpenRouter and your selected transcription model."
+            },
+            {
+                "title": "Carry on.",
+                "body": "The transcript replaces your clipboard content and is pasted into the focused app. You can also paste manually."
+            }
+        ],
+        "note": "Change or disable Super+Z in preferences. Automatic paste depends on the app and keyboard layout."
+    },
+    "models": {
+        "title": "Your voice.\nYour model.",
+        "body": "Choose your model and spoken language in native GNOME preferences.",
+        "features": [
+            {
+                "title": "A searchable model catalog",
+                "body": "Use speech recognition models or LLMs with audio input through OpenRouter. MAI-Transcribe 2 is the default."
+            },
+            {
+                "title": "Speak your language",
+                "body": "Use automatic language detection or select a language explicitly. Recognition depends on your model."
+            },
+            {
+                "title": "Your desktop, your preferences",
+                "body": "Change the shortcut, move or hide the panel icon, and enable or disable recording sounds."
+            }
+        ],
+        "settings": "Explore the settings",
+        "caption": "Actual preferences, shown in English. Available models may change.",
+        "alt": "Native GNOME model chooser with MAI-Transcribe 2 and other audio models"
+    },
+    "setup": {
+        "title": "Give your keyboard\na little breathing room.",
+        "body": "You need GNOME Shell, a microphone, internet access, and your own OpenRouter API key.",
+        "steps": [
+            {
+                "title": "Install the extension",
+                "body": "Get Speech to Text from GNOME Extensions. Supported Shell versions: {versions}."
+            },
+            {
+                "title": "Add your API key",
+                "body": "Open preferences, enter your OpenRouter key, and select a model. API usage may cost money depending on the provider."
+            },
+            {
+                "title": "Focus a text field. Speak.",
+                "body": "Press Super+Z to start, then again to stop. The transcript is pasted into the app where you were typing."
+            }
+        ],
+        "open": "Open GNOME Extensions",
+        "key": "Get an OpenRouter key",
+        "before": "Before you start",
+        "requirements": "Requires GStreamer 1.0 with base and good plugins. After installing or updating on Wayland, log out and back in.",
+        "manual": "Manual installation & troubleshooting"
+    },
+    "faq": {
+        "title": "A few things\nworth knowing.",
+        "ask": "Ask on GitHub",
+        "items": [
+            {
+                "title": "Is it free?",
+                "body": "The extension is free under GPL-2.0-or-later. Transcription uses your own OpenRouter account; costs and model availability depend on the provider."
+            },
+            {
+                "title": "Where does my audio go?",
+                "body": "Audio is recorded locally and sent to OpenRouter over HTTPS when you stop. Processing and retention depend on OpenRouter and the selected provider. Your key is stored in GSettings. The extension collects no telemetry."
+            },
+            {
+                "title": "What happens to my clipboard?",
+                "body": "The finished transcript replaces your clipboard content for pasting. The extension does not read or upload other clipboard content or clipboard history."
+            },
+            {
+                "title": "Does it work on Wayland and in terminals?",
+                "body": "Paste uses Ctrl+V, or Ctrl+Shift+V in terminals. The app must support that shortcut. On Wayland, non-Latin layouts can prevent automatic paste; the transcript remains on your clipboard for manual paste."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Good ideas start\nwith a word.",
+        "install": "Start with Speech to Text",
+        "body": "An independent, open-source GNOME Shell extension."
+    },
+    "demo": {
+        "play": "Play the demo",
+        "again": "Play again",
+        "recording": "Recording…",
+        "transcribing": "Transcribing…",
+        "ready": "Ready when you are",
+        "done": "Pasted from your clipboard",
+        "caption": "Illustration only. Your microphone stays off.",
+        "heading": "Let the ideas flow.",
+        "sample": "Tomorrow, let’s spend less time typing and more time making things.",
+        "pause": "Pause demo",
+        "resume": "Resume demo"
+    }
+}

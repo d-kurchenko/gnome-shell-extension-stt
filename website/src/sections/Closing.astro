@@ -1,0 +1,19 @@
+---
+import logo from '../../../resources/icons/speech-to-text.svg?url';
+import Action from '../shared/ui/Action.astro';
+import Heading from '../shared/ui/Heading.astro';
+import { site } from '../shared/config/site';
+import type { Messages } from '../i18n';
+
+interface Props {
+    messages: Messages['closing'];
+}
+const { messages: t } = Astro.props;
+---
+
+<section class="closing wrap" aria-labelledby="closing-title">
+    <img src={logo} width="72" height="72" alt="" loading="lazy" />
+    <Heading id="closing-title" text={t.title} />
+    <Action href={site.install} label={t.install} variant="orange" icon="download" />
+    <p>{t.body}</p>
+</section>

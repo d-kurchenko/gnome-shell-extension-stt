@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text per al GNOME — Dictat de veu al Linux",
+        "description": "Dictat de veu per al GNOME Shell al Linux. Dicteu amb Super+Z, transcriviu amb OpenRouter i enganxeu a les aplicacions amb Wayland o X11. Extensió lliure i gratuïta."
+    },
+    "nav": {
+        "skip": "Ves al contingut",
+        "main": "Navegació principal",
+        "workflow": "Com funciona",
+        "questions": "Preguntes",
+        "install": "Instal·la",
+        "language": "Llengua",
+        "source": "Codi font",
+        "issues": "Informa d’un problema",
+        "license": "Llicència"
+    },
+    "hero": {
+        "context": "Dictat de veu per al GNOME al Linux",
+        "title": "La vostra veu.\nEl vostre ritme.",
+        "body": "Expresseu les idees i poseu-les a l’aplicació que ja feu servir. Una drecera porta el dictat a l’escriptori GNOME.",
+        "install": "Instal·la per al GNOME",
+        "free": "Gratuït i de codi obert.",
+        "key": "Cal la vostra clau API d’OpenRouter."
+    },
+    "compatibility": {
+        "label": "Compatibilitat i requisits",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transcripció mitjançant"
+    },
+    "workflow": {
+        "title": "No perdeu\nel fil.",
+        "body": "Dicteu notes, missatges o ordres sense obrir una aplicació de dictat separada.",
+        "steps": [
+            {
+                "title": "Premeu. Parleu.",
+                "body": "Premeu Super+Z o la icona del tauler. Un indicador taronja mostra que s’està enregistrant."
+            },
+            {
+                "title": "Premeu de nou. Transcriviu.",
+                "body": "Atureu l’enregistrament per enviar l’àudio a OpenRouter i al model triat."
+            },
+            {
+                "title": "Continueu.",
+                "body": "La transcripció substitueix el contingut del porta-retalls i s’enganxa a l’aplicació activa. També podeu enganxar-la manualment."
+            }
+        ],
+        "note": "Canvieu o desactiveu Super+Z a les preferències. L’enganxament automàtic depèn de l’aplicació i del teclat."
+    },
+    "models": {
+        "title": "La vostra veu.\nEl vostre model.",
+        "body": "Trieu el model i la llengua parlada a les preferències natives del GNOME.",
+        "features": [
+            {
+                "title": "Catàleg de models amb cerca",
+                "body": "Feu servir models de reconeixement de veu o LLM amb entrada d’àudio mitjançant OpenRouter. El predeterminat és MAI-Transcribe 2."
+            },
+            {
+                "title": "Parleu la vostra llengua",
+                "body": "Feu servir la detecció automàtica o trieu una llengua. El reconeixement depèn del model."
+            },
+            {
+                "title": "El vostre escriptori i preferències",
+                "body": "Canvieu la drecera, moveu o amagueu la icona i activeu o desactiveu els sons d’enregistrament."
+            }
+        ],
+        "settings": "Exploreu la configuració",
+        "caption": "Preferències reals, mostrades en anglès. Els models disponibles poden canviar.",
+        "alt": "Selector natiu del GNOME amb MAI-Transcribe 2 i altres models d’àudio"
+    },
+    "setup": {
+        "title": "Doneu un respir\nal teclat.",
+        "body": "Calen GNOME Shell, un micròfon, Internet i la vostra clau API d’OpenRouter.",
+        "steps": [
+            {
+                "title": "Instal·leu l’extensió",
+                "body": "Obteniu Speech to Text al GNOME Extensions. Versions del Shell compatibles: {versions}."
+            },
+            {
+                "title": "Afegiu la clau API",
+                "body": "Obriu les preferències, introduïu la clau d’OpenRouter i trieu un model. L’API pot tenir un cost segons el proveïdor."
+            },
+            {
+                "title": "Trieu un camp. Parleu.",
+                "body": "Premeu Super+Z per començar i de nou per aturar. El text s’enganxa a l’aplicació on escrivíeu."
+            }
+        ],
+        "open": "Obre el GNOME Extensions",
+        "key": "Obtén una clau d’OpenRouter",
+        "before": "Abans de començar",
+        "requirements": "Cal GStreamer 1.0 amb els connectors base i good. Després d’instal·lar o actualitzar al Wayland, sortiu de la sessió i torneu-hi a entrar.",
+        "manual": "Instal·lació manual i resolució de problemes"
+    },
+    "faq": {
+        "title": "És bo\nsaber-ho.",
+        "ask": "Pregunta al GitHub",
+        "items": [
+            {
+                "title": "És gratuït?",
+                "body": "L’extensió és gratuïta sota GPL-2.0-or-later. Fa servir el vostre compte d’OpenRouter; els costos i els models depenen del proveïdor."
+            },
+            {
+                "title": "On va el meu àudio?",
+                "body": "S’enregistra localment i s’envia a OpenRouter per HTTPS en aturar. El processament i la retenció depenen d’OpenRouter i del proveïdor. La clau es desa al GSettings. No es recull telemetria."
+            },
+            {
+                "title": "Què passa amb el porta-retalls?",
+                "body": "La transcripció en substitueix el contingut per enganxar-la. L’extensió no llegeix ni puja altres continguts o l’historial del porta-retalls."
+            },
+            {
+                "title": "Funciona al Wayland i als terminals?",
+                "body": "S’enganxa amb Ctrl+V, o Ctrl+Shift+V als terminals. L’aplicació ho ha d’admetre. Al Wayland, els teclats no llatins poden impedir l’enganxament automàtic; el text queda disponible per enganxar-lo manualment."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Una bona idea comença\namb una paraula.",
+        "install": "Comenceu amb Speech to Text",
+        "body": "Una extensió independent i de codi obert per al GNOME Shell."
+    },
+    "demo": {
+        "play": "Mostra la demo",
+        "again": "Torna-hi",
+        "recording": "Enregistrant…",
+        "transcribing": "Transcrivint…",
+        "ready": "A punt per començar",
+        "done": "Enganxat del porta-retalls",
+        "caption": "Només una il·lustració. El micròfon resta apagat.",
+        "heading": "Deixeu fluir les idees.",
+        "sample": "Demà, dediquem menys temps a teclejar i més a crear.",
+        "pause": "Pausa la demo",
+        "resume": "Reprèn la demo"
+    }
+}

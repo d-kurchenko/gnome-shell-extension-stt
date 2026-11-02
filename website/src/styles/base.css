@@ -1,0 +1,128 @@
+@layer base {
+    :root {
+        --cloud: #f1f4f6;
+        --paper: #fff;
+        --ink: #243541;
+        --muted: #586875;
+        --orange: #f4773a;
+        --orange-deep: #a83e13;
+        --line: #d6dfe5;
+        --lavender: #dcd9f2;
+        font-family: 'Manrope Variable', sans-serif;
+        color: var(--ink);
+        background: var(--cloud);
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
+        scroll-padding-top: 28px;
+    }
+
+    body {
+        min-width: 0;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    a {
+        color: inherit;
+        text-underline-offset: 4px;
+    }
+
+    button,
+    summary {
+        cursor: pointer;
+    }
+
+    button:disabled {
+        cursor: wait;
+    }
+
+    a,
+    button,
+    summary {
+        touch-action: manipulation;
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--orange-deep);
+        outline-offset: 6px;
+    }
+
+    ::selection {
+        color: var(--ink);
+        background: #ffc8ac;
+    }
+
+    h1,
+    h2,
+    h3 {
+        text-wrap: balance;
+    }
+
+    h1 {
+        font-size: clamp(62px, 6.8vw, 100px);
+        font-weight: 650;
+        line-height: 1.04;
+        letter-spacing: -0.065em;
+    }
+
+    h2 {
+        font-size: clamp(35px, 4vw, 53px);
+        line-height: 1.14;
+        font-weight: 600;
+        letter-spacing: -0.055em;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: -0.035em;
+    }
+
+    kbd {
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .skip-link {
+        position: fixed;
+        left: 20px;
+        top: -100px;
+        z-index: 10;
+        padding: 12px 20px;
+        background: white;
+        border-radius: 10px;
+    }
+
+    .skip-link:focus {
+        top: 20px;
+    }
+
+    html {
+        scrollbar-gutter: stable;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        overflow-wrap: anywhere;
+    }
+
+    h1,
+    h2 {
+        hyphens: auto;
+    }
+}

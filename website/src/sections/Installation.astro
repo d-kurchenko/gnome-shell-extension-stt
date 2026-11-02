@@ -1,0 +1,48 @@
+---
+import Action from '../shared/ui/Action.astro';
+import Heading from '../shared/ui/Heading.astro';
+import Shortcut from '../shared/ui/Shortcut.astro';
+import { site } from '../shared/config/site';
+import { formatVersions, type Messages } from '../i18n';
+
+interface Props {
+    messages: Messages['setup'];
+}
+const { messages: t } = Astro.props;
+---
+
+<section id="install" class="install-section wrap section-space" aria-labelledby="install-title">
+    <div class="section-intro">
+        <Heading id="install-title" text={t.title} />
+        <p>{t.body}</p>
+    </div>
+    <ol class="setup-steps" id="setup">
+        {t.steps.map((step, index) => (
+            <li>
+                <span class="step-number" aria-hidden="true">
+                    {index + 1}
+                </span>
+                <div>
+                    <h3>{step.title}</h3>
+                    <p>{formatVersions(step.body, site.versions)}</p>
+                    {index === 0 && (
+                        <Action href={site.install} label={t.open} variant="dark" icon="download" />
+                    )}
+                    {index === 1 && <Action href={site.apiKeys} label={t.key} />}
+                    {index === 2 && (
+                        <span class="setup-shortcut">
+                            <Shortcut />
+                        </span>
+                    )}
+                </div>
+            </li>
+        ))}
+    </ol>
+    <div class="install-notes">
+        <p>
+            <strong>{t.before}</strong>
+            {t.requirements}
+        </p>
+        <Action href={`${site.repository}#installation`} label={t.manual} />
+    </div>
+</section>

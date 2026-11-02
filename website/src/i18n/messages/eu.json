@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text GNOMErako — Ahots bidezko idazketa Linuxen",
+        "description": "Ahots bidezko idazketa GNOME Shellerako Linuxen. Diktatu Super+Z erabiliz, transkribatu OpenRouter bidez eta itsatsi aplikazioetan Wayland edo X11 erabiliz. Doakoa eta irekia."
+    },
+    "nav": {
+        "skip": "Edukira joan",
+        "main": "Nabigazio nagusia",
+        "workflow": "Nola dabil",
+        "questions": "Galderak",
+        "install": "Instalatu",
+        "language": "Hizkuntza",
+        "source": "Iturburu-kodea",
+        "issues": "Eman arazo baten berri",
+        "license": "Lizentzia"
+    },
+    "hero": {
+        "context": "Ahots bidezko idazketa GNOMErako Linuxen",
+        "title": "Zure ahotsa.\nZure erritmoa.",
+        "body": "Esan zure ideiak eta jarri erabiltzen ari zaren aplikazioan. Lasterbide batek diktaketa dakar GNOME mahaigainera.",
+        "install": "Instalatu GNOMErako",
+        "free": "Doakoa eta kode irekikoa.",
+        "key": "Zure OpenRouter API gakoa behar duzu."
+    },
+    "compatibility": {
+        "label": "Bateragarritasuna eta eskakizunak",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transkripzioa honen bidez:"
+    },
+    "workflow": {
+        "title": "Ez galdu\npentsamenduaren haria.",
+        "body": "Diktatu oharrak, mezuak edo terminaleko sarrerak beste aplikazio bat ireki gabe.",
+        "steps": [
+            {
+                "title": "Sakatu. Hitz egin.",
+                "body": "Sakatu Super+Z edo paneleko ikonoa. Adierazle laranjak grabatzen ari dela erakusten du."
+            },
+            {
+                "title": "Sakatu berriro. Transkribatu.",
+                "body": "Gelditu grabaketa audioa OpenRouterrera eta hautatutako modelora bidaltzeko."
+            },
+            {
+                "title": "Jarraitu.",
+                "body": "Transkripzioak arbeleko edukia ordezten du eta aplikazio aktiboan itsasten da. Eskuz ere itsats dezakezu."
+            }
+        ],
+        "note": "Aldatu edo desgaitu Super+Z hobespenetan. Itsaste automatikoa aplikazioaren eta teklatuaren araberakoa da."
+    },
+    "models": {
+        "title": "Zure ahotsa.\nZure modeloa.",
+        "body": "Hautatu modeloa eta ahozko hizkuntza GNOMEren jatorrizko hobespenetan.",
+        "features": [
+            {
+                "title": "Bilaketa duen modelo-katalogoa",
+                "body": "Erabili hizketa ezagutzeko modeloak edo audio-sarrera duten LLMak OpenRouter bidez. Lehenetsia MAI-Transcribe 2 da."
+            },
+            {
+                "title": "Hitz egin zure hizkuntzan",
+                "body": "Erabili hizkuntzaren detekzio automatikoa edo hautatu hizkuntza. Ezagutza modeloaren araberakoa da."
+            },
+            {
+                "title": "Zure mahaigaina eta hobespenak",
+                "body": "Aldatu lasterbidea, mugitu edo ezkutatu ikonoa eta gaitu edo desgaitu grabaketa-soinuak."
+            }
+        ],
+        "settings": "Ikusi ezarpenak",
+        "caption": "Benetako hobespenak, ingelesez. Modelo erabilgarriak alda daitezke.",
+        "alt": "GNOMEren modelo-hautatzailea, MAI-Transcribe 2 eta beste audio-modeloekin"
+    },
+    "setup": {
+        "title": "Eman atseden pixka bat\nteklatuari.",
+        "body": "GNOME Shell, mikrofonoa, Internet eta zure OpenRouter API gakoa behar dituzu.",
+        "steps": [
+            {
+                "title": "Instalatu hedapena",
+                "body": "Eskuratu Speech to Text GNOME Extensions-en. Onartutako Shell bertsioak: {versions}."
+            },
+            {
+                "title": "Gehitu API gakoa",
+                "body": "Ireki hobespenak, sartu OpenRouter gakoa eta hautatu modeloa. APIaren erabilerak kostua izan dezake hornitzailearen arabera."
+            },
+            {
+                "title": "Hautatu testu-eremua. Hitz egin.",
+                "body": "Sakatu Super+Z hasteko eta berriro gelditzeko. Testua idazten ari zinen aplikazioan itsasten da."
+            }
+        ],
+        "open": "Ireki GNOME Extensions",
+        "key": "Eskuratu OpenRouter gakoa",
+        "before": "Hasi aurretik",
+        "requirements": "GStreamer 1.0 behar da, base eta good pluginekin. Waylanden instalatu edo eguneratu ondoren, amaitu saioa eta hasi berriro.",
+        "manual": "Eskuzko instalazioa eta arazoen konponketa"
+    },
+    "faq": {
+        "title": "Jakitea\nkomeni da.",
+        "ask": "Galdetu GitHuben",
+        "items": [
+            {
+                "title": "Doakoa al da?",
+                "body": "Hedapena doakoa da GPL-2.0-or-later lizentziarekin. Zure OpenRouter kontua erabiltzen du; kostuak eta modeloak hornitzailearen araberakoak dira."
+            },
+            {
+                "title": "Nora doa nire audioa?",
+                "body": "Audioa lokalean grabatzen da eta gelditzean OpenRouterrera bidaltzen da HTTPS bidez. Prozesatzea eta gordetzea OpenRouterren eta hornitzailearen araberakoak dira. Gakoa GSettings-en gordetzen da. Ez dago telemetriarik."
+            },
+            {
+                "title": "Zer gertatzen da arbelarekin?",
+                "body": "Transkripzioak arbeleko edukia ordezten du itsasteko. Hedapenak ez du arbeleko bestelako edukirik edo historiarik irakurtzen edo igotzen."
+            },
+            {
+                "title": "Waylanden eta terminaletan funtzionatzen al du?",
+                "body": "Ctrl+V erabiltzen du itsasteko, edo Ctrl+Shift+V terminaletan. Aplikazioak onartu behar du. Waylanden, latindarrak ez diren teklatu-diseinuek itsaste automatikoa eragotz dezakete; testua arbelean geratzen da eskuz itsasteko."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Ideia on bat\nhitz batekin hasten da.",
+        "install": "Hasi Speech to Text erabiltzen",
+        "body": "GNOME Shellerako hedapen independentea eta kode irekikoa."
+    },
+    "demo": {
+        "play": "Erakutsi demoa",
+        "again": "Errepikatu",
+        "recording": "Grabatzen…",
+        "transcribing": "Transkribatzen…",
+        "ready": "Hasteko prest",
+        "done": "Arbeletik itsatsita",
+        "caption": "Ilustrazioa besterik ez. Mikrofonoa itzalita dago.",
+        "heading": "Utzi ideiei bidea.",
+        "sample": "Bihar, eman dezagun denbora gutxiago idazten eta gehiago sortzen.",
+        "pause": "Pausatu demoa",
+        "resume": "Jarraitu demoa"
+    }
+}

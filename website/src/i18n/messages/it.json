@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text per GNOME — Dettatura vocale su Linux",
+        "description": "Dettatura per GNOME Shell su Linux. Premi Super+Z, trascrivi tramite OpenRouter e incolla nelle app su Wayland o X11. Estensione gratuita e open source."
+    },
+    "nav": {
+        "skip": "Vai al contenuto",
+        "main": "Navigazione principale",
+        "workflow": "Come funziona",
+        "questions": "Domande",
+        "install": "Installa",
+        "language": "Lingua",
+        "source": "Codice sorgente",
+        "issues": "Segnala un problema",
+        "license": "Licenza"
+    },
+    "hero": {
+        "context": "Dettatura vocale per GNOME su Linux",
+        "title": "La tua voce.\nIl tuo ritmo.",
+        "body": "Esprimi le tue idee e inseriscile nell’app che stai usando. Una scorciatoia porta la dettatura sul desktop GNOME.",
+        "install": "Installa per GNOME",
+        "free": "Gratuito e open source.",
+        "key": "Serve la tua chiave API OpenRouter."
+    },
+    "compatibility": {
+        "label": "Compatibilità e requisiti",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Trascrizione tramite"
+    },
+    "workflow": {
+        "title": "Non perdere\nil filo.",
+        "body": "Detta note, messaggi o comandi senza aprire un’app di dettatura separata.",
+        "steps": [
+            {
+                "title": "Premi. Parla.",
+                "body": "Premi Super+Z o l’icona del pannello. Un indicatore arancione segnala la registrazione."
+            },
+            {
+                "title": "Premi di nuovo. Trascrivi.",
+                "body": "Ferma la registrazione per inviare l’audio a OpenRouter e al modello scelto."
+            },
+            {
+                "title": "Continua.",
+                "body": "La trascrizione sostituisce il contenuto degli appunti e viene incollata nell’app attiva. Puoi anche incollarla manualmente."
+            }
+        ],
+        "note": "Modifica o disattiva Super+Z nelle preferenze. L’incollaggio automatico dipende dall’app e dalla tastiera."
+    },
+    "models": {
+        "title": "La tua voce.\nIl tuo modello.",
+        "body": "Scegli modello e lingua parlata nelle preferenze native di GNOME.",
+        "features": [
+            {
+                "title": "Catalogo modelli con ricerca",
+                "body": "Usa modelli di riconoscimento vocale o LLM con ingresso audio tramite OpenRouter. Il predefinito è MAI-Transcribe 2."
+            },
+            {
+                "title": "Parla la tua lingua",
+                "body": "Usa il rilevamento automatico o seleziona una lingua. Il riconoscimento dipende dal modello."
+            },
+            {
+                "title": "Il tuo desktop, le tue preferenze",
+                "body": "Cambia scorciatoia, sposta o nascondi l’icona e attiva o disattiva i suoni di registrazione."
+            }
+        ],
+        "settings": "Esplora le impostazioni",
+        "caption": "Preferenze reali, mostrate in inglese. I modelli disponibili possono cambiare.",
+        "alt": "Selettore nativo GNOME con MAI-Transcribe 2 e altri modelli audio"
+    },
+    "setup": {
+        "title": "Fai riposare\nla tastiera.",
+        "body": "Servono GNOME Shell, un microfono, Internet e la tua chiave API OpenRouter.",
+        "steps": [
+            {
+                "title": "Installa l’estensione",
+                "body": "Scarica Speech to Text da GNOME Extensions. Versioni di Shell supportate: {versions}."
+            },
+            {
+                "title": "Aggiungi la chiave API",
+                "body": "Apri le preferenze, inserisci la chiave OpenRouter e scegli un modello. L’API può avere un costo secondo il fornitore."
+            },
+            {
+                "title": "Seleziona un campo. Parla.",
+                "body": "Premi Super+Z per iniziare e di nuovo per fermarti. Il testo viene incollato nell’app in cui scrivevi."
+            }
+        ],
+        "open": "Apri GNOME Extensions",
+        "key": "Ottieni una chiave OpenRouter",
+        "before": "Prima di iniziare",
+        "requirements": "Richiede GStreamer 1.0 con i plugin base e good. Dopo installazione o aggiornamento su Wayland, esci dalla sessione e rientra.",
+        "manual": "Installazione manuale e risoluzione dei problemi"
+    },
+    "faq": {
+        "title": "Cose utili\nda sapere.",
+        "ask": "Chiedi su GitHub",
+        "items": [
+            {
+                "title": "È gratuito?",
+                "body": "L’estensione è gratuita sotto GPL-2.0-or-later. Usa il tuo account OpenRouter; costi e modelli disponibili dipendono dal fornitore."
+            },
+            {
+                "title": "Dove va il mio audio?",
+                "body": "L’audio viene registrato localmente e inviato a OpenRouter via HTTPS quando ti fermi. Elaborazione e conservazione dipendono da OpenRouter e dal fornitore. La chiave è in GSettings. Nessuna telemetria."
+            },
+            {
+                "title": "Cosa succede agli appunti?",
+                "body": "La trascrizione sostituisce il contenuto degli appunti per essere incollata. L’estensione non legge né carica altri contenuti o la cronologia degli appunti."
+            },
+            {
+                "title": "Funziona su Wayland e nei terminali?",
+                "body": "Usa Ctrl+V, o Ctrl+Shift+V nei terminali. L’app deve supportare la scorciatoia. Su Wayland, layout non latini possono impedire l’incollaggio automatico; il testo resta negli appunti per quello manuale."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Una buona idea inizia\ncon una parola.",
+        "install": "Inizia con Speech to Text",
+        "body": "Un’estensione GNOME Shell indipendente e open source."
+    },
+    "demo": {
+        "play": "Guarda la demo",
+        "again": "Ripeti",
+        "recording": "Registrazione…",
+        "transcribing": "Trascrizione…",
+        "ready": "Pronto quando vuoi",
+        "done": "Incollato dagli appunti",
+        "caption": "Solo un’illustrazione. Il microfono resta spento.",
+        "heading": "Lascia fluire le idee.",
+        "sample": "Domani dedichiamo meno tempo a digitare e più tempo a creare.",
+        "pause": "Pausa demo",
+        "resume": "Riprendi demo"
+    }
+}

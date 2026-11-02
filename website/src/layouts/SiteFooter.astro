@@ -1,0 +1,21 @@
+---
+import Brand from '../shared/ui/Brand.astro';
+import { site } from '../shared/config/site';
+import type { Locale, Messages } from '../i18n';
+
+interface Props {
+    locale: Locale;
+    messages: Messages;
+}
+const { locale, messages: t } = Astro.props;
+---
+
+<footer class="site-footer wrap">
+    <Brand locale={locale} small />
+    <p>{t.closing.body}</p>
+    <nav aria-label={t.nav.source}>
+        <a href={site.repository}>{t.nav.source}</a>
+        <a href={`${site.repository}/issues`}>{t.nav.issues}</a>
+        <a href={`${site.repository}/blob/main/LICENSE`}>{t.nav.license}</a>
+    </nav>
+</footer>

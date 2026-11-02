@@ -1,0 +1,31 @@
+---
+import DesktopDemo from '../features/dictation-demo/DesktopDemo.vue';
+import Action from '../shared/ui/Action.astro';
+import Heading from '../shared/ui/Heading.astro';
+import { site } from '../shared/config/site';
+import type { Messages } from '../i18n';
+
+interface Props {
+    messages: Messages;
+}
+const { messages: t } = Astro.props;
+---
+
+<section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+        <p class="product-context">
+            <span class="context-dot"></span>
+            {t.hero.context}
+        </p>
+        <Heading as="h1" id="hero-title" text={t.hero.title} />
+        <p class="hero-description">{t.hero.body}</p>
+        <div class="hero-actions">
+            <Action href={site.install} label={t.hero.install} variant="orange" icon="download" />
+            <Action href="#how-it-works" label={t.nav.workflow} />
+        </div>
+        <p class="hero-requirements">
+            {t.hero.free} <a href="#setup">{t.hero.key}</a>
+        </p>
+    </div>
+    <DesktopDemo messages={t.demo} client:visible />
+</section>

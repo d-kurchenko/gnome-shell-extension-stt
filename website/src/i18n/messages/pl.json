@@ -1,0 +1,133 @@
+{
+    "seo": {
+        "title": "Speech to Text dla GNOME — Pisanie głosem w Linuksie",
+        "description": "Pisanie głosem dla GNOME Shell w Linuksie. Dyktuj przez Super+Z, transkrybuj przez OpenRouter i wklejaj do aplikacji w Wayland i X11. Bezpłatne, otwarte rozszerzenie."
+    },
+    "nav": {
+        "skip": "Przejdź do treści",
+        "main": "Nawigacja główna",
+        "workflow": "Jak to działa",
+        "questions": "Pytania",
+        "install": "Zainstaluj",
+        "language": "Język",
+        "source": "Kod źródłowy",
+        "issues": "Zgłoś problem",
+        "license": "Licencja"
+    },
+    "hero": {
+        "context": "Pisanie głosem dla GNOME w Linuksie",
+        "title": "Twój głos.\nTwój rytm.",
+        "body": "Wypowiedz myśl i umieść ją w aplikacji, której używasz. Skrót klawiszowy uruchamia dyktowanie na pulpicie GNOME.",
+        "install": "Zainstaluj dla GNOME",
+        "free": "Bezpłatne i otwarte.",
+        "key": "Potrzebujesz własnego klucza API OpenRouter."
+    },
+    "compatibility": {
+        "label": "Zgodność i wymagania",
+        "gnome": "GNOME Shell {versions}",
+        "via": "Transkrypcja przez"
+    },
+    "workflow": {
+        "title": "Nie trać\nwątku.",
+        "body": "Dyktuj notatki, wiadomości lub polecenia bez otwierania osobnej aplikacji.",
+        "steps": [
+            {
+                "title": "Naciśnij. Mów.",
+                "body": "Naciśnij Super+Z lub ikonę panelu. Pomarańczowy wskaźnik oznacza trwające nagrywanie."
+            },
+            {
+                "title": "Naciśnij ponownie. Transkrybuj.",
+                "body": "Zatrzymaj nagrywanie, aby wysłać dźwięk do OpenRouter i wybranego modelu."
+            },
+            {
+                "title": "Pracuj dalej.",
+                "body": "Transkrypcja zastępuje zawartość schowka i jest wklejana do aktywnej aplikacji. Możesz też wkleić ją ręcznie."
+            }
+        ],
+        "note": "Zmień lub wyłącz Super+Z w ustawieniach. Automatyczne wklejanie zależy od aplikacji i układu klawiatury."
+    },
+    "models": {
+        "title": "Twój głos.\nTwój model.",
+        "body": "Wybierz model i język mowy w natywnych ustawieniach GNOME.",
+        "features": [
+            {
+                "title": "Katalog modeli z wyszukiwaniem",
+                "body": "Korzystaj z modeli rozpoznawania mowy lub LLM z wejściem audio przez OpenRouter. Domyślny model to MAI-Transcribe 2."
+            },
+            {
+                "title": "Mów w swoim języku",
+                "body": "Użyj automatycznego wykrywania lub wybierz język. Rozpoznawanie zależy od modelu."
+            },
+            {
+                "title": "Twój pulpit, twoje ustawienia",
+                "body": "Zmień skrót, przenieś lub ukryj ikonę i włącz lub wyłącz dźwięki nagrywania."
+            }
+        ],
+        "settings": "Poznaj ustawienia",
+        "caption": "Rzeczywiste ustawienia po angielsku. Dostępność modeli może się zmieniać.",
+        "alt": "Natywny wybór modelu GNOME z MAI-Transcribe 2 i innymi modelami audio"
+    },
+    "setup": {
+        "title": "Daj klawiaturze\nchwilę odpoczynku.",
+        "body": "Potrzebujesz GNOME Shell, mikrofonu, Internetu i własnego klucza API OpenRouter.",
+        "steps": [
+            {
+                "title": "Zainstaluj rozszerzenie",
+                "body": "Pobierz Speech to Text z GNOME Extensions. Obsługiwane wersje Shell: {versions}."
+            },
+            {
+                "title": "Dodaj klucz API",
+                "body": "Otwórz ustawienia, wpisz klucz OpenRouter i wybierz model. Dostawca może pobierać opłaty za API."
+            },
+            {
+                "title": "Wybierz pole tekstowe. Mów.",
+                "body": "Naciśnij Super+Z, aby zacząć, i ponownie, aby zakończyć. Tekst trafi do aplikacji, w której piszesz."
+            }
+        ],
+        "open": "Otwórz GNOME Extensions",
+        "key": "Uzyskaj klucz OpenRouter",
+        "before": "Zanim zaczniesz",
+        "requirements": "Wymaga GStreamer 1.0 z wtyczkami base i good. Po instalacji lub aktualizacji w Wayland wyloguj się i zaloguj ponownie.",
+        "manual": "Ręczna instalacja i rozwiązywanie problemów"
+    },
+    "faq": {
+        "title": "Warto\nwiedzieć.",
+        "ask": "Zapytaj na GitHub",
+        "items": [
+            {
+                "title": "Czy to jest bezpłatne?",
+                "body": "Rozszerzenie jest bezpłatne na licencji GPL-2.0-or-later. Korzysta z twojego konta OpenRouter; koszty i modele zależą od dostawcy."
+            },
+            {
+                "title": "Dokąd trafia nagranie?",
+                "body": "Dźwięk jest nagrywany lokalnie i po zatrzymaniu wysyłany do OpenRouter przez HTTPS. Przetwarzanie i przechowywanie zależą od OpenRouter i dostawcy. Klucz jest w GSettings. Brak telemetrii."
+            },
+            {
+                "title": "Co dzieje się ze schowkiem?",
+                "body": "Transkrypcja zastępuje zawartość schowka, aby można było ją wkleić. Rozszerzenie nie czyta ani nie wysyła innych treści lub historii schowka."
+            },
+            {
+                "title": "Czy działa w Wayland i terminalach?",
+                "body": "Wklejanie używa Ctrl+V, a w terminalach Ctrl+Shift+V. Aplikacja musi obsługiwać skrót. W Wayland układy inne niż łacińskie mogą blokować automatyczne wklejanie; tekst pozostaje w schowku do ręcznego wklejenia."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Dobry pomysł zaczyna się\nod słowa.",
+        "install": "Zacznij ze Speech to Text",
+        "body": "Niezależne rozszerzenie GNOME Shell z otwartym kodem."
+    },
+    "demo": {
+        "play": "Odtwórz demo",
+        "again": "Powtórz",
+        "recording": "Nagrywanie…",
+        "transcribing": "Transkrypcja…",
+        "ready": "Gotowe do nagrywania",
+        "done": "Wklejono ze schowka",
+        "caption": "Tylko ilustracja. Mikrofon jest wyłączony.",
+        "heading": "Uwolnij pomysły.",
+        "sample": "Jutro poświęćmy mniej czasu na pisanie, a więcej na tworzenie.",
+        "pause": "Wstrzymaj demo",
+        "resume": "Wznów demo"
+    }
+}

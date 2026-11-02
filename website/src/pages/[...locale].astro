@@ -1,0 +1,34 @@
+---
+import type { GetStaticPaths } from 'astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../sections/Hero.astro';
+import Compatibility from '../sections/Compatibility.astro';
+import Workflow from '../sections/Workflow.astro';
+import Models from '../sections/Models.astro';
+import Installation from '../sections/Installation.astro';
+import Questions from '../sections/Questions.astro';
+import Closing from '../sections/Closing.astro';
+import { locales, getMessages, type Locale } from '../i18n';
+
+export const getStaticPaths = (() =>
+    locales.map(({ code }) => ({
+        params: { locale: code === 'en' ? undefined : code },
+        props: { locale: code },
+    }))) satisfies GetStaticPaths;
+
+interface Props {
+    locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getMessages(locale);
+---
+
+<SiteLayout locale={locale}>
+    <Hero messages={t} />
+    <Compatibility messages={t.compatibility} />
+    <Workflow messages={t.workflow} />
+    <Models messages={t.models} />
+    <Installation messages={t.setup} />
+    <Questions messages={t.faq} />
+    <Closing messages={t.closing} />
+</SiteLayout>
