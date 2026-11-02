@@ -1,92 +1,119 @@
+<img src="resources/icons/speech-to-text.svg" width="88" height="88" alt="">
+
 # Speech to Text
 
-**Speak. Stop. Done.** — Turn speech into text right inside GNOME, without leaving the app you’re in.
+Dictation for GNOME Shell using [OpenRouter](https://openrouter.ai/). Start and
+stop recording with **Super+Z** or the panel icon. The transcript is copied to the
+clipboard and pasted into the focused application, replacing selected editable
+text.
 
-Speech to Text is a GNOME Shell extension that listens through your microphone, sends the audio to your favourite speech-capable models via **[OpenRouter](https://openrouter.ai/)**, and drops the transcript where your cursor already is — clipboard and paste in one smooth motion.
+Requires **GNOME Shell 47–51**, GStreamer 1.0 with the base/good plugins, and an
+[OpenRouter API key](https://openrouter.ai/keys).
 
----
+<img src="assets/screenshots/preferences.png" width="760" alt="Speech to Text preferences with model and speech language settings">
 
-## Why you’ll like it
+## Installation
 
-- **Stays out of your way** — A calm panel indicator (optional): tap to talk, tap again when you’re finished.
-- **Hands on the keyboard** — Global shortcut to start and stop recording is **on by default** (**Super+z**). Turn it off or change the binding under **Keyboard shortcut** in preferences if you prefer.
-- **Panel layout you control** — Choose **tray horizontal alignment** (left, center, or right section of the top bar) and fine-tune **icon order** within that section with the **− / +** stepper.
-- **Paste where you type** — Text goes into the focused field (editors, browsers, chat apps, terminals) — not only into the clipboard.
-- **Your keys, your models** — Bring your own OpenRouter API key and pick any transcription-ready model the provider exposes.
-- **Sounds you can feel** — Gentle start/stop cues so you always know whether the mic is live.
-- **Tuned to you** — Temperature, timeouts, “no speech” behaviour, icon visibility, tray alignment, icon position, cue volume, and shortcuts — all in a clean preferences window.
+Install `stt-ego-upload.zip` from [GitHub Releases](https://github.com/d-kurchenko/gnome-shell-extension-stt/releases):
 
----
+```sh
+gnome-extensions install --force stt-ego-upload.zip
+```
 
-## How it works
+After installing or updating, log out and back in on Wayland to load the new
+modules. Disabling and re-enabling the extension does not reload them.
 
-1. **Start** — Click the panel icon or press your shortcut. The extension begins capturing speech from the microphone.
-2. **Stop** — Click again (or shortcut). Your audio is sent securely to OpenRouter for transcription.
-3. **Receive** — The returned text is copied and pasted into whatever window already has focus — ready to edit or send.
+```sh
+gnome-extensions enable stt@pvmnsdev.gmail.com
+gnome-extensions prefs stt@pvmnsdev.gmail.com
+```
 
-No separate dictation window. No context switch. Just flow.
+For a local checkout, see [Development](#development).
 
----
+## Configuration
 
-## Perfect for
+Add your API key in preferences and choose a model. **MAI-Transcribe 2** is the
+default.
 
-- Quick replies in chat or email  
-- Drafting notes or code comments  
-- Capturing ideas before they slip away  
-- Anyone who thinks faster than they type on a laptop with a mic  
+The model catalog comes from OpenRouter and supports two kinds of models:
 
----
+- **Speech recognition** models return their transcript directly.
+- **LLMs with audio input** receive transcription instructions, including writing
+  numbers as digits and removing hesitations.
 
-## Trust & transparency
+The extension selects the matching API automatically. Manual model IDs and an
+API-type override are available for models the catalog cannot resolve.
 
-- Transcription runs through **OpenRouter** over HTTPS — only when **you** stop a recording, and only with **your** API key from settings.  
-- The extension writes **your transcript** to the clipboard to make pasting reliable; it does not harvest unrelated clipboard history.  
-- Open source under **GPL-2.0-or-later** — inspect the code, suggest improvements, or fork for your team.
+**Speech language** defaults to automatic detection. Set the spoken language
+explicitly if a model misidentifies it, especially on short recordings. Other
+languages can be specified with a two-letter ISO-639-1 code.
 
----
+Automatic paste uses **Ctrl+V**, or **Ctrl+Shift+V** for terminal input. Target
+applications must support the corresponding paste shortcut. On Wayland,
+automatic paste can fail with a non-Latin keyboard layout. The transcript
+remains available for manual paste from the clipboard.
 
-## Get it
+## Data handling
 
-Install from **[extensions.gnome.org](https://extensions.gnome.org/)** when the listing is live, or follow your distro’s usual GNOME extension workflow from this repository’s releases.
+Audio is recorded locally and uploaded to OpenRouter when recording stops.
+Processing and retention depend on OpenRouter and the selected provider. Your
+API key is stored in the extension's GSettings.
 
-*Requires a modern GNOME Shell environment and an OpenRouter account with an API key. Microphone access is used only while you are recording.*
+The extension writes the transcript to the normal clipboard. It does not read
+clipboard history or collect telemetry.
 
-## Checks
+## Development
 
-Pull requests and pushes to `main` run `.github/workflows/validate.yml`: type
-checking, strict schema validation, and a full release build. The build formats
-JavaScript with ESLint and rejects multiple statements on one line. The package
-check verifies that the ZIP contains every compiled module and matches the build
-output byte for byte, with metadata and files at the ZIP root.
+The extension is written in TypeScript and runs in GJS. Building requires Bun,
+GLib tools, gettext, Python 3, and zip.
 
-Run the same checks locally with `bun run check`,
-`glib-compile-schemas --strict --dry-run schemas`, and `bun run pack`.
-Packaging requires Bun, Python 3, gettext, GLib tools, and zip.
+```sh
+bun install --frozen-lockfile
+bun run build
+bun run install:extension
+```
 
-`bun install` installs development dependencies. To install the extension locally,
-run `bun run build` followed by `bun run install:extension`.
+The build is written to `dist/stt@pvmnsdev.gmail.com/`. The install script symlinks
+that directory into the user extension directory, replacing any existing local
+installation of this extension.
 
-## Releases
+The two entry points are `src/extension.ts` and `src/prefs.ts`. Shell modules live
+in `src/lib/`, shared OpenRouter code in `src/openrouter/`, and preferences UI in
+`src/prefs/`. Settings are defined in `schemas/`. Shell and preferences run in
+separate processes; keep GTK imports in preferences and Shell imports out of it.
+Use GJS platform APIs in runtime modules; Bun and Node APIs belong in build tools.
 
-Publishing a stable GitHub Release runs `.github/workflows/publish.yml`. It calls
-the same validation workflow on the release tag, attaches the validated
-`stt-ego-upload.zip` to the release, and submits that ZIP to extensions.gnome.org
-for review without rebuilding it. Drafts and prereleases do not submit an
-extension.
+Validation and packaging:
 
-Before the first release, add these repository secrets under **Settings → Secrets
-and variables → Actions**:
+```sh
+bun run check
+glib-compile-schemas --strict --dry-run schemas
+bun run pack
+```
 
-- `EGO_USERNAME`: the extensions.gnome.org account that owns the extension.
-- `EGO_PASSWORD`: that account's password.
+`bun run pack` produces `stt-ego-upload.zip` and verifies its contents against the
+build. CI runs the same checks. Use `bun run i18n:refresh` after changing
+translatable strings.
 
-The upload command uses `--accept-tos` to accept the
+### Debugging
+
+```sh
+journalctl _COMM=gnome-shell --since="5 min ago" --no-pager | grep -E 'Speech to Text|JS ERROR'
+```
+
+Bug reports should include the GNOME version, model ID, speech language, target
+application, and relevant journal output.
+
+### Releases
+
+Publishing a stable GitHub Release runs the [publish workflow](.github/workflows/publish.yml):
+it validates the tagged commit, attaches the ZIP, and submits the same artifact
+to extensions.gnome.org for review. Prereleases do not trigger submission.
+
+Configure the `EGO_USERNAME` and `EGO_PASSWORD` repository secrets before
+publishing. Submission uses `--accept-tos` for the
 [GNOME Extensions upload terms](https://extensions.gnome.org/upload/).
-Review those terms before enabling uploads with your account credentials.
 
-Commit and push the changes, create a tag for the version you want to ship, then
-publish a GitHub Release for that tag. The workflow must be present in the tagged
-commit. GNOME reviewers still decide when the submitted version is approved.
-If submission fails, fix the cause and rerun only the failed upload job to reuse
-the existing ZIP. Check EGO before retrying an interrupted upload: it may already
-have been received.
+## License
+
+[GPL-2.0-or-later](LICENSE).
