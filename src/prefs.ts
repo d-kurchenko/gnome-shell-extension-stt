@@ -10,8 +10,8 @@ import {createPage} from './prefs/page.js';
 
 export default class SpeechToTextPreferences extends ExtensionPreferences
 {
-    getPreferencesWidget(): Adw.PreferencesPage
+    async fillPreferencesWindow(window: Adw.PreferencesWindow): Promise<void>
     {
-        return createPage(this.getSettings(), this.metadata, this.uuid, this.path);
+        window.add(createPage(this.getSettings(), this.metadata, this.uuid, this.path));
     }
 }
