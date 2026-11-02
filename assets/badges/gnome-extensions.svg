@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="44" viewBox="0 0 320 44" role="img" aria-labelledby="title">
+  <title id="title">Install Speech to Text from GNOME Extensions</title>
+  <rect x=".5" y=".5" width="319" height="43" rx="10" fill="#243541" stroke="#47606f"/>
+  <g transform="translate(10 10) scale(1.5)" fill="#f4773a">
+    <rect x="1" y="6" width="2" height="4" rx="1"/>
+    <rect x="4" y="3" width="2" height="10" rx="1"/>
+    <rect x="7" y="5" width="2" height="6" rx="1"/>
+    <rect x="11" y="5" width="4" height="2" rx="1"/>
+    <rect x="11" y="9" width="3" height="2" rx="1"/>
+  </g>
+  <text x="46" y="27" fill="#fffaf5" font-family="Cantarell, system-ui, sans-serif" font-size="15" font-weight="600">GNOME Extensions</text>
+  <rect x="212" y="4" width="104" height="36" rx="7" fill="#f4773a"/>
+  <text x="230" y="27" fill="#243541" font-family="Cantarell, system-ui, sans-serif" font-size="15" font-weight="700">Install</text>
+  <path d="M286 19h9v9m0-9-10 10" fill="none" stroke="#243541" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

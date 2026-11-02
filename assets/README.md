@@ -17,8 +17,8 @@ masters live in `resources/icons/`. Each poster has a self-contained SVG master
 beside its PNG, with the icon and native screenshots embedded. Text and icon
 artwork remain vector-based until export. All posters use Cantarell.
 
-Native screenshots in `screenshots/` were rendered at four to six times their logical
-size, with an empty API key and isolated settings. They are not enlarged from
+Native screenshots in `screenshots/` were rendered at four to six times their
+logical size, with an empty API key and isolated settings. They are not enlarged from
 the previous PNG exports. The orange accent applies only to the preview app;
 the extension follows the user's GTK theme. The language popover uses a separate
 native surface and is captured separately for the poster composition.
@@ -33,3 +33,8 @@ python3 assets/render-posters.py
 
 The website's icon and screenshot are uploaded separately from the extension
 ZIP. The runtime bundle contains the two SVG icons, not the listing artwork.
+
+`badges/` contains the README's install, GNOME compatibility, and license badges.
+They use the same palette as the posters and link to their destinations from the
+README. The supported Shell versions follow `metadata.json`; the license badge
+links to `LICENSE`.

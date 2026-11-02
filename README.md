@@ -1,5 +1,3 @@
-<img src="resources/icons/speech-to-text.svg" width="88" height="88" alt="">
-
 # Speech to Text
 
 Dictation for GNOME Shell using [OpenRouter](https://openrouter.ai/). Start and
@@ -7,14 +5,20 @@ stop recording with **Super+Z** or the panel icon. The transcript is copied to t
 clipboard and pasted into the focused application, replacing selected editable
 text.
 
-Requires **GNOME Shell 47–51**, GStreamer 1.0 with the base/good plugins, and an
+[![Install Speech to Text from GNOME Extensions](assets/badges/gnome-extensions.svg)](https://extensions.gnome.org/extension/9978/speech-to-text/)
+[![GNOME Shell 47–51](assets/badges/gnome-shell.svg)](#installation)
+[![License: GPL-2.0-or-later](assets/badges/license.svg)](LICENSE)
+
+Requires GStreamer 1.0 with the base/good plugins and an
 [OpenRouter API key](https://openrouter.ai/keys).
 
-<img src="assets/screenshots/preferences.png" width="760" alt="Speech to Text preferences with model and speech language settings">
+<img src="assets/branding/listing.png" width="760" alt="Speech to Text overview with its recording shortcut and transcription settings">
 
 ## Installation
 
-Install `stt-ego-upload.zip` from [GitHub Releases](https://github.com/d-kurchenko/gnome-shell-extension-stt/releases):
+Install from [GNOME Extensions](https://extensions.gnome.org/extension/9978/speech-to-text/).
+For manual installation, download `stt-ego-upload.zip` from
+[GitHub Releases](https://github.com/d-kurchenko/gnome-shell-extension-stt/releases):
 
 ```sh
 gnome-extensions install --force stt-ego-upload.zip
@@ -32,10 +36,12 @@ For a local checkout, see [Development](#development).
 
 ## Configuration
 
-Add your API key in preferences and choose a model. **MAI-Transcribe 2** is the
-default.
+Add your OpenRouter API key in preferences.
 
-The model catalog comes from OpenRouter and supports two kinds of models:
+### Models
+
+The searchable catalog comes from OpenRouter. **MAI-Transcribe 2** is the default.
+Two kinds of models are supported:
 
 - **Speech recognition** models return their transcript directly.
 - **LLMs with audio input** receive transcription instructions, including writing
@@ -44,9 +50,17 @@ The model catalog comes from OpenRouter and supports two kinds of models:
 The extension selects the matching API automatically. Manual model IDs and an
 API-type override are available for models the catalog cannot resolve.
 
+<img src="assets/branding/poster-models.png" width="760" alt="OpenRouter model chooser with recommended speech recognition models and LLMs with audio input">
+
+### Speech language
+
 **Speech language** defaults to automatic detection. Set the spoken language
 explicitly if a model misidentifies it, especially on short recordings. Other
 languages can be specified with a two-letter ISO-639-1 code.
+
+<img src="assets/branding/poster-language.png" width="760" alt="Speech language selector with automatic detection and explicit language choices">
+
+### Automatic paste
 
 Automatic paste uses **Ctrl+V**, or **Ctrl+Shift+V** for terminal input. Target
 applications must support the corresponding paste shortcut. On Wayland,
