@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "bun run build.ts",
-    "install": "./install.sh",
+    "install:extension": "./install.sh",
     "clean": "rm -rf dist/",
     "check": "bun x tsc --noEmit --project tsconfig.json",
     "pack": "bun run build.ts && rm -f stt-ego-upload.zip && (cd dist/stt@pvmnsdev.gmail.com && zip -r ../../stt-ego-upload.zip . -x 'schemas/gschemas.compiled') && bun run check:package",

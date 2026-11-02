@@ -63,6 +63,9 @@ Run the same checks locally with `bun run check`,
 `glib-compile-schemas --strict --dry-run schemas`, and `bun run pack`.
 Packaging requires Bun, Python 3, gettext, GLib tools, and zip.
 
+`bun install` installs development dependencies. To install the extension locally,
+run `bun run build` followed by `bun run install:extension`.
+
 ## Releases
 
 Publishing a stable GitHub Release runs `.github/workflows/publish.yml`. It calls
