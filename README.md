@@ -62,10 +62,12 @@ languages can be specified with a two-letter ISO-639-1 code.
 
 ### Automatic paste
 
-Automatic paste uses **Ctrl+V**, or **Ctrl+Shift+V** for terminal input. Target
-applications must support the corresponding paste shortcut. On Wayland,
-automatic paste can fail with a non-Latin keyboard layout. The transcript
-remains available for manual paste from the clipboard.
+Automatic paste uses **Shift+Insert**, or **Ctrl+Shift+Insert** for terminal input.
+These shortcuts do not depend on letter keys or change the keyboard layout.
+Target applications must support the corresponding clipboard paste shortcut. In VTE terminals,
+Ctrl+Shift+Insert pastes the normal clipboard; Shift+Insert alone pastes the
+primary selection instead.
+The transcript remains available for manual paste from the clipboard.
 
 ## Data handling
 

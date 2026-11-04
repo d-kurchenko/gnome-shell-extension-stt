@@ -67,17 +67,16 @@ export class Paster
             return;
 
         const terminal = this.#contentPurpose === Clutter.InputContentPurpose.TERMINAL;
-        this.#key(Clutter.KEY_Control_L, Clutter.KeyState.PRESSED);
         if (terminal)
-            this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.PRESSED);
+            this.#key(Clutter.KEY_Control_L, Clutter.KeyState.PRESSED);
 
-        this.#key(Clutter.KEY_v, Clutter.KeyState.PRESSED);
-        this.#key(Clutter.KEY_v, Clutter.KeyState.RELEASED);
+        this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.PRESSED);
+        this.#key(Clutter.KEY_Insert, Clutter.KeyState.PRESSED);
+        this.#key(Clutter.KEY_Insert, Clutter.KeyState.RELEASED);
+        this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.RELEASED);
 
         if (terminal)
-            this.#key(Clutter.KEY_Shift_L, Clutter.KeyState.RELEASED);
-
-        this.#key(Clutter.KEY_Control_L, Clutter.KeyState.RELEASED);
+            this.#key(Clutter.KEY_Control_L, Clutter.KeyState.RELEASED);
     }
 
     #key(keyval: number, state: Clutter.KeyState): void
